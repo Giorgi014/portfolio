@@ -1,5 +1,14 @@
+:root {
+  --bg_color: #212121;
+}
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg_color);
+  overflow-x: hidden;
 }
