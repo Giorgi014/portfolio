@@ -11,7 +11,7 @@ type ParticleType = {
   color: string;
   move: (canvasWidth: number, canvasHeight: number) => void;
   draw: (ctx: CanvasRenderingContext2D) => void;
-}
+};
 
 const ParticleBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -27,27 +27,27 @@ const ParticleBackground = () => {
     canvas.height = window.innerHeight;
 
     const particles: ParticleType[] = [];
-    
+
     const colors = [
       "#334dff",
       "#333eff",
       "#3334ff",
       "#4433ff",
       "#6633ff",
-      "#9933ff"
+      "#9933ff",
     ];
-    
+
     const hexToRgba = (hex: string, alpha: number) => {
       const r = parseInt(hex.slice(1, 3), 16);
       const g = parseInt(hex.slice(3, 5), 16);
       const b = parseInt(hex.slice(5, 7), 16);
       return `rgba(${r}, ${g}, ${b}, ${alpha})`;
     };
-    
+
     const getParticleCount = () => {
       return window.innerWidth < 768 ? 100 : 200;
     };
-    
+
     let numParticles = getParticleCount();
 
     class Particle implements ParticleType {
@@ -107,7 +107,7 @@ const ParticleBackground = () => {
 
     const animate = () => {
       if (!canvas || !ctx) return;
-      
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach((p) => {
         p.move(canvas.width, canvas.height);
@@ -121,15 +121,15 @@ const ParticleBackground = () => {
 
     const handleResize = () => {
       if (!canvas) return;
-      
+
       const oldWidth = canvas.width;
       const oldHeight = canvas.height;
-      
+
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      
+
       const newCount = getParticleCount();
-      
+
       if (newCount !== numParticles) {
         numParticles = newCount;
         particles.length = 0;
@@ -140,7 +140,6 @@ const ParticleBackground = () => {
         particles.forEach((p) => {
           p.x = (p.x / oldWidth) * canvas.width;
           p.y = (p.y / oldHeight) * canvas.height;
-          
           p.x = Math.max(0, Math.min(p.x, canvas.width));
           p.y = Math.max(0, Math.min(p.y, canvas.height));
         });
@@ -157,7 +156,7 @@ const ParticleBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      style={{ position: "absolute", top: 0, left: 0 }}
+      style={{ position: "absolute", top: 0, left: 0, zIndex: -99 }}
     />
   );
 };

@@ -1,5 +1,8 @@
 :root {
-  --bg_color: #212121;
+  --bg_color: #000003;
+  --meteor_shower: #6633ff;
+  --sugar_grape: #9933ff;
+  --white: #ffffff;
 }
 
 * {

@@ -1,0 +1,20 @@
+.info_container {
+  .name_cont {
+    margin: 20px 0px 10px 0px;
+  }
+  .nickname_cont {
+    margin: 10px 0px;
+  }
+  .occupation_cont {
+    margin: 10px 0px;
+  }
+  .availability_cont {
+    margin: 10px 0px;
+  }
+  .name {
+    color: var(--meteor_shower);
+  }
+  .info {
+    color: var(--white);
+  }
+}
