@@ -13,8 +13,13 @@
   }
   .name {
     color: var(--meteor_shower);
+    font-family: "iceland_regular";
+    font-size: 18px;
   }
   .info {
     color: var(--white);
+    font-size: 36px;
+    font-family: "big_shoulder_regular";
+    text-wrap: none;
   }
 }
