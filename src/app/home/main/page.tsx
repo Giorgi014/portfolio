@@ -1,6 +1,7 @@
 import About from "./about/page";
 import Contact from "./contact/page";
 import Projects from "./pojects/page";
+import "./style/main.scss";
 
 const Main = () => {
   return (

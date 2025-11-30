@@ -1,0 +1,9 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.main_container {
+  @include displayCenter("center", center);
+}

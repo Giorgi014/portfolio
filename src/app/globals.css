@@ -22,5 +22,6 @@
 
 body {
   background-color: var(--bg_color);
+  color: #ffffff;
   overflow-x: hidden;
 }
