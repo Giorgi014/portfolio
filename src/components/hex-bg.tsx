@@ -19,7 +19,11 @@ export const HexBg = ({
 }: HexBgProps) => {
   const maskId = useId();
 
-  const hexPositions = [130, 109, 88];
+  const hexPositions = [
+    { x: 119.5, y: -9 },
+    { x: 119.5, y: 10 },
+    { x: 135.6, y: 0.5 },
+  ];
 
   return (
     <svg
@@ -34,8 +38,8 @@ export const HexBg = ({
         <mask id={maskId} maskUnits="userSpaceOnUse">
           <rect width="151" height="23" fill="white" />
 
-          {hexPositions.map((x) => (
-            <g key={x} transform={`translate(${x} 1) scale(0.83)`}>
+          {hexPositions.map(({ x, y }, index) => (
+            <g key={index} transform={`translate(${x} ${y}) scale(0.9)`}>
               <path
                 className="about__hex-mask-border"
                 fill="white"

@@ -4,7 +4,7 @@ import "./style/about.scss";
 const About = () => {
   return (
     <div className="about">
-      <h1 className="about_title">ACHIEVEMENTS</h1>
+      <h1 className="about_title">about</h1>
       <HexBg
         className="about__bg"
         width="151"

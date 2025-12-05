@@ -4,7 +4,8 @@
 }
 @font-face {
   font-family: "big_shoulder_regular";
-  src: url("/fonts/Big_Shoulders/static/BigShoulders-Regular.ttf") format("woff2");
+  src: url("/fonts/Big_Shoulders/static/BigShoulders-Regular.ttf")
+    format("woff2");
 }
 
 :root {
