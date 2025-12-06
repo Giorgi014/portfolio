@@ -1,17 +1,14 @@
 import { HexBg } from "@/components/hex-bg";
+import { Button } from "@/components/header-button";
 import "./style/about.scss";
 
 const About = () => {
   return (
     <div className="about">
-      <h1 className="about_title">about</h1>
-      <HexBg
-        className="about__bg"
-        width="151"
-        height="23"
-        bgColor="#1C202B"
-        borderColor="#000000"
-      />
+      <Button className="about_btn">
+        <h1 className="about_title">about</h1>
+        <HexBg className="about__bg" bgColor="#1C202B" borderColor="#000000" />
+      </Button>
     </div>
   );
 };

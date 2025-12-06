@@ -7,11 +7,48 @@
 .about {
   @include displayCenter("center", "center");
   position: relative;
-  width: 151px;
-  height: 23px;
-  text-transform: uppercase;
   letter-spacing: 0.25em;
-  overflow: hidden;
+  &_btn {
+    width: 180px;
+    height: 30px;
+    text-align: start;
+    padding-left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 91%;
+      background-color: var(--sugar_grape);
+      transition: background-color 0.25s ease, height 0.25s ease;
+      z-index: 2;
+    }
+    .about__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 0;
+      pointer-events: none;
+    }
+    &:hover {
+      .about__bg {
+        .hex-bg__rect {
+          fill: var(--meteor_shower);
+        }
+      }
+      &::before {
+        background-color: var(--yellowish_green);
+      }
+    }
+  }
   &_title {
     position: relative;
     z-index: 1;
@@ -23,8 +60,8 @@
   &__bg {
     position: absolute;
     inset: 0;
-    width: 151px;
-    height: 23px;
+    width: 100%;
+    height: 100%;
     display: block;
     z-index: 0;
     pointer-events: none;
@@ -32,5 +69,8 @@
   &__hex-mask-border {
     stroke-width: 2px;
     stroke-linejoin: round;
+  }
+  .hex-bg__rect {
+    transition: fill 0.25s ease-in-out;
   }
 }

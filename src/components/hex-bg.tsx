@@ -1,18 +1,9 @@
 "use client";
 
 import { useId } from "react";
-
-type HexBgProps = {
-  width?: number | string;
-  height?: number | string;
-  bgColor?: string;
-  borderColor?: string;
-  className?: string;
-};
+import { HexBgProps } from "./type";
 
 export const HexBg = ({
-  width = 151,
-  height = 23,
   bgColor = "#1C202B",
   borderColor = "#000000",
   className,
@@ -31,8 +22,6 @@ export const HexBg = ({
       viewBox="0 0 151 23"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      width={width}
-      height={height}
     >
       <defs>
         <mask id={maskId} maskUnits="userSpaceOnUse">
@@ -56,7 +45,13 @@ export const HexBg = ({
         </mask>
       </defs>
 
-      <rect width="151" height="23" fill={bgColor} mask={`url(#${maskId})`} />
+      <rect
+        className="hex-bg__rect"
+        width="151"
+        height="23"
+        fill={bgColor}
+        mask={`url(#${maskId})`}
+      />
     </svg>
   );
 };
