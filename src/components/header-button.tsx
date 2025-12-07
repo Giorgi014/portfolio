@@ -1,5 +1,9 @@
 import { ButtonProps } from "./type";
 
-export const Button = ({ className, children }: ButtonProps) => {
-  return <button className={className}>{children}</button>;
+export const Button = ({ className, children, onClick }: ButtonProps) => {
+  return (
+    <button className={className} onClick={onClick}>
+      {children}
+    </button>
+  );
 };

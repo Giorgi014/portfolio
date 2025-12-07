@@ -65,4 +65,9 @@
   .hex-bg__rect {
     transition: fill 0.25s ease-in-out;
   }
+  &_container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
 }
