@@ -7,16 +7,16 @@
 .profile_cont {
   @include displayCenter(space-between, flex-start);
   .profile_info {
-    @include displayCenter(center, center);
+    @include displayCenter(flex-start, center);
     flex-direction: column;
     width: 300px;
     height: 100vh;
     padding: 20px;
-    border-right: 2px solid red;
   }
   .profile_content {
     @include displayCenter(center, center);
     width: 100%;
-    padding: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
   }
 }

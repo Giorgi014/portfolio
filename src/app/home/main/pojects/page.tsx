@@ -3,19 +3,16 @@
 import { HexBg } from "@/components/hex-bg";
 import { Button } from "@/components/header-button";
 import { Container } from "@/components/container";
+import { SectionProps } from "@/components/type";
 import "./style/projects.scss";
-import { useState } from "react";
 
-const Projects = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  const handleButton = () => {
-    setIsOpen(!isOpen);
-  };
-
+const Projects = ({ isOpen, onToggle }: SectionProps) => {
   return (
     <div className="projects">
-      <Button className="projects_btn" onClick={handleButton}>
+      <Button
+        className={`projects_btn ${isOpen ? "active" : ""}`}
+        onClick={onToggle}
+      >
         <p className="projects_title">Projects</p>
         <HexBg
           className="projects__bg"
@@ -26,6 +23,12 @@ const Projects = () => {
       {isOpen ? (
         <Container className="projects_container">
           <p>Projects</p>
+          <div className="border_cont">
+            <div className="border one"></div>
+            <div className="border two"></div>
+            <div className="border three"></div>
+            <div className="border four"></div>
+          </div>
         </Container>
       ) : (
         ""

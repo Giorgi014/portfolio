@@ -1,17 +1,48 @@
 "use client";
 
+import { ParticleType } from "@/components/type";
 import { useEffect, useRef } from "react";
 
-type ParticleType = {
+const colors = [
+  "#334dff",
+  "#333eff",
+  "#3334ff",
+  "#4433ff",
+  "#6633ff",
+  "#9933ff",
+];
+
+class Particle implements ParticleType {
   x: number;
   y: number;
   vx: number;
   vy: number;
   radius: number;
   color: string;
-  move: (canvasWidth: number, canvasHeight: number) => void;
-  draw: (ctx: CanvasRenderingContext2D) => void;
-};
+
+  constructor(canvasWidth: number, canvasHeight: number) {
+    this.x = Math.random() * canvasWidth;
+    this.y = Math.random() * canvasHeight;
+    this.vx = (Math.random() - 0.5) * 1;
+    this.vy = (Math.random() - 0.5) * 1;
+    this.radius = 2 + Math.random() * 2;
+    this.color = colors[Math.floor(Math.random() * colors.length)];
+  }
+
+  move(canvasWidth: number, canvasHeight: number) {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x <= 0 || this.x >= canvasWidth) this.vx *= -1;
+    if (this.y <= 0 || this.y >= canvasHeight) this.vy *= -1;
+  }
+
+  draw(ctx: CanvasRenderingContext2D) {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = this.color;
+    ctx.fill();
+  }
+}
 
 const ParticleBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -28,15 +59,6 @@ const ParticleBackground = () => {
 
     const particles: ParticleType[] = [];
 
-    const colors = [
-      "#334dff",
-      "#333eff",
-      "#3334ff",
-      "#4433ff",
-      "#6633ff",
-      "#9933ff",
-    ];
-
     const hexToRgba = (hex: string, alpha: number) => {
       const r = parseInt(hex.slice(1, 3), 16);
       const g = parseInt(hex.slice(3, 5), 16);
@@ -49,38 +71,6 @@ const ParticleBackground = () => {
     };
 
     let numParticles = getParticleCount();
-
-    class Particle implements ParticleType {
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      radius: number;
-      color: string;
-
-      constructor(canvasWidth: number, canvasHeight: number) {
-        this.x = Math.random() * canvasWidth;
-        this.y = Math.random() * canvasHeight;
-        this.vx = (Math.random() - 0.5) * 1;
-        this.vy = (Math.random() - 0.5) * 1;
-        this.radius = 2 + Math.random() * 2;
-        this.color = colors[Math.floor(Math.random() * colors.length)];
-      }
-
-      move(canvasWidth: number, canvasHeight: number) {
-        this.x += this.vx;
-        this.y += this.vy;
-        if (this.x <= 0 || this.x >= canvasWidth) this.vx *= -1;
-        if (this.y <= 0 || this.y >= canvasHeight) this.vy *= -1;
-      }
-
-      draw(ctx: CanvasRenderingContext2D) {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-      }
-    }
 
     for (let i = 0; i < numParticles; i++) {
       particles.push(new Particle(canvas.width, canvas.height));

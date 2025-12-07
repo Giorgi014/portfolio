@@ -1,5 +1,5 @@
 import HomePage from "./home/page";
-import ParticleBackground from "./particleBackground/particleBackground";
+import ParticleBackground from "../components/particleBackground";
 
 export default function Home() {
   return (
