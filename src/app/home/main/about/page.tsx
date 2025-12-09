@@ -18,7 +18,19 @@ const About = ({ isOpen, onToggle }: SectionProps) => {
       </Button>
       {isOpen ? (
         <Container className="about_container">
-          <p>About Me</p>
+          <div>
+            <p>About Me</p>
+            <p>Front End Developer</p>
+            <p>
+              Hi, I’m Giorgi, a Front-End Developer skilled in React,
+              TypeScript, and modern web technologies. I build responsive,
+              user-focused interfaces and enjoy turning ideas into clear and
+              interactive experiences. I focus on writing clean, maintainable
+              code and creating interfaces that feel intuitive and polished. I
+              enjoy working on real-world projects, improving UI quality, and
+              continuously growing as a front-end developer.
+            </p>
+          </div>
           <div className="border_cont">
             <div className="border one"></div>
             <div className="border two"></div>
