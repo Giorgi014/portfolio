@@ -4,17 +4,41 @@ import { HexBg } from "@/components/hex-bg";
 import { Button } from "@/components/header-button";
 import { Container } from "@/components/container";
 import { SectionProps } from "@/components/type";
-import "./style/projects.scss";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
+import { RiCloseLargeFill } from "react-icons/ri";
+import "./style/projects.scss";
 
 const Projects = ({ isOpen, onToggle }: SectionProps) => {
   const t = useTranslations("projects");
+  const [isClosing, setIsClosing] = useState<boolean>(false);
+
+  const handleToggle = () => {
+    if (isOpen) {
+      setIsClosing(true);
+      return;
+    }
+    onToggle();
+  };
+
+  const handleClose = () => {
+    setIsClosing(true);
+  };
+
+  const handleAnimationEnd = () => {
+    if (isClosing) {
+      setIsClosing(false);
+      onToggle();
+    }
+  };
+
+  const open = isOpen || isClosing;
 
   return (
     <div className="projects">
       <Button
         className={`projects_btn ${isOpen ? "active" : ""}`}
-        onClick={onToggle}
+        onClick={handleToggle}
       >
         <p className="projects_title">{t("head")}</p>
         <HexBg
@@ -23,8 +47,12 @@ const Projects = ({ isOpen, onToggle }: SectionProps) => {
           borderColor="#000000"
         />
       </Button>
-      {isOpen ? (
-        <Container className="projects_container">
+      {open ? (
+        <Container
+          className={`projects_container ${isClosing ? "closing" : ""}`}
+          onAnimationEnd={handleAnimationEnd}
+        >
+          <RiCloseLargeFill className="close" onClick={handleClose} />
           <p>{t("title")}</p>
         </Container>
       ) : (

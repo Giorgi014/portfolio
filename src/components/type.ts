@@ -17,20 +17,26 @@ export type HexBgProps = {
   className?: string;
 };
 
+// Button type props
 export type ButtonProps = {
   className: string;
   children: React.ReactNode;
   onClick: () => void;
 };
 
-export type ContainerProps = {
-  className: string;
+// Container type props
+export type ContainerProps = React.HTMLAttributes<HTMLDivElement> & {
+  className?: string;
   children: React.ReactNode;
 };
 
+// Active Section type
 export type ActiveSection = "about" | "projects" | "contact" | null;
 
+// Section type props
 export type SectionProps = {
   isOpen: boolean;
   onToggle: () => void;
+  onClose: () => void;
+  onAnimationEnd: () => void;
 };

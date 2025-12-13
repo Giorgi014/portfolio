@@ -75,6 +75,7 @@
     font-weight: 700;
     letter-spacing: 7.5%;
     color: #f2f2f2;
+    font-family: "big_shoulder_regular";
   }
   &__hex-mask-border {
     stroke-width: 2px;
@@ -91,7 +92,26 @@
     border: 1px solid grey;
     background-color: rgba(255, 255, 255, 0.047);
     backdrop-filter: blur(20px);
+    font-family: "big_shoulder_regular";
+    padding: 20px;
     animation: containerOpening 1.5s ease-out forwards;
+    overflow: hidden;
+    &.closing {
+      animation: containerClosing 1.5s ease-in forwards;
+      pointer-events: none;
+    }
+    .close {
+      position: absolute;
+      right: 20px;
+      font-size: 25px;
+      z-index: 99;
+      cursor: pointer;
+      color: var(--meteor_shower);
+      transition: color 0.2s ease-in-out;
+      &:hover {
+        color: var(--red);
+      }
+    }
     .border_cont {
       position: absolute;
       width: 100%;
@@ -127,6 +147,19 @@
         border-bottom: 2px solid var(--meteor_shower);
         border-right: 2px solid var(--meteor_shower);
       }
+    }
+    .about_me_title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .about_profecion {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .about_me {
+      font-size: 18px;
     }
   }
 }

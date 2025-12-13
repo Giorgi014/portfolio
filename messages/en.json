@@ -1,4 +1,20 @@
 {
+  "profile": {
+    "title": "Name",
+    "info": "Giorgi Gugunava",
+    "nickname": {
+      "title": "Nickname",
+      "info": "Giorgi Gugunava"
+    },
+    "occupation": {
+      "title": "Occupation",
+      "info": "Front-End Developer"
+    },
+    "availability": {
+      "title": "Availability",
+      "info": "open for hire"
+    }
+  },
   "about": {
     "head": "About",
     "title": "About Me",

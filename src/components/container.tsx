@@ -1,8 +1,12 @@
 import { ContainerProps } from "./type";
 
-export const Container = ({ className, children }: ContainerProps) => {
+export const Container = ({
+  className,
+  children,
+  ...props
+}: ContainerProps) => {
   return (
-    <div className={className}>
+    <div className={className} {...props}>
       {children}
       <div className="border_cont">
         <div className="border one"></div>
