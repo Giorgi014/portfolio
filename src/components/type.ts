@@ -37,6 +37,4 @@ export type ActiveSection = "about" | "projects" | "contact" | null;
 export type SectionProps = {
   isOpen: boolean;
   onToggle: () => void;
-  onClose: () => void;
-  onAnimationEnd: () => void;
 };
