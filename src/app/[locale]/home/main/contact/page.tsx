@@ -4,16 +4,18 @@ import { HexBg } from "@/components/hex-bg";
 import { Button } from "@/components/header-button";
 import { Container } from "@/components/container";
 import { SectionProps } from "@/components/type";
+import { useTranslations } from "next-intl";
 import "./style/contact.scss";
 
 const Contact = ({ isOpen, onToggle }: SectionProps) => {
+  const t = useTranslations("contact");
   return (
     <div className="contact">
       <Button
         className={`contact_btn ${isOpen ? "active" : ""}`}
         onClick={onToggle}
       >
-        <p className="contact_title">Contact</p>
+        <p className="contact_title">{t("head")}</p>
         <HexBg
           className="contact__bg"
           bgColor="#1C202B"
@@ -22,13 +24,7 @@ const Contact = ({ isOpen, onToggle }: SectionProps) => {
       </Button>
       {isOpen ? (
         <Container className="contact_container">
-          <p>Contact</p>
-          <div className="border_cont">
-            <div className="border one"></div>
-            <div className="border two"></div>
-            <div className="border three"></div>
-            <div className="border four"></div>
-          </div>
+          <p>{t("title")}</p>
         </Container>
       ) : (
         ""
