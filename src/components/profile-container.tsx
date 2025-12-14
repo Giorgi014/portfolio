@@ -1,13 +1,13 @@
 import { ContainerProps } from "./type";
 import "./style/components.scss";
 
-export const Container = ({
+export const ProfileContainer = ({
   className,
   children,
   ...props
 }: ContainerProps) => {
   return (
-    <div className={`container ${className}`} {...props}>
+    <div className={`profile_container ${className}`} {...props}>
       {children}
       <div className="border_cont">
         <div className="border one"></div>

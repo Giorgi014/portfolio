@@ -1,11 +1,11 @@
-import { Container } from "@/components/container";
+import { ProfileContainer } from "@/components/profile-container";
 import "./style/profile.scss";
 
 const Profile = () => {
   return (
-    <Container className="profile_container">
+    <ProfileContainer className="profile">
       <img src="/img/cat.jpg" alt="profile pcture" />
-    </Container>
+    </ProfileContainer>
   );
 };
 

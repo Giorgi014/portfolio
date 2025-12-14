@@ -1,1 +1,23 @@
-// clear
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.socials {
+  &_title {
+    color: var(--meteor_shower);
+    font-family: "iceland_regular";
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  &_links {
+    @include displayCenter(flex-start, center);
+    gap: 15px;
+    .icon {
+      font-size: 25px;
+      cursor: pointer;
+      color: #fff;
+    }
+  }
+}
