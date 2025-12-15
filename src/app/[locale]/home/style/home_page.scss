@@ -5,7 +5,7 @@
 }
 
 .profile_cont {
-  @include displayCenter(space-between, flex-start);
+  @include displayCenter(flex-start, flex-start);
   .profile_info {
     @include displayCenter(flex-start, center);
     flex-direction: column;
@@ -15,7 +15,10 @@
   }
   .profile_content {
     @include displayCenter(center, center);
+    position: relative;
     width: 100%;
+    max-width: 1320px;
+    border: 1px solid red;
     padding-top: 20px;
     padding-right: 20px;
   }
