@@ -1,7 +1,7 @@
 "use client";
 
-import { HexBg } from "@/components/hex-bg";
-import { Button } from "@/components/header-button";
+import { HexBg } from "@/components/hexBg";
+import { Button } from "@/components/headerButton";
 import { Container } from "@/components/container";
 import { SectionProps } from "@/components/type";
 import { useTranslations } from "next-intl";

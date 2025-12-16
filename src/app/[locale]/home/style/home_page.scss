@@ -10,6 +10,7 @@
     @include displayCenter(flex-start, center);
     flex-direction: column;
     width: 300px;
+    max-width: 100%;
     height: 100vh;
     padding: 20px;
   }
@@ -18,8 +19,28 @@
     position: relative;
     width: 100%;
     max-width: 1320px;
-    border: 1px solid red;
     padding-top: 20px;
     padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile_cont {
+    flex-direction: column;
+    .profile_info {
+      @include displayCenter(space-evenly, flex-start);
+      flex-direction: row;
+      width: 100%;
+      height: max-content;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .profile_cont {
+    .profile_info {
+      @include displayCenter(flex-start, center);
+      flex-direction: column;
+    }
   }
 }

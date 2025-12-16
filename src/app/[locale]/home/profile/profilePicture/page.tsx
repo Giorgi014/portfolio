@@ -1,4 +1,4 @@
-import { ProfileContainer } from "@/components/profile-container";
+import { ProfileContainer } from "@/components/profileContainer";
 import "./style/profile.scss";
 
 const Profile = () => {
