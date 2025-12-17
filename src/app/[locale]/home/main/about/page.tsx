@@ -37,16 +37,16 @@ const About = ({ isOpen, onToggle }: SectionProps) => {
   return (
     <div className="about">
       <Button
-        className={`about_btn ${isOpen ? "active" : ""}`}
+        className={`about_btn ${isOpen && "active"}`}
         onClick={handleToggle}
       >
         <p className="about_title">{t("head")}</p>
         <HexBg className="about__bg" bgColor="#1C202B" borderColor="#000000" />
       </Button>
 
-      {open ? (
+      {open && (
         <Container
-          className={`about_container ${isClosing ? "closing" : ""}`}
+          className={`about_container ${isClosing && "closing"}`}
           onAnimationEnd={handleAnimationEnd}
         >
           <RiCloseLargeFill className="close" onClick={handleClose} />
@@ -54,8 +54,6 @@ const About = ({ isOpen, onToggle }: SectionProps) => {
           <p className="about_profecion">{t("profecion")}</p>
           <p className="about_me">{t("about_me")}</p>
         </Container>
-      ) : (
-        ""
       )}
     </div>
   );

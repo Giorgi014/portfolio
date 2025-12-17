@@ -37,7 +37,7 @@ const Contact = ({ isOpen, onToggle }: SectionProps) => {
   return (
     <div className="contact">
       <Button
-        className={`contact_btn ${isOpen ? "active" : ""}`}
+        className={`contact_btn ${isOpen && "active"}`}
         onClick={handleToggle}
       >
         <p className="contact_title">{t("head")}</p>
@@ -47,16 +47,14 @@ const Contact = ({ isOpen, onToggle }: SectionProps) => {
           borderColor="#000000"
         />
       </Button>
-      {open ? (
+      {open && (
         <Container
-          className={`contact_container ${isClosing ? "closing" : ""}`}
+          className={`contact_container ${isClosing && "closing"}`}
           onAnimationEnd={handleAnimationEnd}
         >
           <RiCloseLargeFill className="close" onClick={handleClose} />
           <p>{t("title")}</p>
         </Container>
-      ) : (
-        ""
       )}
     </div>
   );

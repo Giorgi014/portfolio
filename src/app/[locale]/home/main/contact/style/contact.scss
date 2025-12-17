@@ -10,7 +10,7 @@
   letter-spacing: 0.25em;
   &_btn {
     position: relative;
-    width: 180px;
+    width: clamp(120px, 17vw, 180px);
     height: 30px;
     text-align: start;
     padding-left: 10px;
@@ -25,7 +25,7 @@
       top: 50%;
       transform: translateY(-50%);
       width: 2px;
-      height: 91%;
+      height: clamp(63%, 2.5vw, 91%);
       background-color: var(--sugar_grape);
       transition: background-color 0.25s ease, height 0.25s ease;
       z-index: 2;
@@ -72,7 +72,7 @@
   &_title {
     position: relative;
     z-index: 1;
-    font-size: 18px;
+    font-size: clamp(16px, 2vw, 18px);
     font-weight: 700;
     letter-spacing: 7.5%;
     color: #f2f2f2;
