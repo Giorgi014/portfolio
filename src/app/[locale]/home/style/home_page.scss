@@ -26,12 +26,18 @@
 
 @media screen and (max-width: 768px) {
   .profile_cont {
+    @include displayCenter(flex-start, center);
     flex-direction: column;
     .profile_info {
       @include displayCenter(space-evenly, flex-start);
       flex-direction: row;
       width: 100%;
       height: max-content;
+    }
+    .profile_content {
+      padding: 0;
+      max-width: none;
+      width: 90%;
     }
   }
 }
