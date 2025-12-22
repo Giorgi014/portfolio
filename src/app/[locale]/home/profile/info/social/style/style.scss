@@ -21,3 +21,14 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .socials {
+    &_title {
+      text-align: center;
+    }
+    &_links {
+      @include displayCenter(center, center);
+    }
+  }
+}

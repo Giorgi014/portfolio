@@ -5,7 +5,7 @@
 }
 
 .contact {
-  @include displayCenter("center", "center");
+  @include displayCenter(center, center);
   text-transform: uppercase;
   letter-spacing: 0.25em;
   &_btn {
@@ -25,7 +25,7 @@
       top: 50%;
       transform: translateY(-50%);
       width: 2px;
-      height: clamp(63%, 2.5vw, 91%);
+      height: 100%;
       background-color: var(--sugar_grape);
       transition: background-color 0.25s ease, height 0.25s ease;
       z-index: 2;
@@ -84,5 +84,23 @@
   }
   .hex-bg__rect {
     transition: fill 0.25s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    width: 100%;
+    &_btn {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .contact {
+    width: 100%;
+    &_btn {
+      width: 100%;
+    }
   }
 }
