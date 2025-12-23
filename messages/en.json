@@ -30,6 +30,25 @@
   },
   "projects": {
     "head": "Projects",
-    "title": "Projects"
+    "title": "Projects",
+    "weatherApp": {
+      "title": "About Weather-Next-App",
+      "about": "Weather-Next-App is a sleek, minimalist weather dashboard designed to provide you with real-time atmospheric insights at your fingertips. Built with a focus on speed and clarity, the app bridges the gap between complex meteorological data and a clean, user-friendly interface.",
+      "offer": {
+        "head": "What We Offer",
+        "accuracy": "Real-Time Accuracy: Get instant access to current weather conditions for any city worldwide, powered by the reliable OpenWeatherMap API.",
+        "plan": "Plan Ahead: Stay prepared with our integrated 5-day forecast, breaking down upcoming weather patterns so you’re never caught off guard.",
+        "modes": "Tailored to You: Whether you prefer a crisp Light Mode for daytime browsing or a sleek Dark Mode for late-night checks, the app adapts to your visual preference instantly.",
+        "temp": "Global Standards: Easily toggle between Celsius and Fahrenheit to view temperatures in the format you are most comfortable with."
+      },
+      "experience": {
+        "title": "The Experience",
+        "about": "The app was designed with a (performance-first) mindset. Using modern technologies like Next.js and Tailwind CSS, we ensure that your search results and theme transitions happen lightning-fast. No clutter, no unnecessary ads—just the weather data you need, exactly when you need it."
+      },
+      "design": {
+        "title": "Design Philosophy",
+        "about": "The UI, crafted by Lovable, emphasizes a (Glanceable) design. We believe you shouldn't have to dig through menus to find out if you need an umbrella. Every icon, font choice, and layout shift is optimized to provide maximum information with minimum effort."
+      }
+    }
   }
 }

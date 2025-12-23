@@ -38,3 +38,11 @@ export type SectionProps = {
   isOpen: boolean;
   onToggle: () => void;
 };
+
+// Project Types
+export type ProjectTypes = {
+  id: number;
+  url: string;
+  src: string;
+  urlGitHub: string;
+};
