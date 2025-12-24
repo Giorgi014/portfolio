@@ -45,4 +45,7 @@ export type ProjectTypes = {
   url: string;
   src: string;
   urlGitHub: string;
+  title: string;
+  stack: string;
+  translationKey?: string;
 };

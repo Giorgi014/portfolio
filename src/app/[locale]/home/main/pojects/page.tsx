@@ -7,6 +7,7 @@ import { SectionProps } from "@/components/type";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { RiCloseLargeFill } from "react-icons/ri";
+import Cart from "@/components/cart";
 import "./style/projects.scss";
 
 const Projects = ({ isOpen, onToggle }: SectionProps) => {
@@ -54,6 +55,9 @@ const Projects = ({ isOpen, onToggle }: SectionProps) => {
         >
           <RiCloseLargeFill className="close" onClick={handleClose} />
           <p>{t("title")}</p>
+          <div>
+            <Cart />
+          </div>
         </Container>
       )}
     </div>
