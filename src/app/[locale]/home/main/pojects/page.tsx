@@ -55,9 +55,7 @@ const Projects = ({ isOpen, onToggle }: SectionProps) => {
         >
           <RiCloseLargeFill className="close" onClick={handleClose} />
           <p>{t("title")}</p>
-          <div>
-            <Cart />
-          </div>
+          <Cart />
         </Container>
       )}
     </div>
