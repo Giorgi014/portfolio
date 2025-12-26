@@ -46,6 +46,7 @@ const About = ({ isOpen, onToggle }: SectionProps) => {
 
       {open && (
         <Container
+          variant="container"
           className={`about_container ${isClosing && "closing"}`}
           onAnimationEnd={handleAnimationEnd}
         >

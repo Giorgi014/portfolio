@@ -4,14 +4,18 @@ import { useState } from "react";
 import About from "./about/page";
 import Contact from "./contact/page";
 import Projects from "./pojects/page";
-import { ActiveSection } from "@/components/type";
+import { ActiveSection, MainProps } from "@/components/type";
 import "./style/main.scss";
 
-const Main = () => {
+const Main = ({ onProjectsToggle }: MainProps) => {
   const [activeSection, setActiveSection] = useState<ActiveSection>(null);
 
   const handleSectionToggle = (section: ActiveSection) => {
-    setActiveSection(activeSection === section ? null : section);
+    const newSection = activeSection === section ? null : section;
+    setActiveSection(newSection);
+    if (section === "projects" && onProjectsToggle) {
+      onProjectsToggle(newSection === "projects");
+    }
   };
 
   return (

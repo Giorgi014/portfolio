@@ -28,6 +28,7 @@ export type ButtonProps = {
 export type ContainerProps = React.HTMLAttributes<HTMLDivElement> & {
   className?: string;
   children: React.ReactNode;
+  variant?: "container" | "profile" | "projects";
 };
 
 // Active Section type
@@ -49,4 +50,9 @@ export type ProjectTypes = {
   title: string;
   stack: string;
   translationKey?: string;
+};
+
+// Main Props
+export type MainProps = {
+  onProjectsToggle?: (isOpen: boolean) => void;
 };

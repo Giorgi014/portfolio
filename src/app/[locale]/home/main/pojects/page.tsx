@@ -50,7 +50,8 @@ const Projects = ({ isOpen, onToggle }: SectionProps) => {
       </Button>
       {open && (
         <Container
-          className={`projects_container ${isClosing && "closing"}`}
+          variant="container"
+          className={`${isClosing && "closing"}`}
           onAnimationEnd={handleAnimationEnd}
         >
           <RiCloseLargeFill className="close" onClick={handleClose} />

@@ -49,6 +49,7 @@ const Contact = ({ isOpen, onToggle }: SectionProps) => {
       </Button>
       {open && (
         <Container
+          variant="container"
           className={`contact_container ${isClosing && "closing"}`}
           onAnimationEnd={handleAnimationEnd}
         >

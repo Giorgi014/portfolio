@@ -4,10 +4,19 @@ import "./style/components.scss";
 export const Container = ({
   className,
   children,
+  variant,
   ...props
 }: ContainerProps) => {
+  const variantClassMap = {
+    container: "container",
+    profile: "profile_container",
+    projects: "projects_container",
+  };
+
+  const variantClass = variant ? variantClassMap[variant] : "";
+
   return (
-    <div className={`container ${className}`} {...props}>
+    <div className={`${variantClass} ${className}`} {...props}>
       {children}
       <div className="border_cont">
         <div className="border one"></div>

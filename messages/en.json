@@ -34,6 +34,7 @@
     "allProjects": {
       "weatherApp": {
         "title": "About Weather-Next-App",
+        "cartAbout": "Weather-Next-App is a sleek, minimalist weather dashboard designed to provide you with real-time atmospheric insights at your fingertips.",
         "about": "Weather-Next-App is a sleek, minimalist weather dashboard designed to provide you with real-time atmospheric insights at your fingertips. Built with a focus on speed and clarity, the app bridges the gap between complex meteorological data and a clean, user-friendly interface.",
         "offer": {
           "head": "What We Offer",
@@ -53,6 +54,7 @@
       },
       "guessNumber": {
         "title": "About Guess My Number",
+        "cartAbout": "Guess My Number is a retro-inspired, fast-paced logic game designed to test your intuition and deduction skills.",
         "about": "Guess My Number is a retro-inspired, fast-paced logic game designed to test your intuition and deduction skills. Inspired by classic arcade aesthetics, this web-based challenge brings a nostalgic feel to a modern, responsive interface.",
         "challenge": {
           "head": "The Challenge",
