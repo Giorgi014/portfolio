@@ -1,14 +1,19 @@
 "use client";
 
-import { useId } from "react";
+import { useId, useMemo } from "react";
 import { HexBgProps } from "./type";
 
 export const HexBg = ({
   bgColor = "#1C202B",
   borderColor = "#000000",
   className,
+  id,
 }: HexBgProps) => {
-  const maskId = useId();
+  const generatedId = useId();
+  const maskId = useMemo(
+    () => id || `hex-mask-${generatedId}`,
+    [id, generatedId]
+  );
 
   const hexPositions = [
     { x: 119.5, y: -9 },

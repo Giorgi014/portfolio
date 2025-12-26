@@ -1,5 +1,5 @@
 import { ContainerProps } from "./type";
-import "./style/components.scss";
+import "./style/container.scss";
 
 export const Container = ({
   className,

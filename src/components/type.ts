@@ -15,6 +15,7 @@ export type HexBgProps = {
   bgColor?: string;
   borderColor?: string;
   className?: string;
+  id?: string;
 };
 
 // Button type props

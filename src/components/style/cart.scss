@@ -1,0 +1,33 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.cart {
+  @include displayCenter(center, flex-start);
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  .cart_content {
+    width: 320px;
+    text-decoration: none;
+    .cart_title {
+      margin-top: 10px;
+      font-size: 18px;
+      letter-spacing: 7.5%;
+      color: var(--meteor_shower);
+    }
+    .stack {
+      margin-bottom: 10px;
+      font-size: 14px;
+      letter-spacing: 7.5%;
+      color: var(--white);
+    }
+    .about {
+      font-family: "iceland_regular";
+      font-size: 14px;
+      color: var(--light_gray);
+    }
+  }
+}

@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { allProjects } from "./projects";
 import { Link } from "@/i18n/navigation";
 import { Container } from "./container";
-import "./style/components.scss";
+import "./style/cart.scss";
 
 const Cart = () => {
   const t = useTranslations("projects.allProjects");
