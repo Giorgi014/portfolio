@@ -5,33 +5,98 @@ import { useTranslations } from "next-intl";
 import { allProjects } from "./projects";
 import { Link } from "@/i18n/navigation";
 import { Container } from "./container";
+import { CSSProperties, useState } from "react";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import "./style/cart.scss";
 
 const Cart = () => {
   const t = useTranslations("projects.allProjects");
+  const [currentCart, setCurrentCart] = useState<number>(0);
+
+  const nextSlide = () => {
+    setCurrentCart((prev) => (prev + 1) % allProjects.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentCart(
+      (prev) => (prev - 1 + allProjects.length) % allProjects.length
+    );
+  };
+
+  const getCardStyle = (index: number): CSSProperties => {
+    const diff =
+      (index - currentCart + allProjects.length) % allProjects.length;
+
+    if (diff === 0) {
+      return {
+        transform: "translateX(0) scale(1) rotateY(0deg)",
+        zIndex: 30,
+        opacity: 1,
+        filter: "brightness(1)",
+      };
+    }
+
+    if (diff === 1) {
+      return {
+        transform: "translateX(400px) scale(0.9) rotateY(50deg)",
+        zIndex: 20,
+        opacity: 0.6,
+        filter: "brightness(0.6)",
+      };
+    }
+
+    if (diff === allProjects.length - 1) {
+      return {
+        transform: "translateX(-400px) scale(0.9) rotateY(-50deg)",
+        zIndex: 20,
+        opacity: 0.6,
+        filter: "brightness(0.6)",
+      };
+    }
+
+    return {
+      transform: "translateX(0) scale(0.8)",
+      opacity: 0,
+      pointerEvents: "none",
+      zIndex: 0,
+    };
+  };
 
   return (
     <div className="cart">
-      {allProjects.map(
-        ({ id, src, localUrl, title, stack, translationKey }) => (
-          <Link key={id} href={localUrl} className="cart_content">
-            <Container className="project_container" variant="projects">
-              <Image
-                src={src}
-                alt={title}
-                width={250}
-                height={250}
-                className="img"
-              />
-            </Container>
-            <h2 className="cart_title">{title}</h2>
-            <p className="stack">{stack}</p>
-            {translationKey && (
-              <p className="about">{t(`${translationKey}.cartAbout`)}</p>
-            )}
-          </Link>
-        )
-      )}
+      <button onClick={prevSlide} className="nav_btn left">
+        <BsChevronLeft size={24} />
+      </button>
+      {allProjects.map((project, index) => (
+        <Link
+          key={project.id}
+          href={project.localUrl}
+          className="cart_content"
+          style={getCardStyle(index)}
+        >
+          <Container className="project_container" variant="projects">
+            <Image
+              src={project.src}
+              alt={project.title}
+              width={250}
+              height={250}
+              className="img"
+            />
+          </Container>
+          <h2 className="cart_title">{project.title}</h2>
+          <p className="stack">{project.stack}</p>
+          {project.translationKey && (
+            <p className="about">{t(`${project.translationKey}.cartAbout`)}</p>
+          )}
+        </Link>
+      ))}
+      <div className="slider_divider" />
+      <div className="slider_counter">
+        {currentCart + 1}/{allProjects.length}
+      </div>
+      <button onClick={nextSlide} className="nav_btn right">
+        <BsChevronRight size={24} />
+      </button>
     </div>
   );
 };
