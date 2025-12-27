@@ -3,7 +3,7 @@ import "./style/categories.scss";
 
 const Categories = ({ className }: { className: string }) => {
   return (
-    <div className={className}>
+    <div className={`${className}`}>
       <AllCategories />
     </div>
   );
