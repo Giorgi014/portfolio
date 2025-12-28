@@ -38,8 +38,24 @@ export const AllCategories = () => {
               borderColor="#000000"
             />
           </button>
+          <button className="all_animations all_categories">
+            <p className="category">Informational</p>
+            <HexBg
+              className="category__bg"
+              bgColor="#1C202B"
+              borderColor="#000000"
+            />
+          </button>
           <button className="all_games all_categories">
             <p className="category">Games</p>
+            <HexBg
+              className="category__bg"
+              bgColor="#1C202B"
+              borderColor="#000000"
+            />
+          </button>
+          <button className="all_animations all_categories">
+            <p className="category">Animations</p>
             <HexBg
               className="category__bg"
               bgColor="#1C202B"

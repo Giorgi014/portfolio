@@ -10,6 +10,7 @@ export const allProjects: ProjectTypes[] = [
     title: "Weather App",
     stack: "Next.js Typescript",
     translationKey: "weatherApp",
+    category: "informational",
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const allProjects: ProjectTypes[] = [
     title: "Guess my Number",
     stack: "React.js Typescript",
     translationKey: "guessNumber",
+    category: "game",
   },
   {
     id: 3,
@@ -30,6 +32,7 @@ export const allProjects: ProjectTypes[] = [
     title: "Guess my Number",
     stack: "React.js Typescript",
     translationKey: "guessNumber",
+    category: "game",
   },
   {
     id: 4,
@@ -40,6 +43,7 @@ export const allProjects: ProjectTypes[] = [
     title: "Guess my Number",
     stack: "React.js Typescript",
     translationKey: "guessNumber",
+    category: "game",
   },
   {
     id: 5,
@@ -50,5 +54,6 @@ export const allProjects: ProjectTypes[] = [
     title: "Guess my Number",
     stack: "React.js Typescript",
     translationKey: "guessNumber",
+    category: "game",
   },
 ];

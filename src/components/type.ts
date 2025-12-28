@@ -51,6 +51,7 @@ export type ProjectTypes = {
   title: string;
   stack: string;
   translationKey?: string;
+  category: string;
 };
 
 // Main Props
