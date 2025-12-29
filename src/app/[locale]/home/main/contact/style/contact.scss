@@ -18,6 +18,9 @@
     border: none;
     cursor: pointer;
     text-transform: uppercase;
+    &:active {
+      transform: scale(0.95);
+    }
     &::before {
       content: "";
       position: absolute;

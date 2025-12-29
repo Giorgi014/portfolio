@@ -1,0 +1,49 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.sidebar {
+  @include displayCenter(space-between, center);
+  flex-direction: column;
+  width: 210px;
+  height: 100vh;
+  padding: 20px;
+  &_settings {
+    width: 170px;
+    margin-top: auto;
+    text-transform: uppercase;
+    .settings_btn {
+      @include displayCenter(space-between, center);
+      gap: 8px;
+      width: 100%;
+      padding: 5px 10px;
+      background: none;
+      border: 1px solid #262626;
+      color: var(--white);
+      cursor: pointer;
+      transition: color 0.3s ease-in-out;
+      .settings_text,
+      .settings_icon {
+        font-size: 18px;
+        letter-spacing: 7.5%;
+        font-family: "big_shoulder_regular";
+        font-weight: bold;
+      }
+      .settings_icon {
+        transition: transform 0.5s ease-in-out;
+        transform: rotate(0deg);
+      }
+      &:hover {
+        color: var(--meteor_shower);
+        .settings_icon {
+          transform: rotate(180deg);
+        }
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+}

@@ -51,10 +51,16 @@
 
     &.left {
       left: 25%;
+      &:active {
+        transform: scale(0.65);
+      }
     }
 
     &.right {
       right: 25%;
+      &:active {
+        transform: scale(0.65);
+      }
     }
   }
   .slider_divider {
