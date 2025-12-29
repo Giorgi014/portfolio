@@ -6,6 +6,7 @@ import Profile from "./profile/profilePicture/page";
 import "./style/home_page.scss";
 import { useState } from "react";
 import Categories from "./categories/page";
+import Sidebar from "./sidebar/page";
 
 const HomePage = () => {
   const [isProjectsOpen, setIsProjectsOpen] = useState<boolean>(false);
@@ -19,7 +20,9 @@ const HomePage = () => {
       <div className="profile_content">
         <Main onProjectsToggle={setIsProjectsOpen} />
       </div>
-      <Categories className={isProjectsOpen ? "visible" : "hidden"} />
+      <Sidebar>
+        <Categories className={isProjectsOpen ? "visible" : "hidden"} />
+      </Sidebar>
     </div>
   );
 };
