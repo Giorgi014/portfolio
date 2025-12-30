@@ -15,7 +15,7 @@ export const allProjects: ProjectTypes[] = [
   {
     id: 2,
     url: "https://guess-my-number-chi-seven.vercel.app/",
-    src: "/img/weather-app.png",
+    src: "/img/guess-number.png",
     urlGitHub: "https://github.com/Giorgi014/Guess-Number-ts",
     localUrl: "/home/projects/guessNumber",
     title: "Guess my Number",

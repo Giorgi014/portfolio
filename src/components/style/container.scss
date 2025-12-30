@@ -11,7 +11,8 @@
   transform: translate(-50%, -50%);
   border: 1px solid grey;
   background-color: rgba(255, 255, 255, 0.047);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px);
   font-family: "big_shoulder_regular";
   padding: 20px;
   animation: containerOpening 1.5s ease-out forwards;
