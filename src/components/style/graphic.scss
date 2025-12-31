@@ -4,18 +4,10 @@
   align-items: $align;
 }
 
-.sound {
-  @include displayCenter(space-between, center);
+.graphic {
   width: 100%;
-  padding: 5px 0px 5px 10px;
-  font-family: "big_shoulder_regular";
+  padding: 5px 10px;
   cursor: pointer;
-  &_option {
-    @include displayCenter(center, center);
-    width: 35px;
-    height: 35px;
-    border: 1px solid var(--gray);
-  }
   &_settings {
     font-family: "big_shoulder_regular";
     font-weight: bold;

@@ -12,10 +12,10 @@ export const SoundSettings = () => {
   };
 
   return (
-    <div className="sound">
-      <p>Sound</p>
+    <div className="sound" onClick={toggleSound}>
+      <p className="sound_settings">Sound</p>
       <div className="sound_option">
-        <SoundToggle isOn={!turnOff} onClick={toggleSound} />
+        <SoundToggle isOn={!turnOff} className="sound_icon" />
       </div>
     </div>
   );

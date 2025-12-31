@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { IoSettingsSharp } from "react-icons/io5";
 import { SoundSettings } from "@/components/soundSettings";
-import { VisualSettings } from "@/components/visualSettngs";
+import { GraphicSettings } from "@/components/graphicSettngs";
 import { Button } from "@/components/button";
 import "./style/sidebar.scss";
 
@@ -20,8 +20,8 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
       <section className="sidebar_settings">
         {showSettings && (
           <section className="setitngs">
-            <VisualSettings />
             <SoundSettings />
+            <GraphicSettings />
           </section>
         )}
         <Button className="settings_btn" onClick={toggleSettings}>

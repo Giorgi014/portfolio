@@ -15,7 +15,6 @@ const SoundOn = ({
       height={height}
       className={className}
       onClick={onClick}
-      style={{ cursor: onClick ? "pointer" : "default" }}
     >
       <path
         fill={fill}
