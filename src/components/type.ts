@@ -58,3 +58,31 @@ export type ProjectTypes = {
 export type MainProps = {
   onProjectsToggle?: (isOpen: boolean) => void;
 };
+
+// Sound Off Props
+export type SoundOffProps = {
+  width?: number | string;
+  height?: number | string;
+  fill?: string;
+  className?: string;
+  onClick?: () => void;
+};
+
+// Sound On Props
+export type SoundOnProps = {
+  width?: number | string;
+  height?: number | string;
+  fill?: string;
+  className?: string;
+  onClick?: () => void;
+};
+
+// Sound Toggle Props
+export type SoundToggleProps = {
+  isOn: boolean;
+  width?: number | string;
+  height?: number | string;
+  fill?: string;
+  className?: string;
+  onClick?: () => void;
+};

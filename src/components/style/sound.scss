@@ -1,0 +1,17 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.sound {
+  @include displayCenter(space-between, center);
+  width: 100%;
+  padding: 5px 0px 5px 10px;
+  &_option {
+    @include displayCenter(center, center);
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--gray);
+  }
+}
