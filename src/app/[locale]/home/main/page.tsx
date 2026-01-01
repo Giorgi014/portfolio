@@ -7,7 +7,11 @@ import Projects from "./pojects/page";
 import { ActiveSection, MainProps } from "@/components/type";
 import "./style/main.scss";
 
-const Main = ({ onProjectsToggle }: MainProps) => {
+type MainPageProps = MainProps & {
+  selectedCategory?: string;
+};
+
+const Main = ({ onProjectsToggle, selectedCategory }: MainPageProps) => {
   const [activeSection, setActiveSection] = useState<ActiveSection>(null);
 
   const handleSectionToggle = (section: ActiveSection) => {
@@ -27,6 +31,7 @@ const Main = ({ onProjectsToggle }: MainProps) => {
       <Projects
         isOpen={activeSection === "projects"}
         onToggle={() => handleSectionToggle("projects")}
+        selectedCategory={selectedCategory}
       />
       <Contact
         isOpen={activeSection === "contact"}

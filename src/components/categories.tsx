@@ -4,15 +4,26 @@ import { useState } from "react";
 import { HexBg } from "./hexBg";
 // import { Button } from "./headerButton";
 
-export const AllCategories = () => {
+type AllCategoriesProps = {
+  categoryChange: (category: string) => void;
+  selectedCategory: string;
+};
+
+export const AllCategories = ({
+  categoryChange,
+  selectedCategory,
+}: AllCategoriesProps) => {
   const [show, setShow] = useState<boolean>(false);
 
   const toggleCategories = () => {
     setShow(!show);
   };
   return (
-    <article className="all" onClick={toggleCategories}>
-      <button className="all_projects all_categories">
+    <article className="all">
+      <button
+        className="all_projects all_categories"
+        onClick={() => categoryChange("all")}
+      >
         <p className="category">All Projects</p>
         <HexBg
           className="category__bg"
@@ -22,7 +33,10 @@ export const AllCategories = () => {
       </button>
       {show && (
         <>
-          <button className="all_landing all_categories">
+          <button
+            className="all_landing all_categories"
+            onClick={() => categoryChange("landing")}
+          >
             <p className="category">Landing Pages</p>
             <HexBg
               className="category__bg"
@@ -30,7 +44,10 @@ export const AllCategories = () => {
               borderColor="#000000"
             />
           </button>
-          <button className="all_ecommerce all_categories">
+          <button
+            className="all_ecommerce all_categories"
+            onClick={() => categoryChange("ecommerce")}
+          >
             <p className="category">Ecommerce Websites</p>
             <HexBg
               className="category__bg"
@@ -38,7 +55,10 @@ export const AllCategories = () => {
               borderColor="#000000"
             />
           </button>
-          <button className="all_animations all_categories">
+          <button
+            className="all_informational all_categories"
+            onClick={() => categoryChange("informational")}
+          >
             <p className="category">Informational</p>
             <HexBg
               className="category__bg"
@@ -46,7 +66,10 @@ export const AllCategories = () => {
               borderColor="#000000"
             />
           </button>
-          <button className="all_games all_categories">
+          <button
+            className="all_games all_categories"
+            onClick={() => categoryChange("game")}
+          >
             <p className="category">Games</p>
             <HexBg
               className="category__bg"
@@ -54,7 +77,10 @@ export const AllCategories = () => {
               borderColor="#000000"
             />
           </button>
-          <button className="all_animations all_categories">
+          <button
+            className="all_animations all_categories"
+            onClick={() => categoryChange("animations")}
+          >
             <p className="category">Animations</p>
             <HexBg
               className="category__bg"
@@ -64,6 +90,13 @@ export const AllCategories = () => {
           </button>
         </>
       )}
+      <section className="show_hide_btn" onClick={toggleCategories}>
+        {show ? (
+          <button className="project_btn">Hide All Projects</button>
+        ) : (
+          <button className="project_btn">Show All Projects</button>
+        )}
+      </section>
     </article>
   );
 };

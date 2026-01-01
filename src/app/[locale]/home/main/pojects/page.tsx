@@ -9,10 +9,24 @@ import { useState } from "react";
 import { RiCloseLargeFill } from "react-icons/ri";
 import Cart from "@/components/cart";
 import "./style/projects.scss";
+import { allProjects } from "@/components/projects";
 
-const Projects = ({ isOpen, onToggle }: SectionProps) => {
+type ProjectProps = SectionProps & {
+  selectedCategory?: string;
+};
+
+const Projects = ({
+  isOpen,
+  onToggle,
+  selectedCategory = "all",
+}: ProjectProps) => {
   const t = useTranslations("projects");
   const [isClosing, setIsClosing] = useState<boolean>(false);
+
+  const filterProjects =
+    selectedCategory === "all"
+      ? allProjects
+      : allProjects.filter((project) => project.category === selectedCategory);
 
   const handleToggle = () => {
     if (isOpen) {
@@ -56,7 +70,7 @@ const Projects = ({ isOpen, onToggle }: SectionProps) => {
         >
           <RiCloseLargeFill className="close" onClick={handleClose} />
           <p>{t("title")}</p>
-          <Cart />
+          <Cart filterProjects={filterProjects} />
         </Container>
       )}
     </div>

@@ -1,10 +1,23 @@
 import { AllCategories } from "@/components/categories";
 import "./style/categories.scss";
 
-const Categories = ({ className }: { className: string }) => {
+type CategoriesProps = {
+  className: string;
+  categoryChange: (category: string) => void;
+  selectedCategory: string;
+};
+
+const Categories = ({
+  className,
+  categoryChange,
+  selectedCategory,
+}: CategoriesProps) => {
   return (
     <div className={`${className}`}>
-      <AllCategories />
+      <AllCategories
+        categoryChange={categoryChange}
+        selectedCategory={selectedCategory}
+      />
     </div>
   );
 };

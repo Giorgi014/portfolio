@@ -8,24 +8,32 @@ import { Container } from "./container";
 import { CSSProperties, useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import "./style/cart.scss";
+import { ProjectTypes } from "./type";
 
-const Cart = () => {
+type CartProps = {
+  filterProjects?: ProjectTypes[];
+};
+
+const Cart = ({ filterProjects = allProjects }: CartProps) => {
   const t = useTranslations("projects.allProjects");
   const [currentCart, setCurrentCart] = useState<number>(0);
 
+  const safeCurrentCart =
+    currentCart >= filterProjects.length ? 0 : currentCart;
+
   const nextSlide = () => {
-    setCurrentCart((prev) => (prev + 1) % allProjects.length);
+    setCurrentCart((prev) => (prev + 1) % filterProjects.length);
   };
 
   const prevSlide = () => {
     setCurrentCart(
-      (prev) => (prev - 1 + allProjects.length) % allProjects.length
+      (prev) => (prev - 1 + filterProjects.length) % filterProjects.length
     );
   };
 
   const getCardStyle = (index: number): CSSProperties => {
     const diff =
-      (index - currentCart + allProjects.length) % allProjects.length;
+      (index - safeCurrentCart + filterProjects.length) % filterProjects.length;
 
     if (diff === 0) {
       return {
@@ -45,7 +53,7 @@ const Cart = () => {
       };
     }
 
-    if (diff === allProjects.length - 1) {
+    if (diff === filterProjects.length - 1) {
       return {
         transform: "translateX(-400px) scale(0.9) rotateY(-50deg)",
         zIndex: 20,
@@ -67,7 +75,7 @@ const Cart = () => {
       <button onClick={prevSlide} className="nav_btn left">
         <BsChevronLeft size={24} />
       </button>
-      {allProjects.map((project, index) => (
+      {filterProjects.map((project, index) => (
         <Link
           key={project.id}
           href={project.localUrl}
@@ -92,7 +100,7 @@ const Cart = () => {
       ))}
       <div className="slider_divider" />
       <div className="slider_counter">
-        {currentCart + 1}/{allProjects.length}
+        {safeCurrentCart + 1}/{filterProjects.length}
       </div>
       <button onClick={nextSlide} className="nav_btn right">
         <BsChevronRight size={24} />
