@@ -7,8 +7,9 @@ import { Link } from "@/i18n/navigation";
 import { Container } from "./container";
 import { CSSProperties, useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import "./style/cart.scss";
 import { ProjectTypes } from "./type";
+import GearLoader from "./loader";
+import "./style/cart.scss";
 
 type CartProps = {
   filterProjects?: ProjectTypes[];
@@ -69,6 +70,14 @@ const Cart = ({ filterProjects = allProjects }: CartProps) => {
       zIndex: 0,
     };
   };
+
+  if (filterProjects.length === 0) {
+    return (
+      <div className="cart not_found">
+        <GearLoader text="Projects Not Found" />
+      </div>
+    );
+  }
 
   return (
     <div className="cart">

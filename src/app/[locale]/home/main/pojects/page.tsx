@@ -5,7 +5,7 @@ import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { SectionProps } from "@/components/type";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { RiCloseLargeFill } from "react-icons/ri";
 import Cart from "@/components/cart";
 import "./style/projects.scss";
@@ -23,10 +23,15 @@ const Projects = ({
   const t = useTranslations("projects");
   const [isClosing, setIsClosing] = useState<boolean>(false);
 
-  const filterProjects =
-    selectedCategory === "all"
-      ? allProjects
-      : allProjects.filter((project) => project.category === selectedCategory);
+  const filterProjects = useMemo(
+    () =>
+      selectedCategory === "all"
+        ? allProjects
+        : allProjects.filter(
+            (project) => project.category === selectedCategory
+          ),
+    [selectedCategory]
+  );
 
   const handleToggle = () => {
     if (isOpen) {
