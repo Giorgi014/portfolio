@@ -146,7 +146,14 @@ const ParticleBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      style={{ position: "absolute", top: 0, left: 0, zIndex: -99 }}
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        zIndex: -99,
+        width: "100vw",
+        height: "100vh",
+      }}
     />
   );
 };

@@ -25,8 +25,17 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body>
-        <ParticleBackground />
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <div
+          style={{
+            width: "100vw",
+            height: "100vh",
+            overflowX: "hidden",
+            overflowY: "scroll",
+          }}
+        >
+          <ParticleBackground />
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </div>
       </body>
     </html>
   );
