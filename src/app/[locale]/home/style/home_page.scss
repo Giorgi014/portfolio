@@ -33,6 +33,7 @@
   .profile_cont {
     @include displayCenter(flex-start, center);
     flex-direction: column;
+    height: 100%;
     .profile_info {
       @include displayCenter(space-evenly, flex-start);
       flex-direction: row;
