@@ -11,6 +11,7 @@ export const Container = ({
     container: "container",
     profile: "profile_container",
     projects: "projects_container",
+    settings: "settings_container",
   };
 
   const variantClass = variant ? variantClassMap[variant] : "";

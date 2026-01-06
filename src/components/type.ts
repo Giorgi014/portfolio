@@ -29,7 +29,7 @@ export type ButtonProps = {
 export type ContainerProps = React.HTMLAttributes<HTMLDivElement> & {
   className?: string;
   children: React.ReactNode;
-  variant?: "container" | "profile" | "projects";
+  variant?: "container" | "profile" | "projects" | "settings";
 };
 
 // Active Section type

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { HexBg } from "./hexBg";
-// import { Button } from "./headerButton";
+import { Button } from "./button";
 
 type AllCategoriesProps = {
   categoryChange: (category: string) => void;
@@ -20,7 +20,7 @@ export const AllCategories = ({
   };
   return (
     <article className="all">
-      <button
+      <Button
         className="all_projects all_categories"
         onClick={() => categoryChange("all")}
       >
@@ -30,10 +30,10 @@ export const AllCategories = ({
           bgColor="#1C202B"
           borderColor="#000000"
         />
-      </button>
+      </Button>
       {show && (
         <>
-          <button
+          <Button
             className="all_landing all_categories"
             onClick={() => categoryChange("landing")}
           >
@@ -43,8 +43,8 @@ export const AllCategories = ({
               bgColor="#1C202B"
               borderColor="#000000"
             />
-          </button>
-          <button
+          </Button>
+          <Button
             className="all_ecommerce all_categories"
             onClick={() => categoryChange("ecommerce")}
           >
@@ -54,8 +54,8 @@ export const AllCategories = ({
               bgColor="#1C202B"
               borderColor="#000000"
             />
-          </button>
-          <button
+          </Button>
+          <Button
             className="all_informational all_categories"
             onClick={() => categoryChange("informational")}
           >
@@ -65,8 +65,8 @@ export const AllCategories = ({
               bgColor="#1C202B"
               borderColor="#000000"
             />
-          </button>
-          <button
+          </Button>
+          <Button
             className="all_games all_categories"
             onClick={() => categoryChange("game")}
           >
@@ -76,8 +76,8 @@ export const AllCategories = ({
               bgColor="#1C202B"
               borderColor="#000000"
             />
-          </button>
-          <button
+          </Button>
+          <Button
             className="all_animations all_categories"
             onClick={() => categoryChange("animations")}
           >
@@ -87,7 +87,7 @@ export const AllCategories = ({
               bgColor="#1C202B"
               borderColor="#000000"
             />
-          </button>
+          </Button>
         </>
       )}
       <section className="show_hide_btn" onClick={toggleCategories}>
