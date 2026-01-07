@@ -6,40 +6,17 @@ import { Container } from "@/components/container";
 import { SectionProps } from "@/components/type";
 import { useTranslations } from "next-intl";
 import { RiCloseLargeFill } from "react-icons/ri";
-import { useState } from "react";
+import { useToggleAnimation } from "@/app/hooks/containerAnimation";
 import "./style/about.scss";
 
-const About = ({ isOpen, onToggle }: SectionProps) => {
+const About = ({ isOpen }: SectionProps) => {
   const t = useTranslations("about");
-  const [isClosing, setIsClosing] = useState<boolean>(false);
-
-  const handleToggle = () => {
-    if (isOpen) {
-      setIsClosing(true);
-      return;
-    }
-    onToggle();
-  };
-
-  const handleClose = () => {
-    setIsClosing(true);
-  };
-
-  const handleAnimationEnd = () => {
-    if (isClosing) {
-      setIsClosing(false);
-      onToggle();
-    }
-  };
-
-  const open = isOpen || isClosing;
+  const { open, isClosing, openModal, closeModal, handleAnimationEnd } =
+    useToggleAnimation();
 
   return (
     <div className="about">
-      <Button
-        className={`about_btn ${isOpen && "active"}`}
-        onClick={handleToggle}
-      >
+      <Button className={`about_btn ${isOpen && "active"}`} onClick={openModal}>
         <p className="about_title">{t("head")}</p>
         <HexBg className="about__bg" bgColor="#1C202B" borderColor="#000000" />
       </Button>
@@ -50,7 +27,7 @@ const About = ({ isOpen, onToggle }: SectionProps) => {
           className={`about_container ${isClosing && "closing"}`}
           onAnimationEnd={handleAnimationEnd}
         >
-          <RiCloseLargeFill className="close" onClick={handleClose} />
+          <RiCloseLargeFill className="close" onClick={closeModal} />
           <h2 className="about_me_title">{t("title")}</h2>
           <p className="about_profecion">{t("profecion")}</p>
           <p className="about_me">{t("about_me")}</p>

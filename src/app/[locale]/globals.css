@@ -79,3 +79,51 @@ body {
     display: none;
   }
 }
+
+@keyframes settingContainerOpening {
+  0% {
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+  }
+  20% {
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+  }
+  80% {
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 450px;
+  }
+}
+
+@keyframes settingContainerClosing {
+  0% {
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 450px;
+    display: block;
+  }
+  20% {
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+  }
+  80% {
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+    display: none;
+  }
+}

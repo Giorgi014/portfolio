@@ -6,39 +6,19 @@ import { Container } from "@/components/container";
 import { SectionProps } from "@/components/type";
 import { useTranslations } from "next-intl";
 import { RiCloseLargeFill } from "react-icons/ri";
-import { useState } from "react";
+import { useToggleAnimation } from "@/app/hooks/containerAnimation";
 import "./style/contact.scss";
 
-const Contact = ({ isOpen, onToggle }: SectionProps) => {
+const Contact = ({ isOpen }: SectionProps) => {
   const t = useTranslations("contact");
-  const [isClosing, setIsClosing] = useState<boolean>(false);
-
-  const handleToggle = () => {
-    if (isOpen) {
-      setIsClosing(true);
-      return;
-    }
-    onToggle();
-  };
-
-  const handleClose = () => {
-    setIsClosing(true);
-  };
-
-  const handleAnimationEnd = () => {
-    if (isClosing) {
-      setIsClosing(false);
-      onToggle();
-    }
-  };
-
-  const open = isOpen || isClosing;
+  const { open, isClosing, openModal, closeModal, handleAnimationEnd } =
+    useToggleAnimation();
 
   return (
     <div className="contact">
       <Button
         className={`contact_btn ${isOpen && "active"}`}
-        onClick={handleToggle}
+        onClick={openModal}
       >
         <p className="contact_title">{t("head")}</p>
         <HexBg
@@ -53,7 +33,7 @@ const Contact = ({ isOpen, onToggle }: SectionProps) => {
           className={`contact_container ${isClosing && "closing"}`}
           onAnimationEnd={handleAnimationEnd}
         >
-          <RiCloseLargeFill className="close" onClick={handleClose} />
+          <RiCloseLargeFill className="close" onClick={closeModal} />
           <p>{t("title")}</p>
         </Container>
       )}

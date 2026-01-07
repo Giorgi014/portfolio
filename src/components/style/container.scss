@@ -193,6 +193,23 @@
   border: 1px solid grey;
   background-color: rgba(255, 255, 255, 0.047);
   backdrop-filter: blur(20px);
+  animation: settingContainerOpening 1.5s ease-out forwards;
+  &.closing {
+    animation: settingContainerClosing 1.5s ease-in forwards;
+    pointer-events: none;
+  }
+  .close {
+    position: absolute;
+    right: 20px;
+    font-size: 25px;
+    z-index: 99;
+    cursor: pointer;
+    color: var(--meteor_shower);
+    transition: color 0.2s ease-in-out;
+    &:hover {
+      color: var(--red);
+    }
+  }
   .border_cont {
     position: absolute;
     width: 100%;

@@ -5,23 +5,21 @@ import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { SectionProps } from "@/components/type";
 import { useTranslations } from "next-intl";
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import { RiCloseLargeFill } from "react-icons/ri";
 import Cart from "@/components/cart";
-import "./style/projects.scss";
 import { allProjects } from "@/components/projects";
+import { useToggleAnimation } from "@/app/hooks/containerAnimation";
+import "./style/projects.scss";
 
 type ProjectProps = SectionProps & {
   selectedCategory?: string;
 };
 
-const Projects = ({
-  isOpen,
-  onToggle,
-  selectedCategory = "all",
-}: ProjectProps) => {
+const Projects = ({ isOpen, selectedCategory = "all" }: ProjectProps) => {
   const t = useTranslations("projects");
-  const [isClosing, setIsClosing] = useState<boolean>(false);
+  const { open, isClosing, openModal, closeModal, handleAnimationEnd } =
+    useToggleAnimation();
 
   const filterProjects = useMemo(
     () =>
@@ -33,32 +31,11 @@ const Projects = ({
     [selectedCategory]
   );
 
-  const handleToggle = () => {
-    if (isOpen) {
-      setIsClosing(true);
-      return;
-    }
-    onToggle();
-  };
-
-  const handleClose = () => {
-    setIsClosing(true);
-  };
-
-  const handleAnimationEnd = () => {
-    if (isClosing) {
-      setIsClosing(false);
-      onToggle();
-    }
-  };
-
-  const open = isOpen || isClosing;
-
   return (
     <div className="projects">
       <Button
         className={`projects_btn ${isOpen && "active"}`}
-        onClick={handleToggle}
+        onClick={openModal}
       >
         <p className="projects_title">{t("head")}</p>
         <HexBg
@@ -73,7 +50,7 @@ const Projects = ({
           className={`${isClosing && "closing"}`}
           onAnimationEnd={handleAnimationEnd}
         >
-          <RiCloseLargeFill className="close" onClick={handleClose} />
+          <RiCloseLargeFill className="close" onClick={closeModal} />
           <p>{t("title")}</p>
           <Cart filterProjects={filterProjects} />
         </Container>

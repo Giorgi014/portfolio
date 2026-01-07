@@ -86,3 +86,20 @@ export type SoundToggleProps = {
   className?: string;
   onClick?: () => void;
 };
+
+// Use Toogle Animation Props
+export type UseToggleAnimationProps = {
+  isOpen?: boolean;
+  onToggle?: () => void;
+};
+
+// Use Toggle Animation Return
+export type UseToggleAnimationReturn = {
+  isOpen: boolean;
+  isClosing: boolean;
+  open: boolean;
+  openModal: () => void;
+  closeModal: () => void;
+  toggleModal: () => void;
+  handleAnimationEnd: () => void;
+};
