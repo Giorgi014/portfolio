@@ -32,7 +32,17 @@ export const SoundSettings = () => {
             aria-label="Close sound settings"
             onClick={closeModal}
           />
-          <input type="range" name="volume" id="volume" className="volume" />
+          <div className="volume">
+            <label htmlFor="volume" className="volume_range_text">
+              Volume
+            </label>
+            <input
+              type="range"
+              name="volume"
+              id="volume"
+              className="volume_range"
+            />
+          </div>
         </Container>
       )}
       <section className="sound_option" onClick={toggleSound}>

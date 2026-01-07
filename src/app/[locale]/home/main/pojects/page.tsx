@@ -16,10 +16,14 @@ type ProjectProps = SectionProps & {
   selectedCategory?: string;
 };
 
-const Projects = ({ isOpen, selectedCategory = "all" }: ProjectProps) => {
+const Projects = ({
+  isOpen,
+  onToggle,
+  selectedCategory = "all",
+}: ProjectProps) => {
   const t = useTranslations("projects");
   const { open, isClosing, openModal, closeModal, handleAnimationEnd } =
-    useToggleAnimation();
+    useToggleAnimation({ isOpen, onToggle });
 
   const filterProjects = useMemo(
     () =>
