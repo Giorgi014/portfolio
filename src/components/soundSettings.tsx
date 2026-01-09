@@ -5,6 +5,7 @@ import SoundToggle from "./SoundToggle";
 import { Container } from "./container";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { useToggleAnimation } from "@/app/hooks/containerAnimation";
+import { Range } from "./range";
 import "./style/sound.scss";
 
 export const SoundSettings = () => {
@@ -32,17 +33,8 @@ export const SoundSettings = () => {
             aria-label="Close sound settings"
             onClick={closeModal}
           />
-          <div className="volume">
-            <label htmlFor="volume" className="volume_range_text">
-              Volume
-            </label>
-            <input
-              type="range"
-              name="volume"
-              id="volume"
-              className="volume_range"
-            />
-          </div>
+          <h2 className="sound_settings_head">Sound Setting</h2>
+          <Range id="volume">Volume</Range>
         </Container>
       )}
       <section className="sound_option" onClick={toggleSound}>
