@@ -1,15 +1,15 @@
 "use client";
 
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, RefObject, useState } from "react";
 import "./style/range.scss";
 
-export const Range = ({
-  children,
-  id,
-}: {
+type RangeProps = {
   children: React.ReactNode;
   id: string;
-}) => {
+  ref: RefObject<HTMLElement | null>;
+};
+
+export const Range = ({ children, id, ref }: RangeProps) => {
   const storageKey = `range:${id}`;
 
   const savedRangeInfo = () => {
@@ -34,7 +34,7 @@ export const Range = ({
   };
 
   return (
-    <article className="range">
+    <article className="range" ref={ref}>
       <section className="range_head">
         <label htmlFor={id} className="range_text">
           {children}
