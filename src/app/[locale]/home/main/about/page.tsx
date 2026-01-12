@@ -11,10 +11,10 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import "./style/about.scss";
 
-const About = ({ isOpen }: SectionProps) => {
+const About = ({ isOpen, onToggle }: SectionProps) => {
   const t = useTranslations("about");
   const { open, isClosing, openModal, closeModal, handleAnimationEnd } =
-    useToggleAnimation();
+    useToggleAnimation({ isOpen, onToggle });
 
   const titleRef = useRef<HTMLHeadingElement>(null);
   const professionRef = useRef<HTMLParagraphElement>(null);

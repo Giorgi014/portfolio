@@ -1,3 +1,5 @@
+import { RefObject } from "react";
+
 // Particle Type
 export type ParticleType = {
   x: number;
@@ -102,4 +104,11 @@ export type UseToggleAnimationReturn = {
   closeModal: () => void;
   toggleModal: () => void;
   handleAnimationEnd: () => void;
+};
+
+// Range Props
+export type RangeProps = {
+  children: React.ReactNode;
+  id: string;
+  ref: RefObject<HTMLElement | null>;
 };

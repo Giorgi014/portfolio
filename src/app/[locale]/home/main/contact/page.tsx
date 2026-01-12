@@ -9,10 +9,10 @@ import { RiCloseLargeFill } from "react-icons/ri";
 import { useToggleAnimation } from "@/app/hooks/containerAnimation";
 import "./style/contact.scss";
 
-const Contact = ({ isOpen }: SectionProps) => {
+const Contact = ({ isOpen, onToggle }: SectionProps) => {
   const t = useTranslations("contact");
   const { open, isClosing, openModal, closeModal, handleAnimationEnd } =
-    useToggleAnimation();
+    useToggleAnimation({ isOpen, onToggle });
 
   return (
     <div className="contact">

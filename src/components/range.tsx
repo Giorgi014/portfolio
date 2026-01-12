@@ -1,13 +1,8 @@
 "use client";
 
-import React, { ChangeEvent, RefObject, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
+import { RangeProps } from "./type";
 import "./style/range.scss";
-
-type RangeProps = {
-  children: React.ReactNode;
-  id: string;
-  ref: RefObject<HTMLElement | null>;
-};
 
 export const Range = ({ children, id, ref }: RangeProps) => {
   const storageKey = `range:${id}`;
