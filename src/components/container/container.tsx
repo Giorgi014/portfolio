@@ -1,4 +1,4 @@
-import { ContainerProps } from "./type";
+import { ContainerProps } from "../type";
 import "./style/container.scss";
 
 export const Container = ({

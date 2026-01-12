@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import SoundToggle from "./SoundToggle";
-import { Container } from "./container";
+import { Container } from "@/components";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { useToggleAnimation } from "@/app/hooks/containerAnimation";
 import { Range } from "./range";

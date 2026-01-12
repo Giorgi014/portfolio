@@ -1,14 +1,10 @@
 "use client";
 
-import { HexBg } from "@/components/hexBg";
-import { Button } from "@/components/button";
-import { Container } from "@/components/container";
+import { HexBg, Button, Container, allProjects, Cart } from "@/components";
 import { SectionProps } from "@/components/type";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";
 import { RiCloseLargeFill } from "react-icons/ri";
-import Cart from "@/components/cart";
-import { allProjects } from "@/components/projects";
 import { useToggleAnimation } from "@/app/hooks/containerAnimation";
 import "./style/projects.scss";
 

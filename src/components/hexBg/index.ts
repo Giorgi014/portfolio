@@ -1,0 +1,1 @@
+export { HexBg } from "./hexBg";

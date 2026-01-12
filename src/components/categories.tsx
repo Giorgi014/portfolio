@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { HexBg } from "./hexBg";
-import { Button } from "./button";
+import { HexBg, Button } from "@/components";
 
 type AllCategoriesProps = {
   categoryChange: (category: string) => void;

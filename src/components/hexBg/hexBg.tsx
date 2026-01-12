@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useMemo } from "react";
-import { HexBgProps } from "./type";
+import { HexBgProps } from "./../type";
 
 export const HexBg = ({
   bgColor = "#1C202B",

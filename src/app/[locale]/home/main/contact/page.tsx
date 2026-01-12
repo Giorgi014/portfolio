@@ -1,8 +1,6 @@
 "use client";
 
-import { HexBg } from "@/components/hexBg";
-import { Button } from "@/components/button";
-import { Container } from "@/components/container";
+import { HexBg, Button, Container } from "@/components";
 import { SectionProps } from "@/components/type";
 import { useTranslations } from "next-intl";
 import { RiCloseLargeFill } from "react-icons/ri";

@@ -2,13 +2,11 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { allProjects } from "./projects";
 import { Link } from "@/i18n/navigation";
-import { Container } from "./container";
+import { Container, allProjects, GearLoader } from "@/components";
 import { CSSProperties, useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import { ProjectTypes } from "./type";
-import GearLoader from "./loader";
+import { ProjectTypes } from "./../type";
 import "./style/cart.scss";
 
 type CartProps = {
