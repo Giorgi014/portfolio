@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import SoundToggle from "./SoundToggle";
+import SoundToggle from "../SoundToggle";
 import { Container } from "@/components";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { useToggleAnimation } from "@/app/hooks/containerAnimation";
-import { Range } from "./range";
+import { Range } from "../range";
 import gsap from "gsap";
 import "./style/sound.scss";
 

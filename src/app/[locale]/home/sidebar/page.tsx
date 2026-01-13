@@ -2,9 +2,7 @@
 
 import React, { useState } from "react";
 import { IoSettingsSharp } from "react-icons/io5";
-import { SoundSettings } from "@/components/soundSettings";
-import { GraphicSettings } from "@/components/graphicSettngs";
-import { Button } from "@/components/button";
+import { Button, SoundSettings, GraphicSettings } from "@/components";
 import "./style/sidebar.scss";
 
 const Sidebar = ({ children }: { children: React.ReactNode }) => {
