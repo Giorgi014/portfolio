@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ChangeEvent, useState } from "react";
-import { RangeProps } from "./type";
+import { RangeProps } from "../type";
 import "./style/range.scss";
 
 export const Range = ({ children, id, ref }: RangeProps) => {

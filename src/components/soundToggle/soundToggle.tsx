@@ -1,5 +1,5 @@
 import { SoundOn, SoundOff } from "@/components/icons";
-import { SoundToggleProps } from "./type";
+import { SoundToggleProps } from "../type";
 
 const SoundToggle = ({
   isOn,
