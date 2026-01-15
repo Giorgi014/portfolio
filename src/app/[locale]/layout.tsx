@@ -3,7 +3,7 @@ import "./globals.css";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import ParticleBackground from "@/components/particleBackground";
+import { ParticleBackground } from "@/components";
 
 export const metadata: Metadata = {
   title: "Portfolio",

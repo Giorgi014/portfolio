@@ -1,4 +1,4 @@
-import { AllCategories } from "@/components/categories";
+import { AllCategories } from "@/components";
 import "./style/categories.scss";
 
 type CategoriesProps = {

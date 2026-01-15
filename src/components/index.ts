@@ -9,6 +9,8 @@ export * from "./graphicSettngs";
 export * from "./range";
 export * from "./soundToggle";
 export * from "./soundSettings";
+export * from "./categories";
+export * from "./particleBackground";
 
 // Icons
 export * from "./icons";
