@@ -1,31 +1,30 @@
 "use client";
 
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect } from "react";
 import { RangeProps } from "../type";
 import "./style/range.scss";
 
-export const Range = ({ children, id, ref }: RangeProps) => {
+export const Range = ({
+  children,
+  id,
+  ref,
+  value,
+  onChangeValue,
+}: RangeProps) => {
   const storageKey = `range:${id}`;
 
-  const savedRangeInfo = () => {
-    if (typeof window === "undefined") return 50;
-    const stored = localStorage.getItem(storageKey);
-    if (stored === null) return 50;
-    const n = parseInt(stored, 10);
-    return Number.isNaN(n) ? 50 : Math.min(100, Math.max(0, n));
-  };
-
-  const [rangePercentage, setRangePercentage] = useState<number>(() =>
-    savedRangeInfo()
-  );
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem(storageKey, String(value));
+  }, [value, storageKey]);
 
   const changeRange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(e.target.value, 10);
-    const newValue = Number.isNaN(value)
+    const rawValue = Number(e.target.value);
+    const newValue = Number.isNaN(rawValue)
       ? 0
-      : Math.min(100, Math.max(0, value));
-    setRangePercentage(newValue);
-    localStorage.setItem(storageKey, String(newValue));
+      : Math.min(100, Math.max(0, rawValue));
+
+    onChangeValue?.(newValue);
   };
 
   return (
@@ -34,7 +33,7 @@ export const Range = ({ children, id, ref }: RangeProps) => {
         <label htmlFor={id} className="range_text">
           {children}
         </label>
-        <p className="range_percentage">{rangePercentage}%</p>
+        <p className="range_percentage">{value}%</p>
       </section>
       <input
         type="range"
@@ -43,11 +42,9 @@ export const Range = ({ children, id, ref }: RangeProps) => {
         min={0}
         max={100}
         onChange={changeRange}
-        value={rangePercentage}
+        value={value}
         className="range_input"
-        style={
-          { "--range-progress": `${rangePercentage}%` } as React.CSSProperties
-        }
+        style={{ "--range-progress": `${value}%` } as React.CSSProperties}
       />
     </article>
   );

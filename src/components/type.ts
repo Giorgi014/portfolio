@@ -110,5 +110,7 @@ export type UseToggleAnimationReturn = {
 export type RangeProps = {
   children: React.ReactNode;
   id: string;
+  value: number;
   ref: RefObject<HTMLElement | null>;
+  onChangeValue: (value: number) => void;
 };

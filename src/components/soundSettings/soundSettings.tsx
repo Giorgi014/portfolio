@@ -7,14 +7,57 @@ import { useToggleAnimation } from "@/app/hooks/containerAnimation";
 import gsap from "gsap";
 import "./style/sound.scss";
 
+const VOLUME_KEY = "range:volume";
+const LAST_VOLUME_KEY = "range:last-volume";
+
+const getInitialVolume = () => {
+  if (typeof window === "undefined") return 50;
+
+  const stored = localStorage.getItem(VOLUME_KEY);
+  if (stored === null) return 50;
+
+  const value = Number(stored);
+  if (Number.isNaN(value)) return 50;
+
+  return Math.min(100, Math.max(0, value));
+};
+
+const getLastNonZeroVolume = () => {
+  if (typeof window === "undefined") return 50;
+
+  const stored = localStorage.getItem(LAST_VOLUME_KEY);
+  const value = Number(stored);
+
+  return !stored || Number.isNaN(value) || value <= 0 ? 50 : value;
+};
+
 export const SoundSettings = () => {
-  const [turnOff, setTurnOff] = useState<boolean>(false);
+  const [volume, setVolume] = useState<number>(() => getInitialVolume());
   const { open, isClosing, openModal, closeModal, handleAnimationEnd } =
     useToggleAnimation();
 
+  const turnOff = volume === 0;
+
+  const lastNonZeroVolume = useRef<number>(getLastNonZeroVolume());
+
+  useEffect(() => {
+    if (volume > 0) {
+      lastNonZeroVolume.current = volume;
+      localStorage.setItem(LAST_VOLUME_KEY, String(volume));
+    }
+
+    localStorage.setItem(VOLUME_KEY, String(volume));
+  }, [volume]);
+
   const toggleSound = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setTurnOff(!turnOff);
+    setVolume((prev) => {
+      if (prev === 0) {
+        return lastNonZeroVolume.current || 50;
+      }
+
+      return 0;
+    });
   };
 
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -78,7 +121,12 @@ export const SoundSettings = () => {
           <h2 ref={titleRef} className="sound_settings_head">
             Sound Setting
           </h2>
-          <Range ref={rangeRef} id="volume">
+          <Range
+            ref={rangeRef}
+            id="volume"
+            value={volume}
+            onChangeValue={setVolume}
+          >
             Volume
           </Range>
         </Container>
