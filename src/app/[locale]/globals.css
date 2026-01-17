@@ -32,6 +32,8 @@ body {
   overflow-x: hidden;
 }
 
+/* Keyframes */
+
 @keyframes containerOpening {
   0% {
     transform: translate(-50%, -50%);

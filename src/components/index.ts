@@ -11,6 +11,7 @@ export * from "./soundToggle";
 export * from "./soundSettings";
 export * from "./categories";
 export * from "./particleBackground";
+export * from "./form";
 
 // Icons
 export * from "./icons";

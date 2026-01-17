@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { ParticleBackground } from "@/components";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -32,6 +32,7 @@ export default async function RootLayout({
             overflowX: "hidden",
             overflowY: "scroll",
           }}
+          className="main_cont"
         >
           <ParticleBackground />
           <NextIntlClientProvider>{children}</NextIntlClientProvider>

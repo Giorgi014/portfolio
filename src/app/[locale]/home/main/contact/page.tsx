@@ -1,6 +1,6 @@
 "use client";
 
-import { HexBg, Button, Container } from "@/components";
+import { HexBg, Button, Container, Form } from "@/components";
 import { SectionProps } from "@/components/type";
 import { useTranslations } from "next-intl";
 import { RiCloseLargeFill } from "react-icons/ri";
@@ -33,6 +33,7 @@ const Contact = ({ isOpen, onToggle }: SectionProps) => {
         >
           <RiCloseLargeFill className="close" onClick={closeModal} />
           <p>{t("title")}</p>
+          <Form />
         </Container>
       )}
     </div>
