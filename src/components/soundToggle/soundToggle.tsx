@@ -8,6 +8,7 @@ const SoundToggle = ({
   fill = "currentColor",
   className = "",
   onClick,
+  volume,
 }: SoundToggleProps) => {
   return isOn ? (
     <SoundOn
@@ -16,6 +17,7 @@ const SoundToggle = ({
       fill={fill}
       className={className}
       onClick={onClick}
+      volume={volume}
     />
   ) : (
     <SoundOff

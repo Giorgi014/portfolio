@@ -132,7 +132,7 @@ export const SoundSettings = () => {
         </Container>
       )}
       <section className="sound_option" onClick={toggleSound}>
-        <SoundToggle isOn={!turnOff} className="sound_icon" />
+        <SoundToggle isOn={!turnOff} className="sound_icon" volume={volume} />
       </section>
     </article>
   );

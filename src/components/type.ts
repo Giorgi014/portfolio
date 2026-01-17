@@ -86,6 +86,7 @@ export type SoundToggleProps = {
   height?: number | string;
   fill?: string;
   className?: string;
+  volume: number;
   onClick?: () => void;
 };
 
