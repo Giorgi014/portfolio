@@ -26,9 +26,9 @@ const Projects = ({
       selectedCategory === "all"
         ? allProjects
         : allProjects.filter(
-            (project) => project.category === selectedCategory
+            (project) => project.category === selectedCategory,
           ),
-    [selectedCategory]
+    [selectedCategory],
   );
 
   return (
@@ -51,7 +51,7 @@ const Projects = ({
           onAnimationEnd={handleAnimationEnd}
         >
           <RiCloseLargeFill className="close" onClick={closeModal} />
-          <p>{t("title")}</p>
+          <h2 className="projects_head">{t("title")}</h2>
           <Cart filterProjects={filterProjects} />
         </Container>
       )}

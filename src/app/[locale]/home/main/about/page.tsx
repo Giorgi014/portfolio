@@ -42,7 +42,7 @@ const About = ({ isOpen, onToggle }: SectionProps) => {
             duration: 1.3,
             ease: "power3.out",
           },
-          "-=0.4"
+          "-=0.4",
         )
         .to(
           aboutMeRef.current,
@@ -52,7 +52,7 @@ const About = ({ isOpen, onToggle }: SectionProps) => {
             duration: 0.8,
             ease: "power3.out",
           },
-          "-=0.4"
+          "-=0.4",
         );
     }
 
@@ -73,7 +73,7 @@ const About = ({ isOpen, onToggle }: SectionProps) => {
             duration: 0.7,
             ease: "power3.in",
           },
-          "-=0.2"
+          "-=0.2",
         )
         .to(
           titleRef.current,
@@ -83,7 +83,7 @@ const About = ({ isOpen, onToggle }: SectionProps) => {
             duration: 0.7,
             ease: "power3.in",
           },
-          "-=0.2"
+          "-=0.2",
         );
     }
   }, [open, isClosing]);

@@ -32,7 +32,7 @@ const Contact = ({ isOpen, onToggle }: SectionProps) => {
           onAnimationEnd={handleAnimationEnd}
         >
           <RiCloseLargeFill className="close" onClick={closeModal} />
-          <p>{t("title")}</p>
+          <h2 className="contact_head">{t("title")}</h2>
           <Form />
         </Container>
       )}

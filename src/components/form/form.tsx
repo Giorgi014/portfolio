@@ -1,9 +1,35 @@
+"use client";
+
+import React, { useState } from "react";
 import "./style/form.scss";
 
 export const Form = () => {
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    formData.append("access_key", "1acf3ed7-c079-40eb-9663-cb712813dfdc");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      form.reset();
+    } else {
+      setResult("Error");
+    }
+  };
+
   return (
     <section className="form_container">
-      <form action="contact form" className="form">
+      <form action="contact form" className="form" onSubmit={onSubmit}>
         <div className="enter_name_cont">
           <input
             type="text"
@@ -35,6 +61,7 @@ export const Form = () => {
           ></textarea>
         </div>
         <button className="submit_text">Send Message</button>
+        <span>{result}</span>
       </form>
     </section>
   );
