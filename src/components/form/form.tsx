@@ -30,6 +30,7 @@ export const Form = () => {
   return (
     <section className="form_container">
       <form action="contact form" className="form" onSubmit={onSubmit}>
+        <input type="hidden" name="subject" value="Portfolio"></input>
         <div className="enter_name_cont">
           <input
             type="text"

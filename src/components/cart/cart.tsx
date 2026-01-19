@@ -26,7 +26,7 @@ const Cart = ({ filterProjects = allProjects }: CartProps) => {
 
   const prevSlide = () => {
     setCurrentCart(
-      (prev) => (prev - 1 + filterProjects.length) % filterProjects.length
+      (prev) => (prev - 1 + filterProjects.length) % filterProjects.length,
     );
   };
 
