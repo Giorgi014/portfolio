@@ -60,7 +60,7 @@ export const Form = ({ open, isClosing }: FormProps) => {
       tl.to(btnRef.current, {
         opacity: 0,
         y: -20,
-        duration: 0.2,
+        duration: 0,
         ease: "power3.in",
       })
         .to(messageRef.current, {

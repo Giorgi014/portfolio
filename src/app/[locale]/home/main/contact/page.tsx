@@ -32,6 +32,16 @@ const Contact = ({ isOpen, onToggle }: SectionProps) => {
         ease: "power3.out",
       });
     }
+
+    if (isClosing) {
+      const tl = gsap.timeline();
+      tl.to(titleRef.current, {
+        opacity: 0,
+        y: -20,
+        duration: 1.2,
+        ease: "power3.in",
+      });
+    }
   }, [open, isClosing]);
 
   return (
