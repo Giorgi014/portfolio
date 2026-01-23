@@ -6,20 +6,19 @@
 
 .profile_cont {
   @include displayCenter(flex-start, flex-start);
+  padding: 20px;
   .profile_info {
     @include displayCenter(flex-start, center);
     flex-direction: column;
     width: 300px;
     max-width: 100%;
     height: 100vh;
-    padding: 20px;
   }
   .profile_content {
     @include displayCenter(center, center);
     position: relative;
     width: 100%;
     max-width: 1320px;
-    padding-top: 20px;
   }
   .visible {
     display: flex;
