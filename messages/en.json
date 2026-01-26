@@ -15,6 +15,9 @@
       "info": "open for hire"
     }
   },
+  "menu": {
+    "navigation": "Navigation"
+  },
   "social": {
     "socials": "Socials"
   },
