@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import About from "./about/page";
 import Contact from "./contact/page";
-import Projects from "./pojects/page";
+import Projects from "./projects/page";
 import { ActiveSection, MainProps } from "@/components/type";
 import { HexBg } from "@/components";
 import { useTranslations } from "next-intl";
