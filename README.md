@@ -169,7 +169,7 @@ The project uses `next-intl` for internationalization. Currently configured for 
 
 1. Add locale to `src/i18n/routing.ts`:
    ```typescript
-   locales: ["en", "ka"], // Add Georgian
+   locales: ["en", "ka"], // Will Add Georgian
    ```
 
 2. Create translation file `messages/ka.json` with the same structure as `en.json`
