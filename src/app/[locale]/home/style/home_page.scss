@@ -15,17 +15,22 @@
     max-width: 100%;
     padding-right: 20px;
   }
-  .profile_content {
-    @include displayCenter(center, center);
-    position: relative;
+  .profile_content_cont {
+    @include displayCenter(space-between, flex-start);
     width: 100%;
-    max-width: 1320px;
-  }
-  .visible {
-    display: flex;
-  }
-  .hidden {
-    display: none;
+    height: 100%;
+    .profile_content {
+      @include displayCenter(center, center);
+      position: relative;
+      width: 100%;
+      max-width: 1320px;
+    }
+    .visible {
+      display: flex;
+    }
+    .hidden {
+      display: none;
+    }
   }
 }
 

@@ -29,7 +29,7 @@ const Main = ({ onProjectsToggle, selectedCategory }: MainPageProps) => {
 
   useEffect(() => {
     const handleResize = () => {
-      const mobile = window.innerWidth <= 970;
+      const mobile = window.innerWidth <= 1024;
 
       setIsMobileNav(mobile);
 

@@ -13,25 +13,27 @@ const HomePage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   return (
-    <div className="profile_cont">
-      <div className="profile_info">
+    <main className="profile_cont">
+      <section className="profile_info">
         <Profile />
         <Info />
-      </div>
-      <div className="profile_content">
-        <Main
-          onProjectsToggle={setIsProjectsOpen}
-          selectedCategory={selectedCategory}
-        />
-      </div>
-      <Sidebar>
-        <Categories
-          className={isProjectsOpen ? "visible" : "hidden"}
-          categoryChange={setSelectedCategory}
-          selectedCategory={selectedCategory}
-        />
-      </Sidebar>
-    </div>
+      </section>
+      <article className="profile_content_cont">
+        <section className="profile_content">
+          <Main
+            onProjectsToggle={setIsProjectsOpen}
+            selectedCategory={selectedCategory}
+          />
+        </section>
+        <Sidebar>
+          <Categories
+            className={isProjectsOpen ? "visible" : "hidden"}
+            categoryChange={setSelectedCategory}
+            selectedCategory={selectedCategory}
+          />
+        </Sidebar>
+      </article>
+    </main>
   );
 };
 
