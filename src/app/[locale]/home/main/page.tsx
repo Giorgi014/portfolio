@@ -50,7 +50,7 @@ const Main = ({ onProjectsToggle, selectedCategory }: MainPageProps) => {
   };
 
   return (
-    <div className="main_container">
+    <header className="header_container">
       {isMobileNav && (
         <button className="navigation_btn" onClick={toggleNavigation}>
           <p className="navigation_text">{t("navigation")}</p>
@@ -62,7 +62,7 @@ const Main = ({ onProjectsToggle, selectedCategory }: MainPageProps) => {
         </button>
       )}
       {!isMobileNav && (
-        <>
+        <nav>
           <About
             isOpen={activeSection === "about"}
             onToggle={() => handleSectionToggle("about")}
@@ -76,11 +76,11 @@ const Main = ({ onProjectsToggle, selectedCategory }: MainPageProps) => {
             isOpen={activeSection === "contact"}
             onToggle={() => handleSectionToggle("contact")}
           />
-        </>
+        </nav>
       )}
 
       {isMobileNav && navigation && (
-        <>
+        <nav>
           <About
             isOpen={activeSection === "about"}
             onToggle={() => handleSectionToggle("about")}
@@ -94,9 +94,9 @@ const Main = ({ onProjectsToggle, selectedCategory }: MainPageProps) => {
             isOpen={activeSection === "contact"}
             onToggle={() => handleSectionToggle("contact")}
           />
-        </>
+        </nav>
       )}
-    </div>
+    </header>
   );
 };
 
