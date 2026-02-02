@@ -25,13 +25,15 @@ const HomePage = () => {
             selectedCategory={selectedCategory}
           />
         </section>
-        <Sidebar>
-          <Categories
+        {/* Temporary section */}
+        <section className="">
+          <Sidebar />
+          {/* <Categories
             className={isProjectsOpen ? "visible" : "hidden"}
             categoryChange={setSelectedCategory}
             selectedCategory={selectedCategory}
-          />
-        </Sidebar>
+          /> */}
+        </section>
       </article>
     </main>
   );

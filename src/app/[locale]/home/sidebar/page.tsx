@@ -5,7 +5,7 @@ import { IoSettingsSharp } from "react-icons/io5";
 import { Button, SoundSettings, GraphicSettings } from "@/components";
 import "./style/sidebar.scss";
 
-const Sidebar = ({ children }: { children: React.ReactNode }) => {
+const Sidebar = () => {
   const [showSettings, setShowSettings] = useState<boolean>(false);
 
   const toggleSettings = () => {
@@ -14,18 +14,17 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <article className="sidebar">
-      {children}
       <section className="sidebar_settings">
+        <Button className="settings_btn" onClick={toggleSettings}>
+          <p className="settings_text">Settings</p>
+          <IoSettingsSharp className="settings_icon" />
+        </Button>
         {showSettings && (
           <section className="setitngs">
             <SoundSettings />
             <GraphicSettings />
           </section>
         )}
-        <Button className="settings_btn" onClick={toggleSettings}>
-          <p className="settings_text">Settings</p>
-          <IoSettingsSharp className="settings_icon" />
-        </Button>
       </section>
     </article>
   );

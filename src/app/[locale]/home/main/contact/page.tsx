@@ -67,7 +67,6 @@ const Contact = ({ isOpen, onToggle }: SectionProps) => {
           <h2 ref={titleRef} className="contact_head">
             {t("title")}
           </h2>
-          {/* <Form /> */}
           <Form open={open} isClosing={isClosing} />
         </Container>
       )}
