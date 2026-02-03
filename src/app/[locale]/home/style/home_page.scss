@@ -19,7 +19,7 @@
     @include displayCenter(space-between, flex-start);
     width: 100%;
     height: 100%;
-    .profile_content {
+    .profile_header {
       @include displayCenter(center, center);
       position: relative;
       width: 100%;

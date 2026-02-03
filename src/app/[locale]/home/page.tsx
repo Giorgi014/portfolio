@@ -1,6 +1,6 @@
 "use client";
 
-import Main from "./main/page";
+import Header from "./main/page";
 import Info from "./profile/info/page";
 import Profile from "./profile/profilePicture/page";
 import { useState } from "react";
@@ -19,8 +19,8 @@ const HomePage = () => {
         <Info />
       </section>
       <article className="profile_content_cont">
-        <section className="profile_content">
-          <Main
+        <section className="profile_header">
+          <Header
             onProjectsToggle={setIsProjectsOpen}
             selectedCategory={selectedCategory}
           />

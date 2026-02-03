@@ -13,7 +13,7 @@ type MainPageProps = MainProps & {
   selectedCategory?: string;
 };
 
-const Main = ({ onProjectsToggle, selectedCategory }: MainPageProps) => {
+const Header = ({ onProjectsToggle, selectedCategory }: MainPageProps) => {
   const t = useTranslations("menu");
   const [activeSection, setActiveSection] = useState<ActiveSection>(null);
   const [navigation, setNavigation] = useState<boolean>(false);
@@ -100,4 +100,4 @@ const Main = ({ onProjectsToggle, selectedCategory }: MainPageProps) => {
   );
 };
 
-export default Main;
+export default Header;
