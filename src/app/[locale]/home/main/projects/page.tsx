@@ -5,7 +5,7 @@ import { SectionProps } from "@/components/type";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";
 import { RiCloseLargeFill } from "react-icons/ri";
-import { useToggleAnimation } from "@/app/hooks/containerAnimation";
+import { useToggleAnimation } from "@/app/hooks";
 import "./style/projects.scss";
 
 type ProjectProps = SectionProps & {

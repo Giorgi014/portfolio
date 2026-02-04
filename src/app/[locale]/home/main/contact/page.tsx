@@ -4,7 +4,7 @@ import { HexBg, Button, Container, Form } from "@/components";
 import { SectionProps } from "@/components/type";
 import { useTranslations } from "next-intl";
 import { RiCloseLargeFill } from "react-icons/ri";
-import { useToggleAnimation } from "@/app/hooks/containerAnimation";
+import { useToggleAnimation } from "@/app/hooks";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import "./style/contact.scss";

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Container, allProjects, GearLoader } from "@/components";
-import { CSSProperties, useState } from "react";
+import { useSlider } from "@/app/hooks";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { ProjectTypes } from "./../type";
 import "./style/cart.scss";
@@ -15,59 +15,9 @@ type CartProps = {
 
 const Cart = ({ filterProjects = allProjects }: CartProps) => {
   const t = useTranslations("projects.allProjects");
-  const [currentCart, setCurrentCart] = useState<number>(0);
-
-  const safeCurrentCart =
-    currentCart >= filterProjects.length ? 0 : currentCart;
-
-  const nextSlide = () => {
-    setCurrentCart((prev) => (prev + 1) % filterProjects.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentCart(
-      (prev) => (prev - 1 + filterProjects.length) % filterProjects.length,
-    );
-  };
-
-  const getCardStyle = (index: number): CSSProperties => {
-    const diff =
-      (index - safeCurrentCart + filterProjects.length) % filterProjects.length;
-
-    if (diff === 0) {
-      return {
-        transform: "translateX(0) scale(1) rotateY(0deg)",
-        zIndex: 30,
-        opacity: 1,
-        filter: "brightness(1)",
-      };
-    }
-
-    if (diff === 1) {
-      return {
-        transform: "translateX(400px) scale(0.9) rotateY(50deg)",
-        zIndex: 20,
-        opacity: 0.6,
-        filter: "brightness(0.6)",
-      };
-    }
-
-    if (diff === filterProjects.length - 1) {
-      return {
-        transform: "translateX(-400px) scale(0.9) rotateY(-50deg)",
-        zIndex: 20,
-        opacity: 0.6,
-        filter: "brightness(0.6)",
-      };
-    }
-
-    return {
-      transform: "translateX(0) scale(0.8)",
-      opacity: 0,
-      pointerEvents: "none",
-      zIndex: 0,
-    };
-  };
+  const { safeIndex, nextSlide, prevSlide, getCardStyle } = useSlider({
+    itemsLength: filterProjects.length,
+  });
 
   if (filterProjects.length === 0) {
     return (
@@ -107,7 +57,7 @@ const Cart = ({ filterProjects = allProjects }: CartProps) => {
       ))}
       <div className="slider_divider" />
       <div className="slider_counter">
-        {safeCurrentCart + 1}/{filterProjects.length}
+        {safeIndex + 1}/{filterProjects.length}
       </div>
       <button onClick={nextSlide} className="nav_btn right">
         <BsChevronRight size={24} />

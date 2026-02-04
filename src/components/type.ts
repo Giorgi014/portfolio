@@ -115,3 +115,21 @@ export type RangeProps = {
   ref: RefObject<HTMLElement | null>;
   onChangeValue: (value: number) => void;
 };
+
+// Use Slider Props
+export type UseSliderProps = {
+  itemsLength: number;
+  initialIndex?: number;
+  translateX?: number;
+  scale?: number;
+  rotateY?: number;
+};
+
+// Use Slider Return
+export type UseSliderReturn = {
+  currentIndex: number;
+  safeIndex: number;
+  nextSlide: () => void;
+  prevSlide: () => void;
+  getCardStyle: (index: number) => React.CSSProperties;
+};
