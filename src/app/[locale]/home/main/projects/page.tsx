@@ -3,23 +3,21 @@
 import { HexBg, Button, Container, allProjects, Cart } from "@/components";
 import { SectionProps } from "@/components/type";
 import { useTranslations } from "next-intl";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { useToggleAnimation } from "@/app/hooks";
 import "./style/projects.scss";
+import Categories from "../../categories/page";
 
 type ProjectProps = SectionProps & {
   selectedCategory?: string;
 };
 
-const Projects = ({
-  isOpen,
-  onToggle,
-  selectedCategory = "all",
-}: ProjectProps) => {
+const Projects = ({ isOpen, onToggle }: ProjectProps) => {
   const t = useTranslations("projects");
   const { open, isClosing, openModal, closeModal, handleAnimationEnd } =
     useToggleAnimation({ isOpen, onToggle });
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const filterProjects = useMemo(
     () =>
@@ -52,6 +50,10 @@ const Projects = ({
         >
           <RiCloseLargeFill className="close" onClick={closeModal} />
           <h2 className="projects_head">{t("title")}</h2>
+          <Categories
+            categoryChange={setSelectedCategory}
+            selectedCategory={selectedCategory}
+          />
           <Cart filterProjects={filterProjects} />
         </Container>
       )}

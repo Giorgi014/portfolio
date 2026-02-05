@@ -7,13 +7,9 @@ import Projects from "./projects/page";
 import { ActiveSection, MainProps } from "@/components/type";
 import { HexBg } from "@/components";
 import { useTranslations } from "next-intl";
-import "./style/main.scss";
+import "./style/header.scss";
 
-type MainPageProps = MainProps & {
-  selectedCategory?: string;
-};
-
-const Header = ({ onProjectsToggle, selectedCategory }: MainPageProps) => {
+const Header = ({ onProjectsToggle }: MainProps) => {
   const t = useTranslations("menu");
   const [activeSection, setActiveSection] = useState<ActiveSection>(null);
   const [navigation, setNavigation] = useState<boolean>(false);
@@ -70,7 +66,6 @@ const Header = ({ onProjectsToggle, selectedCategory }: MainPageProps) => {
           <Projects
             isOpen={activeSection === "projects"}
             onToggle={() => handleSectionToggle("projects")}
-            selectedCategory={selectedCategory}
           />
           <Contact
             isOpen={activeSection === "contact"}
@@ -88,7 +83,6 @@ const Header = ({ onProjectsToggle, selectedCategory }: MainPageProps) => {
           <Projects
             isOpen={activeSection === "projects"}
             onToggle={() => handleSectionToggle("projects")}
-            selectedCategory={selectedCategory}
           />
           <Contact
             isOpen={activeSection === "contact"}
