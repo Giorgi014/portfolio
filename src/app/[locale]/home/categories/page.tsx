@@ -8,12 +8,10 @@ type CategoriesProps = {
 
 const Categories = ({ categoryChange, selectedCategory }: CategoriesProps) => {
   return (
-    <div>
-      <AllCategories
-        categoryChange={categoryChange}
-        selectedCategory={selectedCategory}
-      />
-    </div>
+    <AllCategories
+      categoryChange={categoryChange}
+      selectedCategory={selectedCategory}
+    />
   );
 };
 

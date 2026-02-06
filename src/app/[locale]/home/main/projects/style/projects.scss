@@ -88,6 +88,11 @@
   &_head {
     @extend %head;
   }
+
+  .project_header {
+    @include displayCenter(flex-start, center);
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
