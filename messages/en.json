@@ -36,6 +36,14 @@
   "projects": {
     "head": "Projects",
     "title": "Projects",
+    "projectNavigation": {
+      "allProjects": "All Projects",
+      "landingPages": "Landing Pages",
+      "ecommerceWebsites": "Ecommerce Websites",
+      "informational": "Informational",
+      "games": "Games",
+      "animations": "Animations"
+    },
     "allProjects": {
       "weatherApp": {
         "title": "About Weather-Next-App",

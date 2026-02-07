@@ -12,6 +12,7 @@ export * from "./soundSettings";
 export * from "./categories";
 export * from "./particleBackground";
 export * from "./form";
+export * from "./categoryNavigation";
 
 // Icons
 export * from "./icons";

@@ -133,3 +133,11 @@ export type UseSliderReturn = {
   prevSlide: () => void;
   getCardStyle: (index: number) => React.CSSProperties;
 };
+
+// Categories Navigation Props
+export type categoriesNavigationProps = {
+  id: number;
+  className: string;
+  category: string;
+  translationKey: string;
+};
