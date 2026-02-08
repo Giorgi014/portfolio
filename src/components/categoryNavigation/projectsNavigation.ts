@@ -1,6 +1,6 @@
-import { categoriesNavigationProps } from "../type";
+import { categoriesNavigationType } from "../type";
 
-export const categoriesNavigation: categoriesNavigationProps[] = [
+export const categoriesNavigation: categoriesNavigationType[] = [
   {
     id: 0,
     className: "all_projects all_categories",

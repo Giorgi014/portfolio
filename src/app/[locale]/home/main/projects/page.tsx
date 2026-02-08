@@ -48,13 +48,13 @@ const Projects = ({ isOpen, onToggle }: ProjectProps) => {
           className={`${isClosing && "closing"}`}
           onAnimationEnd={handleAnimationEnd}
         >
-          <RiCloseLargeFill className="close" onClick={closeModal} />
           <header className="project_header">
             <h2 className="projects_head">{t("title")}</h2>
             <Categories
               categoryChange={setSelectedCategory}
               selectedCategory={selectedCategory}
             />
+            <RiCloseLargeFill className="close" onClick={closeModal} />
           </header>
           <Cart filterProjects={filterProjects} />
         </Container>
