@@ -9,7 +9,7 @@ import { categoriesNavigationType } from "../type";
 type AllCategoriesProps = {
   categoryChange: (category: string) => void;
   selectedCategory: string;
-  filterNavigation: categoriesNavigationType[];
+  filterNavigation?: categoriesNavigationType[];
 };
 
 export const AllCategories = ({
