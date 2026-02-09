@@ -91,6 +91,7 @@
 
   .project_header {
     @include displayCenter(flex-start, center);
+    position: relative;
     width: 100%;
   }
 }

@@ -18,9 +18,9 @@ export const AllCategories = ({
   filterNavigation = categoriesNavigation,
 }: AllCategoriesProps) => {
   const t = useTranslations("projects.projectNavigation");
-  const { safeIndex, nextSlide, prevSlide, getCardStyle } = useSlider({
+  const { nextSlide, prevSlide, getCardStyle } = useSlider({
     itemsLength: filterNavigation.length,
-    translateX: 160,
+    translateX: 200,
     scale: 0.95,
     rotateY: 0,
   });
