@@ -26,8 +26,28 @@
     "title": "About Me",
     "profecion": "Front End Developer",
     "about_me": "Hi, I’m Giorgi, a Front-End Developer skilled in React, TypeScript, and modern web technologies. I build responsive, user-focused interfaces and enjoy turning ideas into clear and interactive experiences. I focus on writing clean, maintainable code and creating interfaces that feel intuitive and polished. I enjoy working on real-world projects, improving UI quality, and continuously growing as a front-end developer.",
-    "education": "========================",
-    "experience": "========================"
+    "education": {
+      "tenX": {
+        "about": "Advanced Front-end Development (10-Month Intensive) 10x College | 2024 – 2025 Mastered modern development workflows and front-end architecture. This program focused on building scalable, type-safe applications and implementing professional testing standards.",
+        "knowledge": "HTML, CSS, SASS, JavaScript, Git/GitHub, React.JS, TailwindCSS, Typescript, Jets, Figma"
+      },
+      "nsa": {
+        "about": "Front-end Development (6-Month Program) Next Step Academy | 2024 Established a solid foundation in web development, focusing on responsive design and core programming principles. Developed a strong command over the fundamental building blocks of the web.",
+        "knowledge": "HTML, CSS, JavaScript, Git/GitHub, React.JS, Figma"
+      }
+    },
+    "experience": {
+      "damble": {
+        "position": "Front-end Developer Intern DAMBLE | 2024 – Present",
+        "aboutExperience": "Currently contributing to the development of a high-traffic Crypto-Casino platform, focusing on creating a seamless and high-performance user interface.",
+        "responsibilities": {
+          "enhancement": "UI Optimization: Enhancing and optimizing the visual elements of the platform to ensure a smooth user experience.",
+          "maintenance": "Style Management & Bug Fixing: Maintaining consistent styling across the application, identifying visual inconsistencies, and implementing rapid fixes.",
+          "implementation": "Design-to-Code: Translating complex design mockups into clean, functional code with a focus on pixel-perfect implementation.",
+          "adaptation": "Responsive Development: Ensuring the platform’s interface is fully adaptive and optimized for a wide range of devices and screen sizes."
+        }
+      }
+    }
   },
   "contact": {
     "head": "Contact",
