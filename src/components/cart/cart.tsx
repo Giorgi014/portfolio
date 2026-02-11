@@ -15,9 +15,10 @@ type CartProps = {
 
 const Cart = ({ filterProjects = allProjects }: CartProps) => {
   const t = useTranslations("projects.allProjects");
-  const { safeIndex, nextSlide, prevSlide, getCardStyle } = useSlider({
-    itemsLength: filterProjects.length,
-  });
+  const { safeIndex, nextSlide, prevSlide, getCardStyle, sliderHandlers } =
+    useSlider({
+      itemsLength: filterProjects.length,
+    });
 
   if (filterProjects.length === 0) {
     return (
@@ -28,7 +29,7 @@ const Cart = ({ filterProjects = allProjects }: CartProps) => {
   }
 
   return (
-    <div className="cart">
+    <div className="cart" {...sliderHandlers}>
       <button onClick={prevSlide} className="nav_btn left">
         <BsChevronLeft size={24} />
       </button>

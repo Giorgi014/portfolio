@@ -18,7 +18,7 @@ export const AllCategories = ({
   filterNavigation = categoriesNavigation,
 }: AllCategoriesProps) => {
   const t = useTranslations("projects.projectNavigation");
-  const { nextSlide, prevSlide, getHeadStyle } = useSlider({
+  const { nextSlide, prevSlide, getHeadStyle, sliderHandlers } = useSlider({
     itemsLength: filterNavigation.length,
     translateX: 200,
     scale: 0.95,
@@ -26,7 +26,7 @@ export const AllCategories = ({
   });
 
   return (
-    <article className="all">
+    <article className="all" {...sliderHandlers}>
       <button onClick={prevSlide} className="nav_btn left">
         <BsChevronLeft size={24} />
       </button>

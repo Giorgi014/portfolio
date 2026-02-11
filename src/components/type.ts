@@ -133,6 +133,11 @@ export type UseSliderReturn = {
   prevSlide: () => void;
   getCardStyle: (index: number) => React.CSSProperties;
   getHeadStyle: (index: number) => React.CSSProperties;
+  sliderHandlers: {
+    onTouchStart: (e: React.TouchEvent) => void;
+    onTouchEnd: (e: React.TouchEvent) => void;
+    onWheel: (e: React.WheelEvent) => void;
+  };
 };
 
 // Categories Navigation Type
