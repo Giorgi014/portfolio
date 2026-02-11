@@ -18,7 +18,7 @@ export const AllCategories = ({
   filterNavigation = categoriesNavigation,
 }: AllCategoriesProps) => {
   const t = useTranslations("projects.projectNavigation");
-  const { nextSlide, prevSlide, getCardStyle } = useSlider({
+  const { nextSlide, prevSlide, getHeadStyle } = useSlider({
     itemsLength: filterNavigation.length,
     translateX: 200,
     scale: 0.95,
@@ -36,7 +36,7 @@ export const AllCategories = ({
             key={category.id}
             className={category.className}
             onClick={() => categoryChange(category.category)}
-            style={getCardStyle(index)}
+            style={getHeadStyle(index)}
           >
             <p className="category">{t(category.translationKey)}</p>
           </button>

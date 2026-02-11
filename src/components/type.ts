@@ -132,6 +132,7 @@ export type UseSliderReturn = {
   nextSlide: () => void;
   prevSlide: () => void;
   getCardStyle: (index: number) => React.CSSProperties;
+  getHeadStyle: (index: number) => React.CSSProperties;
 };
 
 // Categories Navigation Type
