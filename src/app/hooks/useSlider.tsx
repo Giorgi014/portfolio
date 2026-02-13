@@ -1,7 +1,7 @@
 "use client";
 
 import { UseSliderProps, UseSliderReturn } from "@/components/type";
-import { CSSProperties, useCallback, useRef, useState } from "react";
+import { CSSProperties, useCallback, useRef, useState, useEffect } from "react";
 
 export const useSlider = ({
   itemsLength,
@@ -9,10 +9,18 @@ export const useSlider = ({
   translateX = 400,
   scale = 0.9,
   rotateY = 50,
+  onIndexChange,
 }: UseSliderProps): UseSliderReturn => {
   const [currentIndex, setCurrentIndex] = useState<number>(initialIndex);
 
   const safeIndex = currentIndex >= itemsLength ? 0 : currentIndex;
+
+  useEffect(() => {
+    if (typeof onIndexChange === "function") {
+      const idx = itemsLength === 0 ? 0 : safeIndex % itemsLength;
+      onIndexChange(idx);
+    }
+  }, [safeIndex, itemsLength, onIndexChange]);
 
   const nextSlide = useCallback(() => {
     if (itemsLength === 0) return;
@@ -122,22 +130,22 @@ export const useSlider = ({
       if (deltaX > threshold) prevSlide();
       else if (deltaX < -threshold) nextSlide();
     },
-    [nextSlide, prevSlide]
+    [nextSlide, prevSlide],
   );
 
   const onWheel = useCallback(
     (e: React.WheelEvent) => {
       if (wheelTimeout.current) return;
-      const delta =
-        Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-      if (Math.abs(delta) < 30) return;
-      if (delta > 0) nextSlide();
+      const deltaX = e.deltaX;
+      const threshold = 30;
+      if (Math.abs(deltaX) < threshold) return;
+      if (deltaX > 0) nextSlide();
       else prevSlide();
       wheelTimeout.current = setTimeout(() => {
         wheelTimeout.current = null;
       }, 1000);
     },
-    [nextSlide, prevSlide]
+    [nextSlide, prevSlide],
   );
 
   const sliderHandlers = { onTouchStart, onTouchEnd, onWheel };

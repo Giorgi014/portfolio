@@ -23,6 +23,10 @@ export const AllCategories = ({
     translateX: 200,
     scale: 0.95,
     rotateY: 0,
+    onIndexChange: (index: number) => {
+      const cat = filterNavigation[index];
+      if (cat) categoryChange(cat.category);
+    },
   });
 
   return (

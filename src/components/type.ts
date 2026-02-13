@@ -123,6 +123,7 @@ export type UseSliderProps = {
   translateX?: number;
   scale?: number;
   rotateY?: number;
+  onIndexChange?: (index: number) => void;
 };
 
 // Use Slider Return
