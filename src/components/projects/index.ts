@@ -1,1 +1,0 @@
-export { allProjects } from "./projects";

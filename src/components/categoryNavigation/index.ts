@@ -1,1 +1,0 @@
-export { categoriesNavigation } from "./projectsNavigation";

@@ -1,0 +1,62 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.btn {
+  width: 250px;
+  height: 50px;
+  background: rgba(0, 240, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  color: var(--cyber_cyan);
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    background: rgba(0, 240, 255, 0.1);
+    box-shadow:
+      0 0 5px 0px rgba(0, 240, 255, 0.31),
+      0 0 5px 0px rgba(0, 240, 255, 0.13);
+  }
+}
+
+.btn_read_more {
+  @include displayCenter(center, center);
+  gap: 8px;
+  background: transparent;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  color: var(--cyber_cyan);
+  cursor: pointer;
+  &:hover {
+    color: var(--cyber_magenta);
+  }
+}
+
+.send_btn {
+  width: 100%;
+  height: 50px;
+  background: rgba(0, 240, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  color: var(--cyber_cyan);
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    background: rgba(0, 240, 255, 0.1);
+    box-shadow:
+      0 0 5px 0px rgba(0, 240, 255, 0.31),
+      0 0 5px 0px rgba(0, 240, 255, 0.13);
+  }
+}

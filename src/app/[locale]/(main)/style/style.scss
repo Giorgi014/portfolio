@@ -1,0 +1,70 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+main {
+  width: 100%;
+  margin-top: 55px;
+  text-align: center;
+  padding: 20px 60px;
+  .system_init {
+    font-family: "jetBrainsMono_regular";
+    font-size: 11px;
+    color: rgb(106, 106, 122);
+    letter-spacing: 4px;
+    margin-top: 120px;
+  }
+  h1 {
+    font-family: "orbitron_bold";
+    font-size: clamp(40px, 8vw, 90px);
+    font-weight: 900;
+    margin: 40px auto;
+    text-align: center;
+    color: var(--cyber_cyan);
+    letter-spacing: 8px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-shadow:
+      0 0 30px rgba(0, 240, 255, 0.31),
+      0 0 60px rgba(0, 240, 255, 0.13);
+  }
+  .profession {
+    color: var(--cyber_magenta);
+    text-transform: uppercase;
+  }
+  .button_section {
+    @include displayCenter(center, center);
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 20px;
+  }
+  .down_row {
+    margin-top: 90px;
+    color: var(--cyber_cyan);
+    opacity: 0;
+    animation: scroll_bounce 5s ease-in-out infinite;
+  }
+  .about_section {
+    margin: 150px auto;
+    width: 100%;
+    max-width: 705px;
+    text-align: start;
+    font-family: "jetBrainsMono_regular";
+    .hero_about {
+      color: var(--cyber_magenta);
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+    .about_me {
+      margin: 20px auto;
+      font-size: 16px;
+      color: var(--cyber_muted);
+      line-height: 1.45rem;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}

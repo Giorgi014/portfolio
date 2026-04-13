@@ -1,0 +1,119 @@
+.about_page {
+  width: 100%;
+  margin-top: 55px;
+  padding: 20px 60px;
+
+  .about_header {
+    text-align: center;
+    margin-top: 120px;
+
+    .label {
+      font-family: "jetBrainsMono_regular";
+      font-size: 11px;
+      color: rgb(106, 106, 122);
+      letter-spacing: 4px;
+    }
+
+    h1 {
+      font-family: "orbitron_bold";
+      font-size: clamp(40px, 8vw, 90px);
+      font-weight: 900;
+      margin: 20px auto;
+      color: var(--cyber_cyan);
+      letter-spacing: 8px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 30px rgba(0, 240, 255, 0.31),
+        0 0 60px rgba(0, 240, 255, 0.13);
+    }
+
+    .subtitle {
+      font-family: "jetBrainsMono_regular";
+      font-size: 14px;
+      color: var(--cyber_magenta);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  }
+
+  .about_bio {
+    max-width: 705px;
+    margin: 80px auto;
+    font-family: "jetBrainsMono_regular";
+    color: var(--cyber_muted);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .tech_section {
+    max-width: 900px;
+    margin: 0 auto 120px;
+
+    .section_label {
+      font-family: "jetBrainsMono_regular";
+      font-size: 11px;
+      color: rgb(106, 106, 122);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    .tech_grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+    }
+
+    .tech_group {
+      border: 1px solid var(--cyber_cyan_border);
+      padding: 24px;
+      background: var(--cyber_glass_bg);
+      transition: border-color 0.3s ease;
+
+      &:hover {
+        border-color: var(--cyber_cyan_border_strong);
+      }
+
+      .tech_category {
+        font-family: "orbitron_regular";
+        font-size: 10px;
+        color: var(--cyber_magenta);
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        li {
+          font-family: "jetBrainsMono_regular";
+          font-size: 14px;
+          color: var(--cyber_cyan);
+
+          &::before {
+            content: "> ";
+            color: var(--cyber_magenta);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about_page {
+    padding: 20px 24px;
+
+    .tech_section {
+      .tech_grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+    }
+  }
+}

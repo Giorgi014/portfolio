@@ -1,0 +1,120 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+header {
+  @include displayCenter(space-between, center);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--cyber_glass_bg);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--cyber_cyan);
+  padding: 16px 32px;
+  h2 {
+    font-family: "orbitron_regular";
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--cyber_cyan);
+    text-shadow:
+      0 0 10px rgba(0, 240, 255, 0.7),
+      0 0 40px rgba(0, 240, 255, 0.3);
+    cursor: pointer;
+
+    .dot {
+      color: var(--cyber_magenta);
+    }
+  }
+
+  nav {
+    @include displayCenter(center, center);
+    gap: 2rem;
+
+    ul {
+      @include displayCenter(center, center);
+      list-style: none;
+      gap: 2rem;
+
+      li {
+        a {
+          position: relative;
+          font-family: "jetBrainsMono_regular";
+          font-size: 14px;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: var(--cyber_muted);
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: var(--cyber_cyan);
+          }
+
+          &.active {
+            color: var(--cyber_cyan);
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -4px;
+              left: 0;
+              right: 0;
+              height: 1px;
+              background: var(--cyber_cyan);
+              box-shadow: 0 0 10px var(--cyber_cyan_shadow);
+            }
+          }
+        }
+      }
+    }
+
+    button {
+      font-family: "jetBrainsMono_regular";
+      font-size: 16px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cyber_muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--cyber_cyan);
+      }
+    }
+
+    .line {
+      width: 1px;
+      height: 24px;
+      background: var(--cyber_cyan);
+      margin: 0 4px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+
+    h1 {
+      font-size: 1rem;
+    }
+
+    nav {
+      display: none;
+      ul {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .line {
+        display: none;
+      }
+    }
+  }
+}

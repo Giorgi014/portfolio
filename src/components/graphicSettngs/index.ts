@@ -1,1 +1,0 @@
-export { GraphicSettings } from "./graphicSettngs";

@@ -1,9 +1,25 @@
-import { ButtonProps } from "./../type";
+import { forwardRef } from "react";
+import { buttonProps } from "../type";
+import "./style/style.scss";
 
-export const Button = ({ className, children, onClick }: ButtonProps) => {
-  return (
-    <button className={className} onClick={onClick}>
-      {children}
-    </button>
-  );
+const btnVariant = {
+  default: "btn",
+  read_more: "btn_read_more",
+  send: "send_btn",
 };
+
+export const Button = forwardRef<HTMLButtonElement, buttonProps>(
+  ({ className, children, variant, ...props }, ref) => {
+    return (
+      <button
+        ref={ref}
+        className={`${variant ? btnVariant[variant] : ""} ${className ?? ""}`}
+        {...props}
+      >
+        {children}
+      </button>
+    );
+  },
+);
+
+Button.displayName = "Button";

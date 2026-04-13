@@ -1,107 +1,60 @@
 {
-  "profile": {
-    "title": "Name",
-    "info": "Giorgi Gugunava",
-    "nickname": {
-      "title": "Nickname",
-      "info": "Giorgi014"
-    },
-    "occupation": {
-      "title": "Occupation",
-      "info": "Front-End Developer"
-    },
-    "availability": {
-      "title": "Availability",
-      "info": "open for hire"
-    }
-  },
-  "menu": {
-    "navigation": "Navigation"
-  },
-  "social": {
-    "socials": "Socials"
-  },
   "about": {
-    "head": "About",
-    "title": "About Me",
-    "profecion": "Front End Developer",
-    "about_me": "Hi, I’m Giorgi, a Front-End Developer skilled in React, TypeScript, and modern web technologies. I build responsive, user-focused interfaces and enjoy turning ideas into clear and interactive experiences. I focus on writing clean, maintainable code and creating interfaces that feel intuitive and polished. I enjoy working on real-world projects, improving UI quality, and continuously growing as a front-end developer.",
-    "education": {
-      "tenX": {
-        "about": "Advanced Front-end Development (10-Month Intensive) 10x College | 2024 – 2025 Mastered modern development workflows and front-end architecture. This program focused on building scalable, type-safe applications and implementing professional testing standards.",
-        "knowledge": "HTML, CSS, SASS, JavaScript, Git/GitHub, React.JS, TailwindCSS, Typescript, Jets, Figma"
-      },
-      "nsa": {
-        "about": "Front-end Development (6-Month Program) Next Step Academy | 2024 Established a solid foundation in web development, focusing on responsive design and core programming principles. Developed a strong command over the fundamental building blocks of the web.",
-        "knowledge": "HTML, CSS, JavaScript, Git/GitHub, React.JS, Figma"
-      }
-    },
-    "experience": {
-      "damble": {
-        "position": "Front-end Developer Intern DAMBLE | 2024 – Present",
-        "aboutExperience": "Currently contributing to the development of a high-traffic Crypto-Casino platform, focusing on creating a seamless and high-performance user interface.",
-        "responsibilities": {
-          "enhancement": "UI Optimization: Enhancing and optimizing the visual elements of the platform to ensure a smooth user experience.",
-          "maintenance": "Style Management & Bug Fixing: Maintaining consistent styling across the application, identifying visual inconsistencies, and implementing rapid fixes.",
-          "implementation": "Design-to-Code: Translating complex design mockups into clean, functional code with a focus on pixel-perfect implementation.",
-          "adaptation": "Responsive Development: Ensuring the platform’s interface is fully adaptive and optimized for a wide range of devices and screen sizes."
-        }
-      }
-    }
+    "subtitle": "Equipped technologies & power-ups",
+    "title": "ABOUT"
   },
   "contact": {
-    "head": "Contact",
-    "title": "Contact"
+    "email": "FREQUENCY",
+    "emailPh": "your@frequency.com",
+    "message": "TRANSMISSION",
+    "msgPh": "Compose your transmission...",
+    "name": "CALLSIGN",
+    "namePh": "Enter your callsign",
+    "send": "TRANSMIT SIGNAL",
+    "sending": "SIGNAL TRANSMITTING...",
+    "sent": "SIGNAL RECEIVED",
+    "subtitle": "Establish a secure communication channel",
+    "title": "MISSION CONTROL"
+  },
+  "footer": {
+    "rights": "All systems operational",
+    "status": "SYSTEM ONLINE"
+  },
+  "hero": {
+    "bio": "I'm a Front-End Developer skilled in React, TypeScript, and modern web technologies. I build responsive, user-focused interfaces and enjoy turning ideas into clear and interactive experiences. I focus on writing clean, maintainable code and creating interfaces that feel intuitive and polished.",
+    "cta": "VIEW PROJECTS",
+    "ctaContact": "OPEN COMMS",
+    "greeting": "Hi, I'm",
+    "name": "Giorgi",
+    "title": "FRONT-END DEVELOPER"
+  },
+  "main": {
+    "about": "Hi, I'm Giorgi, a Front-End Developer skilled in React, TypeScript, and modern web technologies. I build responsive, user-focused interfaces and enjoy turning ideas into clear and interactive experiences. I focus on writing clean, maintainable code and creating interfaces that feel intuitive and polished.",
+    "contact": "contact",
+    "hero_about": "about",
+    "name": "Giorgi Gugunava",
+    "profession": "font-end developer",
+    "read_more": "read_more",
+    "view_projects": "view_projects"
+  },
+  "nav": {
+    "about": "ABOUT",
+    "contact": "CONTACT",
+    "home": "HOME",
+    "projects": "PROJECTS",
+    "sound": "SOUND"
   },
   "projects": {
-    "head": "Projects",
-    "title": "Projects",
-    "projectNavigation": {
-      "allProjects": "All Projects",
-      "landingPages": "Landing Pages",
-      "ecommerceWebsites": "Ecommerce Websites",
-      "informational": "Informational",
-      "games": "Games",
-      "animations": "Animations"
+    "categories": {
+      "all": "ALL",
+      "creative": "CREATIVE",
+      "game": "GAME",
+      "platform": "PLATFORM",
+      "web": "WEB APP"
     },
-    "allProjects": {
-      "weatherApp": {
-        "title": "About Weather-Next-App",
-        "cartAbout": "Weather-Next-App is a sleek, minimalist weather dashboard designed to provide you with real-time atmospheric insights at your fingertips.",
-        "about": "Weather-Next-App is a sleek, minimalist weather dashboard designed to provide you with real-time atmospheric insights at your fingertips. Built with a focus on speed and clarity, the app bridges the gap between complex meteorological data and a clean, user-friendly interface.",
-        "offer": {
-          "head": "What We Offer",
-          "accuracy": "Real-Time Accuracy: Get instant access to current weather conditions for any city worldwide, powered by the reliable OpenWeatherMap API.",
-          "plan": "Plan Ahead: Stay prepared with our integrated 5-day forecast, breaking down upcoming weather patterns so you’re never caught off guard.",
-          "modes": "Tailored to You: Whether you prefer a crisp Light Mode for daytime browsing or a sleek Dark Mode for late-night checks, the app adapts to your visual preference instantly.",
-          "temp": "Global Standards: Easily toggle between Celsius and Fahrenheit to view temperatures in the format you are most comfortable with."
-        },
-        "experience": {
-          "title": "The Experience",
-          "about": "The app was designed with a (performance-first) mindset. Using modern technologies like Next.js and Tailwind CSS, we ensure that your search results and theme transitions happen lightning-fast. No clutter, no unnecessary ads—just the weather data you need, exactly when you need it."
-        },
-        "design": {
-          "title": "Design Philosophy",
-          "about": "The UI, crafted by Lovable, emphasizes a (Glanceable) design. We believe you shouldn't have to dig through menus to find out if you need an umbrella. Every icon, font choice, and layout shift is optimized to provide maximum information with minimum effort."
-        }
-      },
-      "guessNumber": {
-        "title": "About Guess My Number",
-        "cartAbout": "Guess My Number is a retro-inspired, fast-paced logic game designed to test your intuition and deduction skills.",
-        "about": "Guess My Number is a retro-inspired, fast-paced logic game designed to test your intuition and deduction skills. Inspired by classic arcade aesthetics, this web-based challenge brings a nostalgic feel to a modern, responsive interface.",
-        "challenge": {
-          "head": "The Challenge",
-          "rules": "The rules are simple, but the stakes are high:",
-          "secret": "A hidden number is randomly generated between 1 and 20.",
-          "goal": "Find the secret number using as few attempts as possible.",
-          "scoring": "You start with a perfect score of 20. Every time you guess incorrectly, your score drops. The faster you find the number, the higher your final score!",
-          "hints": "Don't worry, you aren't flying blind. The game provides instant feedback, telling you if your guess was (Too High) or (Too Low.)"
-        },
-        "design": {
-          "title": "Design & Performance",
-          "about": "Built with a focus on (snappy) interactions, the game responds instantly to your inputs. Whether you are playing on a desktop or a mobile device, the TailwindCSS styling ensures a crisp, clean, and accessible experience for players of all ages."
-        }
-      }
-    }
+    "subtitle": "Mission logs & completed deployments",
+    "title": "PROJECT ARCHIVE",
+    "viewCode": "SOURCE",
+    "viewProject": "LAUNCH"
   }
 }
