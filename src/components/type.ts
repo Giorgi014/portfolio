@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import { ComponentProps, ReactNode } from "react";
 
 // HEADER TYPE
 export type headerType = {
@@ -13,8 +13,29 @@ export type buttonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
 };
 
-// ROW PROPS
-export type RowProps = ComponentProps<"svg"> & {
+// Icon PROPS
+export type IconProps = ComponentProps<"svg"> & {
   size?: number | string;
   color?: string;
+};
+
+// Card Props
+export type CardProps = ComponentProps<"div"> & {
+  children: React.ReactNode;
+  className?: string;
+};
+
+// Contact Link
+export type ContactLink = {
+  id: number;
+  header: string;
+  href: string;
+  label: string;
+  icon: ReactNode;
+};
+
+// Burger Menu Props
+export type BurgerMenuProps = {
+  isOpen: boolean;
+  onToggle: () => void;
 };

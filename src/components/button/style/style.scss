@@ -41,6 +41,8 @@
 }
 
 .send_btn {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   height: 50px;
   background: rgba(0, 240, 255, 0.03);
@@ -53,6 +55,35 @@
   text-transform: uppercase;
   transition: all 0.3s ease;
   cursor: pointer;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 240, 255, 0.03);
+    opacity: 0;
+  }
+
+  &:active::before {
+    content: attr(data-text);
+    opacity: 1;
+    color: rgba(168, 85, 247, 0.9);
+    animation: glitch_anim 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  &:active::after {
+    content: attr(data-text);
+    opacity: 1;
+    color: var(--cyber_cyan);
+    animation: glitch_anim 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
+  }
+
   &:hover {
     background: rgba(0, 240, 255, 0.1);
     box-shadow:

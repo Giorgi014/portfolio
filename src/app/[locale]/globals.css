@@ -28,6 +28,7 @@
   --cyber_glass_bg: rgba(255, 255, 255, 0.03);
   --cyber_glass_mobile: rgba(255, 255, 255, 0.06);
   --cyber_muted: rgb(102, 153, 153);
+  --red_color: #ff1b1b;
 }
 
 * {
@@ -40,6 +41,10 @@ body {
   background-color: var(--bg_color);
   overflow-x: hidden;
   font-family: "orbitron_regular";
+}
+
+a {
+  text-decoration: none;
 }
 
 ::selection {
@@ -70,5 +75,101 @@ body {
   50% {
     opacity: 1;
     transform: translateY(30px);
+  }
+}
+
+@keyframes glitch_anim {
+  0% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+  20% {
+    transform: translate(-5px, 3px);
+    clip-path: inset(50% 0 20% 0);
+  }
+  40% {
+    transform: translate(3px, -2px);
+    clip-path: inset(20% 0 60% 0);
+  }
+  60% {
+    transform: translate(-4px, 2px);
+    clip-path: inset(80% 0 5% 0);
+  }
+  80% {
+    transform: translate(4px, -3px);
+    clip-path: inset(30% 0 45% 0);
+  }
+  100% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enter_name_cont input:focus ~ label::before,
+  .enter_name_cont input:focus ~ label::after,
+  .enter_email_cont input:focus ~ label::before,
+  .enter_email_cont input:focus ~ label::after,
+  .send_btn:active::before,
+  .send_btn:active::after {
+    animation: none;
+    content: none;
+  }
+}
+
+@keyframes burger_anim1 {
+  0% {
+    transform: translateY(-8px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(45deg);
+  }
+}
+
+@keyframes burger_anim2 {
+  0% {
+    transform: translateY(8px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-45deg);
+  }
+}
+
+@keyframes indicator_slide {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide_down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide_up {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
   }
 }

@@ -1,4 +1,4 @@
-import { RowProps } from "@/components";
+import { IconProps } from "@/components";
 
 export const DownRown = ({
   size = 20,
@@ -6,7 +6,7 @@ export const DownRown = ({
   style,
   className,
   ...props
-}: RowProps) => {
+}: IconProps) => {
   return (
     <svg
       stroke={color}
