@@ -1,3 +1,5 @@
+@use "../../../styles/mixins" as *;
+
 @mixin displayCenter($justify, $align) {
   display: flex;
   justify-content: $justify;
@@ -70,19 +72,7 @@
     opacity: 0;
   }
 
-  &:active::before {
-    content: attr(data-text);
-    opacity: 1;
-    color: rgba(168, 85, 247, 0.9);
-    animation: glitch_anim 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  }
-
-  &:active::after {
-    content: attr(data-text);
-    opacity: 1;
-    color: var(--cyber_cyan);
-    animation: glitch_anim 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
-  }
+  @include glitch-active(0.4s);
 
   &:hover {
     background: rgba(0, 240, 255, 0.1);

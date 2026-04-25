@@ -45,7 +45,7 @@ export const Header = () => {
   return (
     <header>
       <Link href="/">
-        <h2>Giorgi014</h2>
+        <h2 data-text="Giorgi014">Giorgi014</h2>
       </Link>
       <nav className={navClass}>
         <ul>
@@ -54,6 +54,7 @@ export const Header = () => {
               <Link
                 href={item.href}
                 onClick={closeMenu}
+                data-text={t(item.key)}
                 className={
                   item.href === "/"
                     ? pathname === "/"
@@ -70,8 +71,8 @@ export const Header = () => {
           ))}
         </ul>
         <span className="line"></span>
-        <button onClick={toggleLocale}>{locale === "en" ? "GE" : "EN"}</button>
-        <button>{t("sound")}</button>
+        <button onClick={toggleLocale} data-text={locale === "en" ? "GE" : "EN"}>{locale === "en" ? "GE" : "EN"}</button>
+        <button data-text={t("sound")}>{t("sound")}</button>
       </nav>
       <BurgerMenu isOpen={menuState === "open"} onToggle={toggleMenu} />
     </header>

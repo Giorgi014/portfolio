@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { Button, Card } from "@/components";
 import "./style/style.scss";
 
-export const Form = () => {
+export const Form = React.forwardRef<HTMLDivElement>((_, ref) => {
   const [result, setResult] = useState<{ message: string; success: boolean } | null>(null);
   const nameRef = useRef<HTMLDivElement>(null);
   const emailRef = useRef<HTMLDivElement>(null);
@@ -53,7 +53,7 @@ export const Form = () => {
   };
 
   return (
-    <Card className="form_container">
+    <Card className="form_container" ref={ref}>
       <form action="contact form" className="form" onSubmit={onSubmit}>
         <input type="hidden" name="subject" value="Portfolio"></input>
         <div className="enter_name_cont" ref={nameRef}>
@@ -98,4 +98,6 @@ export const Form = () => {
       </form>
     </Card>
   );
-};
+});
+
+Form.displayName = "Form";

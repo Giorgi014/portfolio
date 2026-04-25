@@ -1,3 +1,5 @@
+@use "../../../../../styles/mixins" as *;
+
 @mixin displayCenter($justify, $align) {
   display: flex;
   justify-content: $justify;
@@ -8,7 +10,7 @@
   @include displayCenter(center, flex-start);
   width: 100%;
   max-width: 1920px;
-  padding: 100px 30px 0px 30px;
+  padding: 100px 30px 30px 30px;
   gap: 50px;
   .links_container {
     @include displayCenter(center, center);
@@ -31,9 +33,20 @@
         color: var(--cyber_muted);
         line-height: 1.45rem;
         transition: 0.3s color ease-in-out;
+        min-width: 0;
+
         &:hover {
           color: var(--cyber_cyan);
         }
+
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          min-width: 0;
+        }
+
+        @include glitch-hover;
       }
     }
   }
@@ -48,5 +61,17 @@
 @media screen and (max-width: 840px) {
   .contact_container {
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact_container {
+    .links_container {
+      width: 100%;
+      .links {
+        width: 100%;
+        max-width: none;
+      }
+    }
   }
 }

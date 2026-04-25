@@ -1,3 +1,5 @@
+@use "../../../styles/mixins" as *;
+
 @mixin displayCenter($justify, $align) {
   display: flex;
   justify-content: $justify;
@@ -15,6 +17,7 @@ header {
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--cyber_cyan);
   padding: 16px 32px;
+
   h2 {
     font-family: "orbitron_regular";
     font-size: 18px;
@@ -25,6 +28,8 @@ header {
       0 0 10px rgba(0, 240, 255, 0.7),
       0 0 40px rgba(0, 240, 255, 0.3);
     cursor: pointer;
+
+    @include glitch-hover;
 
     .dot {
       color: var(--cyber_magenta);
@@ -42,7 +47,6 @@ header {
 
       li {
         a {
-          position: relative;
           font-family: "jetBrainsMono_regular";
           font-size: 14px;
           letter-spacing: 0.2em;
@@ -53,6 +57,8 @@ header {
           &:hover {
             color: var(--cyber_cyan);
           }
+
+          @include glitch-hover;
 
           &.active {
             color: var(--cyber_cyan);
@@ -67,7 +73,8 @@ header {
               background: var(--cyber_cyan);
               box-shadow: 0 0 10px var(--cyber_cyan_shadow);
               transform-origin: left center;
-              animation: indicator_slide 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+              animation: indicator_slide 0.4s cubic-bezier(0.22, 1, 0.36, 1)
+                forwards;
             }
           }
         }
@@ -88,6 +95,8 @@ header {
       &:hover {
         color: var(--cyber_cyan);
       }
+
+      @include glitch-hover;
     }
 
     .line {

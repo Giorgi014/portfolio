@@ -8,7 +8,7 @@ main {
   width: 100%;
   margin-top: 55px;
   text-align: center;
-  padding: 20px 60px;
+  padding: 20px 30px;
   .system_init {
     font-family: "jetBrainsMono_regular";
     font-size: 11px;
@@ -18,7 +18,7 @@ main {
   }
   h1 {
     font-family: "orbitron_bold";
-    font-size: clamp(40px, 8vw, 90px);
+    font-size: clamp(30px, 8vw, 90px);
     font-weight: 900;
     margin: 40px auto;
     text-align: center;
@@ -39,6 +39,13 @@ main {
     flex-wrap: wrap;
     margin-top: 40px;
     gap: 20px;
+  }
+
+  .is_typing::after {
+    content: "|";
+    color: var(--cyber_cyan);
+    animation: blink_caret 0.8s step-end infinite;
+    margin-left: 2px;
   }
   .down_row {
     margin-top: 90px;
@@ -63,5 +70,21 @@ main {
       color: var(--cyber_muted);
       line-height: 1.45rem;
     }
+  }
+}
+
+// @media screen and (max-width: 768px) {
+//   main {
+//     padding: 20px 30px;
+//   }
+// }
+
+@keyframes blink_caret {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
 }

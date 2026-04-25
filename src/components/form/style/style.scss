@@ -1,3 +1,5 @@
+@use "../../../styles/mixins" as *;
+
 @mixin displayCenter($justify, $align) {
   display: flex;
   justify-content: $justify;
@@ -60,17 +62,7 @@
       input:not(:placeholder-shown) ~ label {
         top: -20px;
       }
-      input:focus ~ label::before {
-        content: attr(data-text);
-        color: rgba(168, 85, 247, 0.8);
-        animation: glitch_anim 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-      }
-      input:focus ~ label::after {
-        content: attr(data-text);
-        color: var(--cyber_cyan);
-        animation: glitch_anim 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse
-          both;
-      }
+      @include glitch-label-focus;
       input {
         @extend %input_style;
       }
@@ -84,17 +76,7 @@
       input:not(:placeholder-shown) ~ label {
         top: -20px;
       }
-      input:focus ~ label::before {
-        content: attr(data-text);
-        color: rgba(168, 85, 247, 0.8);
-        animation: glitch_anim 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-      }
-      input:focus ~ label::after {
-        content: attr(data-text);
-        color: var(--cyber_cyan);
-        animation: glitch_anim 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse
-          both;
-      }
+      @include glitch-label-focus;
       input {
         @extend %input_style;
       }
