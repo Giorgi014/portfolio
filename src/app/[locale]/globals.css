@@ -1,17 +1,21 @@
 @font-face {
   font-family: "orbitron_regular";
-  src: url("./../../assets/font/orbitron/Orbitron-Regular.ttf") format("woff2");
+  src: url("./../../assets/font/orbitron/Orbitron-Regular.ttf")
+    format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "orbitron_bold";
-  src: url("./../../assets/font/orbitron/Orbitron-Bold.ttf") format("woff2");
+  src: url("./../../assets/font/orbitron/Orbitron-Bold.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "jetBrainsMono_regular";
   src: url("./../../assets/font/jetbrains/JetBrainsMono-Regular.ttf")
-    format("woff2");
+    format("truetype");
+  font-display: swap;
 }
 
 :root {
@@ -171,5 +175,18 @@ a {
   to {
     opacity: 0;
     transform: translateY(-10px);
+  }
+}
+
+@keyframes loader_blur {
+  0%,
+  90% {
+    filter: blur(0);
+    opacity: 1;
+  }
+
+  50% {
+    filter: blur(10px);
+    opacity: 0.4;
   }
 }

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { Galaxy } from "@/components";
+import { Galaxy, Loader } from "@/components";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -37,6 +37,7 @@ export default async function RootLayout({
           }}
           className="main_cont"
         >
+          <Loader />
           <Galaxy />
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </div>

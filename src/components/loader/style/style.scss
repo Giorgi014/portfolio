@@ -1,0 +1,39 @@
+.loader_overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg_color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+  pointer-events: all;
+
+  &.loader_hiding {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  gap: 0.05em;
+
+  span {
+    font-size: clamp(24px, 4.5vw, 52px);
+    font-family: "orbitron_bold";
+    color: var(--cyber_cyan);
+    letter-spacing: 0.2em;
+    text-shadow:
+      0 0 8px var(--cyber_cyan_glow),
+      0 0 20px var(--cyber_cyan_glow_soft);
+    animation: loader_blur 3s linear infinite;
+  }
+
+  &--ka span {
+    font-family: "jetBrainsMono_regular";
+    letter-spacing: 0.15em;
+  }
+}
