@@ -47,6 +47,34 @@ body {
   font-family: "orbitron_regular";
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 240, 255, 0.08) 50%,
+    transparent 100%
+  );
+  background-size: 100% 6px;
+  animation: scan-sweep 8s linear infinite;
+}
+
 a {
   text-decoration: none;
 }
@@ -189,4 +217,9 @@ a {
     filter: blur(10px);
     opacity: 0.4;
   }
+}
+
+@keyframes scan-sweep {
+  0%   { background-position: 0 -100vh; }
+  100% { background-position: 0 100vh; }
 }

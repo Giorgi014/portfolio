@@ -48,13 +48,68 @@
     "categories": {
       "all": "ALL",
       "creative": "CREATIVE",
+      "e-commerce": "E-COMMERCE",
       "game": "GAME",
       "platform": "PLATFORM",
       "web": "WEB APP"
     },
-    "subtitle": "Mission logs & completed deployments",
-    "title": "PROJECT ARCHIVE",
-    "viewCode": "SOURCE",
-    "viewProject": "LAUNCH"
+    "title": "PROJECTS",
+    "items": {
+      "prj_01": {
+        "title": "NEURAL DASHBOARD",
+        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
+        "category": "web"
+      },
+      "prj_02": {
+        "title": "COMMERCE ENGINE",
+        "description": "Full-featured e-commerce platform with product management, cart system, and payment integration.",
+        "category": "e-commerce"
+      },
+      "prj_03": {
+        "title": "NEURAL DASHBOARD",
+        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
+        "category": "game"
+      },
+      "prj_04": {
+        "title": "NEURAL DASHBOARD",
+        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
+        "category": "creative"
+      },
+      "prj_05": {
+        "title": "NEURAL DASHBOARD",
+        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
+        "category": "platform"
+      },
+      "prj_06": {
+        "title": "NEURAL DASHBOARD",
+        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
+        "category": "web"
+      },
+      "prj_07": {
+        "title": "NEURAL DASHBOARD",
+        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
+        "category": "game"
+      },
+      "prj_08": {
+        "title": "NEURAL DASHBOARD",
+        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
+        "category": "creative"
+      },
+      "prj_09": {
+        "title": "NEURAL DASHBOARD",
+        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
+        "category": "e-commerce"
+      },
+      "prj_10": {
+        "title": "NEURAL DASHBOARD",
+        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
+        "category": "platform"
+      },
+      "prj_11": {
+        "title": "NEURAL DASHBOARD",
+        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
+        "category": "web"
+      }
+    }
   }
 }

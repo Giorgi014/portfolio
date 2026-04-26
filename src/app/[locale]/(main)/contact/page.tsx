@@ -38,7 +38,7 @@ const ContactPage = () => {
             stagger: 0.15,
             scrollTrigger: {
               trigger: card,
-              start: "top 85%",
+              start: "top 95%",
               scroller: ".main_cont",
             },
           },
@@ -66,13 +66,19 @@ const ContactPage = () => {
         {links.map((item, index) => (
           <Card
             key={item.id}
+            variant="link"
             className="links"
             ref={(el) => {
               if (el) cardsRef.current[index] = el;
             }}
           >
             <h2>{item.header}</h2>
-            <Link href={item.href} target="_blank" rel="noopener noreferrer" data-text={item.label}>
+            <Link
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-text={item.label}
+            >
               {item.icon}
               <span>{item.label}</span>
             </Link>

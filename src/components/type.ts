@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { ComponentProps, ReactNode } from "react";
 
 // HEADER TYPE
@@ -23,6 +24,7 @@ export type IconProps = ComponentProps<"svg"> & {
 export type CardProps = ComponentProps<"div"> & {
   children: React.ReactNode;
   className?: string;
+  variant?: "form" | "link" | "project";
 };
 
 // Contact Link
@@ -38,4 +40,15 @@ export type ContactLink = {
 export type BurgerMenuProps = {
   isOpen: boolean;
   onToggle: () => void;
+};
+
+// Project Type
+export type ProjectCategory = "web" | "game" | "creative" | "platform" | "e-commerce";
+
+export type ProjectType = {
+  id: number;
+  img: StaticImageData;
+  project: string;
+  key: string;
+  technologies: string[];
 };

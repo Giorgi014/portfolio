@@ -1,1 +1,34 @@
-// clear
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.projects_container {
+  padding: 100px 30px 30px 30px;
+
+  .projects_grid {
+    @include displayCenter(space-between, stretch);
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  h2 {
+    font-family: "orbitron_bold";
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--cyber_cyan);
+    text-shadow:
+      0 0 10px var(--cyber_cyan_glow),
+      0 0 40px var(--cyber_cyan_glow_soft);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .projects_container {
+    h2 {
+      font-size: 36px;
+    }
+  }
+}

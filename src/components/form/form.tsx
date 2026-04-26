@@ -53,7 +53,7 @@ export const Form = React.forwardRef<HTMLDivElement>((_, ref) => {
   };
 
   return (
-    <Card className="form_container" ref={ref}>
+    <Card variant="form" className="form_container" ref={ref}>
       <form action="contact form" className="form" onSubmit={onSubmit}>
         <input type="hidden" name="subject" value="Portfolio"></input>
         <div className="enter_name_cont" ref={nameRef}>

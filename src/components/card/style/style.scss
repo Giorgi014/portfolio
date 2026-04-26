@@ -5,4 +5,198 @@
   background: rgba(0, 240, 255, 0.03);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(0, 240, 255, 0.15);
+
+  &.card--form {
+    width: clamp(250px, 50vw, 640px);
+  }
+
+  &.card--link {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  &.card--project {
+    width: 100%;
+    max-width: 320px;
+    max-height: 410px;
+    padding: 0;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition:
+      transform 0.3s ease,
+      border-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 240, 255, 0.35);
+    }
+
+    .project_media {
+      position: relative;
+      height: 192px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(0.8);
+        transition:
+          filter 0.5s ease,
+          transform 0.5s ease;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          #ff00e5 33%,
+          #00f0ff 66%,
+          #ffe600 100%
+        );
+        mix-blend-mode: screen;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 2;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.9),
+          transparent 50%
+        );
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+      }
+    }
+
+    &:hover .project_media {
+      img {
+        filter: saturate(1.8) contrast(1.3) hue-rotate(10deg);
+        transform: scale(1.05);
+      }
+
+      &::before {
+        opacity: 0.3;
+        animation: glitch-flicker 0.2s linear infinite;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    .project_media_line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: var(--cyber_cyan);
+      opacity: 0.5;
+      z-index: 3;
+    }
+
+    .project_media_header {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .project_id,
+    .project_category {
+      padding: 4px 8px;
+      font-family: "jetBrainsMono_regular";
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--cyber_muted);
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .project_body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project_title {
+      font-family: "orbitron_bold";
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      color: var(--cyber_cyan);
+      margin-bottom: 8px;
+      transition: text-shadow 0.3s ease;
+    }
+
+    &:hover .project_title {
+      text-shadow:
+        0 0 10px var(--cyber_cyan_glow),
+        0 0 40px var(--cyber_cyan_glow_soft);
+    }
+
+    .project_desc {
+      font-family: "jetBrainsMono_regular";
+      font-size: 12px;
+      line-height: 1.625;
+      color: var(--cyber_muted);
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .project_tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project_tag {
+      font-family: "jetBrainsMono_regular";
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--cyber_magenta);
+      border: 1px solid rgba(210, 0, 230, 0.2);
+      padding: 2px 8px;
+    }
+  }
+}
+
+@keyframes glitch-flicker {
+  0%,
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+  20% {
+    clip-path: inset(20% 0 60% 0);
+    transform: translate(-3px, 2px);
+  }
+  40% {
+    clip-path: inset(40% 0 30% 0);
+    transform: translate(3px, -1px);
+  }
+  60% {
+    clip-path: inset(60% 0 10% 0);
+    transform: translate(-2px, 3px);
+  }
+  80% {
+    clip-path: inset(10% 0 70% 0);
+    transform: translate(2px, -2px);
+  }
 }
