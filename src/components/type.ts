@@ -43,12 +43,30 @@ export type BurgerMenuProps = {
 };
 
 // Project Type
-export type ProjectCategory = "web" | "game" | "creative" | "platform" | "e-commerce";
+export type ProjectCategory =
+  | "web"
+  | "game"
+  | "creative"
+  | "platform"
+  | "e-commerce";
+
+export type CategoryKey = "all" | ProjectCategory;
 
 export type ProjectType = {
   id: number;
   img: StaticImageData;
   project: string;
   key: string;
+  category: ProjectCategory;
   technologies: string[];
+};
+
+export type CategoryType = {
+  id: number;
+  category: CategoryKey;
+};
+
+export type CategoriesProps = {
+  activeCategory: CategoryKey;
+  onCategoryChange: (category: CategoryKey) => void;
 };

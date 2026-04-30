@@ -1,5 +1,6 @@
 export * from "./button";
 export * from "./card";
+export * from "./projects/categories/categories";
 export * from "./form";
 export * from "./galaxy";
 export * from "./header";

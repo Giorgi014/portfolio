@@ -8,9 +8,11 @@
   padding: 100px 30px 30px 30px;
 
   .projects_grid {
-    @include displayCenter(space-between, stretch);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 320px));
+    justify-content: space-between;
+    align-content: start;
     gap: 20px;
-    flex-wrap: wrap;
   }
 
   h2 {
@@ -27,6 +29,10 @@
 
 @media screen and (max-width: 768px) {
   .projects_container {
+    .projects_grid {
+      justify-content: center;
+    }
+
     h2 {
       font-size: 36px;
     }

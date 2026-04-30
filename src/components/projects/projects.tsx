@@ -7,6 +7,7 @@ export const projects: ProjectType[] = [
     img: CasinoImg,
     project: "PRJ_01",
     key: "prj_01",
+    category: "web",
     technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
   },
   {
@@ -14,6 +15,7 @@ export const projects: ProjectType[] = [
     img: CasinoImg,
     project: "PRJ_02",
     key: "prj_02",
+    category: "e-commerce",
     technologies: ["Next.JS", "TypeScript", "Stripe", "SASS"],
   },
   {
@@ -21,6 +23,7 @@ export const projects: ProjectType[] = [
     img: CasinoImg,
     project: "PRJ_03",
     key: "prj_03",
+    category: "game",
     technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
   },
   {
@@ -28,6 +31,7 @@ export const projects: ProjectType[] = [
     img: CasinoImg,
     project: "PRJ_04",
     key: "prj_04",
+    category: "creative",
     technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
   },
   {
@@ -35,6 +39,7 @@ export const projects: ProjectType[] = [
     img: CasinoImg,
     project: "PRJ_05",
     key: "prj_05",
+    category: "platform",
     technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
   },
   {
@@ -42,6 +47,7 @@ export const projects: ProjectType[] = [
     img: CasinoImg,
     project: "PRJ_06",
     key: "prj_06",
+    category: "web",
     technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
   },
   {
@@ -49,6 +55,7 @@ export const projects: ProjectType[] = [
     img: CasinoImg,
     project: "PRJ_07",
     key: "prj_07",
+    category: "game",
     technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
   },
   {
@@ -56,6 +63,7 @@ export const projects: ProjectType[] = [
     img: CasinoImg,
     project: "PRJ_08",
     key: "prj_08",
+    category: "creative",
     technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
   },
   {
@@ -63,6 +71,7 @@ export const projects: ProjectType[] = [
     img: CasinoImg,
     project: "PRJ_09",
     key: "prj_09",
+    category: "e-commerce",
     technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
   },
   {
@@ -70,6 +79,7 @@ export const projects: ProjectType[] = [
     img: CasinoImg,
     project: "PRJ_10",
     key: "prj_10",
+    category: "platform",
     technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
   },
   {
@@ -77,6 +87,7 @@ export const projects: ProjectType[] = [
     img: CasinoImg,
     project: "PRJ_11",
     key: "prj_11",
+    category: "web",
     technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
   },
 ];
