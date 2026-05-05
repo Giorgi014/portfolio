@@ -1,23 +1,69 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Card, Categories, projects } from "@/components";
-import "./style/style.scss";
 import Image from "next/image";
 import { CategoryKey } from "@/components/type";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "./style/style.scss";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const MOBILE_BREAKPOINT = 769;
 
 const ProjectPage = () => {
   const t = useTranslations("projects");
   const [activeCategory, setActiveCategory] = useState<CategoryKey>("all");
+  const cardsRef = useRef<HTMLDivElement[]>([]);
 
   const filteredProjects = useMemo(() => {
-    if (activeCategory === "all") {
-      return projects;
-    }
-
+    if (activeCategory === "all") return projects;
     return projects.filter((project) => project.category === activeCategory);
   }, [activeCategory]);
+
+  useEffect(() => {
+    const isMobile = window.innerWidth < MOBILE_BREAKPOINT;
+    const cards = cardsRef.current.filter(Boolean);
+
+    ScrollTrigger.getAll().forEach((st) => st.kill());
+
+    if (isMobile) {
+      cards.forEach((card) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.1,
+            ease: "power4.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              scroller: ".main_cont",
+            },
+          },
+        );
+      });
+    } else {
+      gsap.fromTo(
+        cards,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.1,
+          ease: "power4.out",
+          stagger: 0.12,
+          delay: 0.15,
+        },
+      );
+    }
+
+    return () => ScrollTrigger.getAll().forEach((st) => st.kill());
+  }, [filteredProjects]);
 
   return (
     <article className="projects_container">
@@ -27,8 +73,14 @@ const ProjectPage = () => {
         onCategoryChange={setActiveCategory}
       />
       <div className="projects_grid">
-        {filteredProjects.map((item) => (
-          <Card key={item.id} variant="project">
+        {filteredProjects.map((item, index) => (
+          <Card
+            key={item.id}
+            variant="project"
+            ref={(el) => {
+              if (el) cardsRef.current[index] = el;
+            }}
+          >
             <div className="project_media">
               <Image src={item.img} alt={t(`items.${item.key}.title`)} />
               <span className="project_media_line" />
