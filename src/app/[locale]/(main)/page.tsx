@@ -25,11 +25,14 @@ const HomePage = () => {
   const heroAboutRef = useRef<HTMLParagraphElement>(null);
   const aboutMeRef = useRef<HTMLParagraphElement>(null);
   const readMoreRef = useRef<HTMLDivElement>(null);
+  const btn1Ref = useRef<HTMLAnchorElement>(null);
+  const btn2Ref = useRef<HTMLAnchorElement>(null);
 
   const [step, setStep] = useState(1);
 
   useEffect(() => {
     if (step >= 3) return;
+
     const durations: Record<number, number> = {
       1: SYSTEM_TEXT.length * SPEED + 150,
       2: nameText.length * NAME_SPEED + 250,
@@ -56,30 +59,40 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    const scroll = [
-      heroAboutRef.current,
-      aboutMeRef.current,
-      readMoreRef.current,
-    ];
+    const isMobile = window.innerWidth < 769;
+    if (step < 3) return;
 
-    gsap.fromTo(
-      scroll,
-      { opacity: 0, y: 30 },
-      {
+    if (isMobile) {
+      gsap.set(btnRef.current, { opacity: 1, y: 0 });
+      gsap.set([btn1Ref.current, btn2Ref.current], { opacity: 0, y: 30 });
+
+      [btn1Ref.current, btn2Ref.current].forEach((el, i) => {
+        gsap.to(el, {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          delay: i * 0.25,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 95%",
+            scroller: ".main_cont",
+          },
+        });
+      });
+    } else {
+      gsap.set(btnRef.current, { opacity: 0, y: 30 });
+      gsap.to(btnRef.current, {
         opacity: 1,
         y: 0,
-        duration: 1.5,
+        duration: 1,
         ease: "power3.out",
-        stagger: 0.3,
-        scrollTrigger: {
-          trigger: scroll[0],
-          start: "top 90%",
-          scroller: ".main_cont",
-        },
-      },
-    );
+        delay: 2.8,
+      });
+    }
+
     return () => ScrollTrigger.getAll().forEach((st) => st.kill());
-  }, []);
+  }, [step]);
 
   return (
     <main>
@@ -91,10 +104,10 @@ const HomePage = () => {
         {professionDisplayed || " "}
       </p>
       <section className="button_section" ref={btnRef}>
-        <Link href="/projects">
+        <Link href="/projects" ref={btn1Ref}>
           <Button variant="default">{t("view_projects")}</Button>
         </Link>
-        <Link href="/contact">
+        <Link href="/contact" ref={btn2Ref}>
           <Button variant="default">{t("contact")}</Button>
         </Link>
       </section>

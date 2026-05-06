@@ -37,7 +37,7 @@ const ProjectPage = () => {
           {
             opacity: 1,
             y: 0,
-            duration: 1.1,
+            duration: 0.9,
             ease: "power4.out",
             scrollTrigger: {
               trigger: card,
@@ -54,9 +54,9 @@ const ProjectPage = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 1.1,
+          duration: 0.9,
           ease: "power4.out",
-          stagger: 0.12,
+          stagger: 0.15,
           delay: 0.15,
         },
       );
