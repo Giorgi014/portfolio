@@ -10,7 +10,11 @@ type FormResult = {
   success: boolean;
 } | null;
 
-export const Form = () => {
+type FormProps = {
+  ref?: React.RefObject<HTMLDivElement | null>;
+};
+
+export const Form = ({ ref }: FormProps) => {
   const [result, setResult] = useState<FormResult>(null);
   const nameRef = useRef<HTMLDivElement>(null);
   const emailRef = useRef<HTMLDivElement>(null);
@@ -60,7 +64,7 @@ export const Form = () => {
   };
 
   return (
-    <Card variant="form" className="form_container">
+    <Card variant="form" className="form_container" ref={ref}>
       <form className="form" onSubmit={onSubmit}>
         <input type="hidden" name="subject" value="Portfolio" />
 
