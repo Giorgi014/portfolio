@@ -1,4 +1,10 @@
-@mixin glitch-hover($font-size: inherit, $font-family: inherit, $font-weight: inherit, $letter-spacing: inherit, $text-transform: inherit) {
+@mixin glitch-hover(
+  $font-size: inherit,
+  $font-family: inherit,
+  $font-weight: inherit,
+  $letter-spacing: inherit,
+  $text-transform: inherit
+) {
   position: relative;
 
   &:hover::before,
@@ -40,7 +46,8 @@
   input:focus ~ label::after {
     content: attr(data-text);
     color: var(--cyber_cyan);
-    animation: glitch_anim 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
+    animation: glitch_anim 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse
+      both;
   }
 }
 
@@ -56,6 +63,7 @@
     content: attr(data-text);
     opacity: 1;
     color: var(--cyber_cyan);
-    animation: glitch_anim $duration cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
+    animation: glitch_anim $duration cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      reverse both;
   }
 }

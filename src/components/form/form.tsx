@@ -1,12 +1,17 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Button, Card } from "@/components";
 import "./style/style.scss";
 
-export const Form = React.forwardRef<HTMLDivElement>((_, ref) => {
-  const [result, setResult] = useState<{ message: string; success: boolean } | null>(null);
+type FormResult = {
+  message: string;
+  success: boolean;
+} | null;
+
+export const Form = () => {
+  const [result, setResult] = useState<FormResult>(null);
   const nameRef = useRef<HTMLDivElement>(null);
   const emailRef = useRef<HTMLDivElement>(null);
   const messageRef = useRef<HTMLDivElement>(null);
@@ -19,8 +24,8 @@ export const Form = React.forwardRef<HTMLDivElement>((_, ref) => {
       messageRef.current,
       btnRef.current,
     ];
-    gsap.set(elements, { opacity: 0, y: 30 });
 
+    gsap.set(elements, { opacity: 0, y: 30 });
     gsap.to(elements, {
       opacity: 1,
       y: 0,
@@ -31,9 +36,10 @@ export const Form = React.forwardRef<HTMLDivElement>((_, ref) => {
     });
   }, []);
 
-  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setResult({ message: "Sending....", success: true });
+    setResult({ message: "Sending...", success: true });
+
     const form = event.currentTarget;
     const formData = new FormData(form);
     formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "");
@@ -44,6 +50,7 @@ export const Form = React.forwardRef<HTMLDivElement>((_, ref) => {
     });
 
     const data = await response.json();
+
     if (data.success) {
       setResult({ message: "Form Submitted Successfully", success: true });
       form.reset();
@@ -53,9 +60,10 @@ export const Form = React.forwardRef<HTMLDivElement>((_, ref) => {
   };
 
   return (
-    <Card variant="form" className="form_container" ref={ref}>
-      <form action="contact form" className="form" onSubmit={onSubmit}>
-        <input type="hidden" name="subject" value="Portfolio"></input>
+    <Card variant="form" className="form_container">
+      <form className="form" onSubmit={onSubmit}>
+        <input type="hidden" name="subject" value="Portfolio" />
+
         <div className="enter_name_cont" ref={nameRef}>
           <input
             type="text"
@@ -65,8 +73,11 @@ export const Form = React.forwardRef<HTMLDivElement>((_, ref) => {
             placeholder=" "
             required
           />
-          <label htmlFor="enter_name" data-text="Enter Your Name">Enter Your Name</label>
+          <label htmlFor="enter_name" data-text="Enter Your Name">
+            Enter Your Name
+          </label>
         </div>
+
         <div className="enter_email_cont" ref={emailRef}>
           <input
             type="email"
@@ -76,28 +87,40 @@ export const Form = React.forwardRef<HTMLDivElement>((_, ref) => {
             placeholder=" "
             required
           />
-          <label htmlFor="enter_email" data-text="Enter Your Email">Enter Your Email</label>
+          <label htmlFor="enter_email" data-text="Enter Your Email">
+            Enter Your Email
+          </label>
         </div>
+
         <div className="enter_text_cont" ref={messageRef}>
-          <label htmlFor="Enter Your Text">Enter Your Text</label>
+          <label htmlFor="enter_text">Enter Your Text</label>
           <textarea
             name="enter_text"
             id="enter_text"
             className="enter_text"
             required
-          ></textarea>
+          />
         </div>
-        <Button variant="send" type="submit" ref={btnRef} data-text="Send Message">
+
+        <Button
+          variant="send"
+          type="submit"
+          ref={btnRef}
+          data-text="Send Message"
+        >
           Send Message
         </Button>
+
         {result && (
-          <span className={result.success ? "form_result" : "form_result form_result--error"}>
+          <span
+            className={
+              result.success ? "form_result" : "form_result form_result--error"
+            }
+          >
             {result.message}
           </span>
         )}
       </form>
     </Card>
   );
-});
-
-Form.displayName = "Form";
+};

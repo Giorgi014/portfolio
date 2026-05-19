@@ -1,3 +1,4 @@
+export * from "./about";
 export * from "./button";
 export * from "./card";
 export * from "./projects/categories/categories";
