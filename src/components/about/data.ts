@@ -15,6 +15,7 @@ export const skillsData = {
   quality: ["ESLint", "Prettier", "Biome", "Jest", "Postman"],
   design: [
     "Figma",
+    "Framer",
     "Adobe Photoshop",
     "Adobe After Effects",
     "Adobe Premiere Pro",
