@@ -143,6 +143,7 @@
       color: var(--cyber_cyan);
       margin-bottom: 8px;
       transition: text-shadow 0.3s ease;
+      text-transform: uppercase;
     }
 
     &:hover .project_title {
@@ -158,6 +159,11 @@
       color: var(--cyber_muted);
       margin-bottom: 16px;
       flex: 1;
+      max-height: 80px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
     }
 
     .project_tags {

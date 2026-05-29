@@ -1,93 +1,68 @@
 import CasinoImg from "@/assets/img/casinoimg.jpg";
+import CyberSite from "@/assets/img/cyber.png";
+import GuessNumber from "@/assets/img/guess-number.png";
+import TextAnimation from "@/assets/img/text-animation.png";
+import Calculator from "@/assets/img/calculator.png";
+import RegForm from "@/assets/img/registration-form.png";
+import WeatherApp from "@/assets/img/weather.png";
+import PigGame from "@/assets/img/pig-game.png";
 import { ProjectType } from "../type";
 
 export const projects: ProjectType[] = [
   {
     id: 0,
-    img: CasinoImg,
+    img: CyberSite,
     project: "PRJ_01",
     key: "prj_01",
-    category: "web",
-    technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
+    category: "e-commerce",
+    technologies: ["React", "SCSS", "JavaScript", "Vite", "Vercel"],
   },
   {
     id: 1,
-    img: CasinoImg,
+    img: GuessNumber,
     project: "PRJ_02",
     key: "prj_02",
-    category: "e-commerce",
-    technologies: ["Next.JS", "TypeScript", "Stripe", "SASS"],
+    category: "game",
+    technologies: ["HTML", "SCSS", "JavaScript", "Jest", "Vercel"],
   },
   {
     id: 2,
-    img: CasinoImg,
+    img: TextAnimation,
     project: "PRJ_03",
     key: "prj_03",
-    category: "game",
-    technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
+    category: "creative",
+    technologies: ["HTML", "CSS", "JavaScript", "Vercel"],
   },
   {
     id: 3,
-    img: CasinoImg,
+    img: Calculator,
     project: "PRJ_04",
     key: "prj_04",
-    category: "creative",
-    technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
+    category: "utility",
+    technologies: ["React", "CSS", "JavaScript", "Vercel"],
   },
   {
     id: 4,
-    img: CasinoImg,
+    img: RegForm,
     project: "PRJ_05",
     key: "prj_05",
-    category: "platform",
-    technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
+    category: "creative",
+    technologies: ["HTML", "CSS", "Vercel"],
   },
   {
     id: 5,
-    img: CasinoImg,
+    img: WeatherApp,
     project: "PRJ_06",
     key: "prj_06",
     category: "web",
-    technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
+    technologies: ["Next.js", "TypeScript", "TailwindCSS", "Vercel"],
   },
   {
     id: 6,
-    img: CasinoImg,
+    img: PigGame,
     project: "PRJ_07",
     key: "prj_07",
     category: "game",
-    technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
-  },
-  {
-    id: 7,
-    img: CasinoImg,
-    project: "PRJ_08",
-    key: "prj_08",
-    category: "creative",
-    technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
-  },
-  {
-    id: 8,
-    img: CasinoImg,
-    project: "PRJ_09",
-    key: "prj_09",
-    category: "e-commerce",
-    technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
-  },
-  {
-    id: 9,
-    img: CasinoImg,
-    project: "PRJ_10",
-    key: "prj_10",
-    category: "platform",
-    technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
-  },
-  {
-    id: 10,
-    img: CasinoImg,
-    project: "PRJ_11",
-    key: "prj_11",
-    category: "web",
-    technologies: ["React", "TypeScript", "ChartJS", "TailwindCSS"],
+    technologies: ["React", "Vite", "TypeScript", "TailwindCSS", "Vercel"],
   },
 ];

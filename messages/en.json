@@ -85,63 +85,44 @@
       "e-commerce": "E-COMMERCE",
       "game": "GAME",
       "platform": "PLATFORM",
-      "web": "WEB APP"
+      "web": "WEB APP",
+      "utility": "UTILITY"
     },
     "items": {
       "prj_01": {
-        "category": "web",
-        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
-        "title": "NEURAL DASHBOARD"
+        "category": "e-commerce",
+        "description": "This e-commerce platform implements a comprehensive set of features for online shopping, including user authentication, product browsing, search functionality, and responsive design.",
+        "title": "cyber"
       },
       "prj_02": {
-        "category": "e-commerce",
-        "description": "Full-featured e-commerce platform with product management, cart system, and payment integration.",
-        "title": "COMMERCE ENGINE"
+        "category": "game",
+        "description": "Guess My Number is a number guessing game where the player tries to identify a randomly generated secret number between 1 and 20. Each wrong guess costs a point and reveals a hint — the score system tracks your best result across rounds.",
+        "title": "Guess My Number"
       },
       "prj_03": {
-        "category": "game",
-        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
-        "title": "NEURAL DASHBOARD"
+        "category": "creative",
+        "description": "Text Animation is a creative JavaScript experiment that brings text to life through dynamic visual effects. Built with pure vanilla JS, HTML, and CSS — no libraries or frameworks.",
+        "title": "Text Animation"
       },
       "prj_04": {
-        "category": "creative",
-        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
-        "title": "NEURAL DASHBOARD"
+        "category": "utility",
+        "description": "Calculator is a functional calculator app built with React. Supports standard arithmetic operations with a clean, minimal interface.",
+        "title": "Calculator"
       },
       "prj_05": {
-        "category": "platform",
-        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
-        "title": "NEURAL DASHBOARD"
+        "category": "creative",
+        "description": "Login Form is a styled login and sign-up UI built with pure HTML and CSS. Focuses on clean form design and layout without any frameworks.",
+        "title": "Login Form"
       },
       "prj_06": {
         "category": "web",
-        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
-        "title": "NEURAL DASHBOARD"
+        "description": "Weather App is a city weather forecast app built with Next.js and TypeScript. Search any city to get current weather and a 5-day forecast, with support for light/dark theme and Celsius/Fahrenheit switching — powered by the OpenWeatherMap API.",
+        "title": "Weather App"
       },
       "prj_07": {
         "category": "game",
-        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
-        "title": "NEURAL DASHBOARD"
-      },
-      "prj_08": {
-        "category": "creative",
-        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
-        "title": "NEURAL DASHBOARD"
-      },
-      "prj_09": {
-        "category": "e-commerce",
-        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
-        "title": "NEURAL DASHBOARD"
-      },
-      "prj_10": {
-        "category": "platform",
-        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
-        "title": "NEURAL DASHBOARD"
-      },
-      "prj_11": {
-        "category": "web",
-        "description": "Real-time analytics platform built with React, TypeScript, and Chart.js. Features live data streaming and responsive layouts.",
-        "title": "NEURAL DASHBOARD"
+        "description": "Pig Game is a two-player dice game built with React and TypeScript. Players take turns rolling a die and accumulating points — but rolling a 1 resets the turn. The first to reach 100 wins.",
+        "title": "Pig Game"
       }
     },
     "title": "PROJECTS"

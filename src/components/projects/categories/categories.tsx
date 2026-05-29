@@ -25,4 +25,8 @@ export const categories: CategoryType[] = [
     id: 5,
     category: "e-commerce",
   },
+  {
+    id: 6,
+    category: "utility",
+  },
 ];

@@ -48,7 +48,8 @@ export type ProjectCategory =
   | "game"
   | "creative"
   | "platform"
-  | "e-commerce";
+  | "e-commerce"
+  | "utility";
 
 export type CategoryKey = "all" | ProjectCategory;
 
