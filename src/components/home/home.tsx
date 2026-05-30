@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components";
-import { DownRown } from "@/assets/img/dow-row";
+import { DownRown } from "@/assets/img/icons/dow-row";
 import { useTranslations } from "next-intl";
 import { LuMoveRight } from "react-icons/lu";
 import { Link } from "@/i18n/navigation";

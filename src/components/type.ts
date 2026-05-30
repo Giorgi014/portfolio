@@ -25,6 +25,7 @@ export type CardProps = ComponentProps<"div"> & {
   children: React.ReactNode;
   className?: string;
   variant?: "form" | "link" | "project";
+  onClick?: () => void;
 };
 
 // Contact Link
@@ -47,7 +48,6 @@ export type ProjectCategory =
   | "web"
   | "game"
   | "creative"
-  | "platform"
   | "e-commerce"
   | "utility";
 
@@ -60,6 +60,7 @@ export type ProjectType = {
   key: string;
   category: ProjectCategory;
   technologies: string[];
+  src: string;
 };
 
 export type CategoryType = {

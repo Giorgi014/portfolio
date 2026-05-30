@@ -19,14 +19,10 @@ export const categories: CategoryType[] = [
   },
   {
     id: 4,
-    category: "platform",
-  },
-  {
-    id: 5,
     category: "e-commerce",
   },
   {
-    id: 6,
+    id: 5,
     category: "utility",
   },
 ];

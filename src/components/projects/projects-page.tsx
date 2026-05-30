@@ -2,7 +2,7 @@
 
 import { useMemo, useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
-import { Card, Categories, projects } from "@/components";
+import { Card, Categories, projects, ProjectsDialog } from "@/components";
 import Image from "next/image";
 import { CategoryKey } from "@/components/type";
 import gsap from "gsap";
@@ -16,6 +16,9 @@ const MOBILE_BREAKPOINT = 769;
 const Projects = () => {
   const t = useTranslations("projects");
   const [activeCategory, setActiveCategory] = useState<CategoryKey>("all");
+  const [selectedProject, setSelectedProject] = useState<
+    (typeof projects)[0] | null
+  >(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
   const filteredProjects = useMemo(() => {
@@ -65,6 +68,10 @@ const Projects = () => {
     return () => ScrollTrigger.getAll().forEach((st) => st.kill());
   }, [filteredProjects]);
 
+  const openModal = (project: (typeof projects)[number]) => {
+    setSelectedProject(project);
+  };
+
   return (
     <article className="projects_container">
       <h2>{t("title")}</h2>
@@ -80,6 +87,8 @@ const Projects = () => {
             ref={(el) => {
               if (el) cardsRef.current[index] = el;
             }}
+            title="View More"
+            onClick={() => openModal(item)}
           >
             <div className="project_media">
               <Image src={item.img} alt={t(`items.${item.key}.title`)} />
@@ -107,6 +116,13 @@ const Projects = () => {
           </Card>
         ))}
       </div>
+
+      {selectedProject && (
+        <ProjectsDialog
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </article>
   );
 };

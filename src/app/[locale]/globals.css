@@ -34,6 +34,7 @@
   --cyber_muted: rgb(102, 153, 153);
   --light_green: #4ade80;
   --red_color: #ff1b1b;
+  --transparent_red_color: #ff1b1b73;
 }
 
 * {

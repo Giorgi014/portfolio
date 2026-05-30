@@ -1,4 +1,3 @@
-import CasinoImg from "@/assets/img/casinoimg.jpg";
 import CyberSite from "@/assets/img/cyber.png";
 import GuessNumber from "@/assets/img/guess-number.png";
 import TextAnimation from "@/assets/img/text-animation.png";
@@ -16,14 +15,16 @@ export const projects: ProjectType[] = [
     key: "prj_01",
     category: "e-commerce",
     technologies: ["React", "SCSS", "JavaScript", "Vite", "Vercel"],
+    src: "https://10x-final-project.vercel.app/",
   },
   {
     id: 1,
-    img: GuessNumber,
+    img: WeatherApp,
     project: "PRJ_02",
     key: "prj_02",
-    category: "game",
-    technologies: ["HTML", "SCSS", "JavaScript", "Jest", "Vercel"],
+    category: "web",
+    technologies: ["Next.js", "TypeScript", "TailwindCSS", "Vercel"],
+    src: "https://weather-next-app-amber.vercel.app/",
   },
   {
     id: 2,
@@ -32,30 +33,34 @@ export const projects: ProjectType[] = [
     key: "prj_03",
     category: "creative",
     technologies: ["HTML", "CSS", "JavaScript", "Vercel"],
+    src: "https://text-animation-nu.vercel.app/",
   },
   {
     id: 3,
-    img: Calculator,
+    img: RegForm,
     project: "PRJ_04",
     key: "prj_04",
-    category: "utility",
-    technologies: ["React", "CSS", "JavaScript", "Vercel"],
+    category: "creative",
+    technologies: ["HTML", "CSS", "Vercel"],
+    src: "https://login-form-ten-sandy.vercel.app/",
   },
   {
     id: 4,
-    img: RegForm,
+    img: Calculator,
     project: "PRJ_05",
     key: "prj_05",
-    category: "creative",
-    technologies: ["HTML", "CSS", "Vercel"],
+    category: "utility",
+    technologies: ["React", "CSS", "JavaScript", "Vercel"],
+    src: "https://calculator-phi-snowy.vercel.app/",
   },
   {
     id: 5,
-    img: WeatherApp,
+    img: GuessNumber,
     project: "PRJ_06",
     key: "prj_06",
-    category: "web",
-    technologies: ["Next.js", "TypeScript", "TailwindCSS", "Vercel"],
+    category: "game",
+    technologies: ["HTML", "SCSS", "JavaScript", "Jest", "Vercel"],
+    src: "https://guess-number-one-wine.vercel.app/",
   },
   {
     id: 6,
@@ -64,5 +69,6 @@ export const projects: ProjectType[] = [
     key: "prj_07",
     category: "game",
     technologies: ["React", "Vite", "TypeScript", "TailwindCSS", "Vercel"],
+    src: "https://pig-game-ts.vercel.app/",
   },
 ];

@@ -1,0 +1,122 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.projects_dialog_container {
+  width: 90%;
+  max-width: 950px;
+  min-height: 500px;
+  padding: 20px;
+  background: rgba(0, 240, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  .projects_dialog_head {
+    @include displayCenter(space-between, center);
+    width: 100%;
+    .close {
+      width: 30px;
+      height: 30px;
+      color: var(--transparent_red_color);
+      cursor: pointer;
+      transition: color 0.2s ease-in-out;
+      &:hover {
+        color: var(--red_color);
+      }
+    }
+    .projects_dialog_title {
+      font-size: 36px;
+    }
+  }
+  .projects_dialog {
+    @include displayCenter(space-between, center);
+    width: 100%;
+    img {
+      width: 100%;
+      max-width: 500px;
+      height: 250px;
+      margin: 20px 0px;
+    }
+    .project_link {
+      width: 100%;
+      max-width: 300px;
+      .link_btn {
+        @include displayCenter(center, center);
+        gap: 10px;
+        width: 100%;
+        a {
+          font-size: 14px;
+          letter-spacing: 0.2em;
+          color: var(--cyber_cyan) !important;
+          text-align: center;
+          text-transform: uppercase;
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .projects_dialog_content {
+    .projects_dialog_description {
+      font-family: "jetBrainsMono_regular";
+      font-size: 12px;
+      line-height: 1.625;
+      color: var(--cyber_muted);
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    .project_tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .project_tag {
+      font-family: "jetBrainsMono_regular";
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      color: var(--cyber_magenta);
+      border: 2px solid rgba(210, 0, 230, 0.2);
+      padding: 2px 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .projects_dialog_container {
+    .projects_dialog {
+      @include displayCenter(space-between, center);
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .projects_dialog_container {
+    width: 100%;
+    height: 100vh;
+    .projects_dialog_head {
+      .projects_dialog_title {
+        font-size: 24px;
+      }
+    }
+    .projects_dialog {
+      margin: 50px 0px;
+      img {
+        width: 100%;
+        max-width: none;
+        height: auto;
+      }
+      .project_link {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  }
+}

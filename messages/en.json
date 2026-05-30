@@ -84,9 +84,8 @@
       "creative": "CREATIVE",
       "e-commerce": "E-COMMERCE",
       "game": "GAME",
-      "platform": "PLATFORM",
-      "web": "WEB APP",
-      "utility": "UTILITY"
+      "utility": "UTILITY",
+      "web": "WEB APP"
     },
     "items": {
       "prj_01": {
@@ -95,9 +94,9 @@
         "title": "cyber"
       },
       "prj_02": {
-        "category": "game",
-        "description": "Guess My Number is a number guessing game where the player tries to identify a randomly generated secret number between 1 and 20. Each wrong guess costs a point and reveals a hint — the score system tracks your best result across rounds.",
-        "title": "Guess My Number"
+        "category": "web",
+        "description": "Weather App is a city weather forecast app built with Next.js and TypeScript. Search any city to get current weather and a 5-day forecast, with support for light/dark theme and Celsius/Fahrenheit switching — powered by the OpenWeatherMap API.",
+        "title": "Weather App"
       },
       "prj_03": {
         "category": "creative",
@@ -105,19 +104,19 @@
         "title": "Text Animation"
       },
       "prj_04": {
-        "category": "utility",
-        "description": "Calculator is a functional calculator app built with React. Supports standard arithmetic operations with a clean, minimal interface.",
-        "title": "Calculator"
-      },
-      "prj_05": {
         "category": "creative",
         "description": "Login Form is a styled login and sign-up UI built with pure HTML and CSS. Focuses on clean form design and layout without any frameworks.",
         "title": "Login Form"
       },
+      "prj_05": {
+        "category": "utility",
+        "description": "Calculator is a functional calculator app built with React. Supports standard arithmetic operations with a clean, minimal interface.",
+        "title": "Calculator"
+      },
       "prj_06": {
-        "category": "web",
-        "description": "Weather App is a city weather forecast app built with Next.js and TypeScript. Search any city to get current weather and a 5-day forecast, with support for light/dark theme and Celsius/Fahrenheit switching — powered by the OpenWeatherMap API.",
-        "title": "Weather App"
+        "category": "game",
+        "description": "Guess My Number is a number guessing game where the player tries to identify a randomly generated secret number between 1 and 20. Each wrong guess costs a point and reveals a hint — the score system tracks your best result across rounds.",
+        "title": "Guess My Number"
       },
       "prj_07": {
         "category": "game",
