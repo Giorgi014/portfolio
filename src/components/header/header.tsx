@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { navigation } from "./navigation";
 import { BurgerMenu } from "./burger-menu";
 import "./style/header.scss";
+import { useSpaceAudio } from "@/app/hooks";
 
 type MenuState = "closed" | "open" | "closing";
 
@@ -17,6 +18,7 @@ export const Header = () => {
   const rawPathname = usePathname();
   const pathname = rawPathname.replace(`/${locale}`, "") || "/";
   const [menuState, setMenuState] = useState<MenuState>("closed");
+  const { isPlaying, toggle } = useSpaceAudio();
 
   const toggleLocale = () => {
     const nextLocale = locale === "en" ? "ka" : "en";
@@ -71,8 +73,15 @@ export const Header = () => {
           ))}
         </ul>
         <span className="line"></span>
-        <button onClick={toggleLocale} data-text={locale === "en" ? "GE" : "EN"}>{locale === "en" ? "GE" : "EN"}</button>
-        <button data-text={t("sound")}>{t("sound")}</button>
+        <button
+          onClick={toggleLocale}
+          data-text={locale === "en" ? "GE" : "EN"}
+        >
+          {locale === "en" ? "GE" : "EN"}
+        </button>
+        <button data-text={t("sound")} onClick={toggle}>
+          {t("sound")}
+        </button>
       </nav>
       <BurgerMenu isOpen={menuState === "open"} onToggle={toggleMenu} />
     </header>

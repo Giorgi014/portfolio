@@ -4,6 +4,7 @@ import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { Galaxy, Loader } from "@/components";
 import "./globals.css";
+import { SpaceAudioProvider } from "../hooks";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -37,9 +38,11 @@ export default async function RootLayout({
           }}
           className="main_cont"
         >
-          <Loader />
-          <Galaxy />
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          <SpaceAudioProvider>
+            <Loader />
+            <Galaxy />
+            <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          </SpaceAudioProvider>
         </div>
       </body>
     </html>

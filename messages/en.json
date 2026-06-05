@@ -69,7 +69,7 @@
     "name": "Giorgi Gugunava",
     "profession": "font-end developer",
     "read_more": "read_more",
-    "view_projects": "view_projects"
+    "view_projects": "view projects"
   },
   "nav": {
     "about": "ABOUT",
@@ -124,6 +124,7 @@
         "title": "Pig Game"
       }
     },
-    "title": "PROJECTS"
+    "title": "PROJECTS",
+    "view_project": "view project"
   }
 }

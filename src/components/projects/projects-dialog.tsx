@@ -34,7 +34,7 @@ export const ProjectsDialog = ({ project, onClose }: ProjectsDialogProps) => {
         >
           <Button variant="default" className="link_btn">
             <UpRightIcon />
-            View Project
+            {t("view_project")}
           </Button>
         </Link>
       </section>

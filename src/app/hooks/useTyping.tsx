@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 export const useTyping = (text: string, start: boolean, speed: number = 28) => {
