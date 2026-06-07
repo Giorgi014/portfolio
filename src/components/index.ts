@@ -1,4 +1,5 @@
 export * from "./about";
+export * from "./audio";
 export * from "./button";
 export * from "./card";
 export * from "./contact";

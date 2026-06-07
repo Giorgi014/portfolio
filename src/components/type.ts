@@ -24,7 +24,7 @@ export type IconProps = ComponentProps<"svg"> & {
 export type CardProps = ComponentProps<"div"> & {
   children: React.ReactNode;
   className?: string;
-  variant?: "form" | "link" | "project";
+  variant?: "form" | "link" | "project" | "audio";
   onClick?: () => void;
 };
 
@@ -71,4 +71,34 @@ export type CategoryType = {
 export type CategoriesProps = {
   activeCategory: CategoryKey;
   onCategoryChange: (category: CategoryKey) => void;
+};
+
+// Audio Off Props
+export type AudioOffProps = {
+  width?: number | string;
+  height?: number | string;
+  fill?: string;
+  className?: string;
+  onClick?: () => void;
+};
+
+// Audio On Props
+export type AudioOnProps = {
+  width?: number | string;
+  height?: number | string;
+  fill?: string;
+  className?: string;
+  onClick?: () => void;
+  volume: number;
+};
+
+// Audio Toggle Props
+export type AudioToggleProps = {
+  isOn: boolean;
+  width?: number | string;
+  height?: number | string;
+  fill?: string;
+  className?: string;
+  volume: number;
+  onClick?: () => void;
 };

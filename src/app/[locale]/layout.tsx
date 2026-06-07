@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { Galaxy, Loader } from "@/components";
-import "./globals.css";
+import { AudioSettingsModal, Galaxy, Loader } from "@/components";
 import { SpaceAudioProvider } from "../hooks";
+import { AudioModalProvider } from "../hooks/use-audio-modal";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -38,11 +39,16 @@ export default async function RootLayout({
           }}
           className="main_cont"
         >
-          <SpaceAudioProvider>
-            <Loader />
-            <Galaxy />
-            <NextIntlClientProvider>{children}</NextIntlClientProvider>
-          </SpaceAudioProvider>
+          <NextIntlClientProvider>
+            <AudioModalProvider>
+              <SpaceAudioProvider>
+                <Loader />
+                <Galaxy />
+                <AudioSettingsModal />
+                {children}
+              </SpaceAudioProvider>
+            </AudioModalProvider>
+          </NextIntlClientProvider>
         </div>
       </body>
     </html>

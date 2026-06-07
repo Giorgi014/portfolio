@@ -6,8 +6,8 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { usePathname } from "next/navigation";
 import { navigation } from "./navigation";
 import { BurgerMenu } from "./burger-menu";
+import { useAudioModal } from "@/app/hooks/use-audio-modal";
 import "./style/header.scss";
-import { useSpaceAudio } from "@/app/hooks";
 
 type MenuState = "closed" | "open" | "closing";
 
@@ -18,7 +18,7 @@ export const Header = () => {
   const rawPathname = usePathname();
   const pathname = rawPathname.replace(`/${locale}`, "") || "/";
   const [menuState, setMenuState] = useState<MenuState>("closed");
-  const { isPlaying, toggle } = useSpaceAudio();
+  const { toggle } = useAudioModal();
 
   const toggleLocale = () => {
     const nextLocale = locale === "en" ? "ka" : "en";

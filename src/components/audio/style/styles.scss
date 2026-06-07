@@ -1,0 +1,95 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.audio_modal_overlay {
+  position: relative;
+  .audio_header {
+    @include displayCenter(space-between, center);
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .audio_container {
+    @include displayCenter(space-between, center);
+    width: 100%;
+    gap: 10px;
+    .audio_range {
+      width: 100%;
+    }
+
+    .audio_range_wrapper {
+      @include displayCenter(center, center);
+      position: relative;
+      width: 100%;
+
+      input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 2px;
+        border-radius: 0;
+        outline: none;
+        cursor: pointer;
+
+        // thumb
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          width: 35px;
+          height: 16px;
+          border-radius: 0;
+          background: var(--cyber_cyan);
+          clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - 5px),
+            calc(100% - 5px) 100%,
+            0 100%
+          );
+          cursor: pointer;
+          transition:
+            transform 0.15s ease,
+            box-shadow 0.15s ease;
+
+          &:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 8px var(--cyber_cyan);
+          }
+        }
+
+        &::-moz-range-thumb {
+          width: 35px;
+          height: 16px;
+          border-radius: 0;
+          background: var(--cyber_cyan);
+          border: none;
+          cursor: pointer;
+        }
+      }
+      .audio_thumb_label {
+        position: absolute;
+        top: 50%;
+        transform: translate(-55%, -50%);
+        font-size: 9px;
+        font-weight: 700;
+        color: var(--cyber_dark);
+        pointer-events: none;
+        line-height: 1;
+        white-space: nowrap;
+      }
+    }
+  }
+  .close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    color: var(--transparent_red_color);
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    &:hover {
+      color: var(--red_color);
+    }
+  }
+}
