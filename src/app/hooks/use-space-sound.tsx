@@ -14,27 +14,21 @@ const AudioCtx = createContext<AudioContextType | null>(null);
 
 const VOLUME_KEY = "range:volume";
 const LAST_VOLUME_KEY = "range:last-volume";
+const PLAYING_KEY = "range:is-playing";
 
 const getInitialVolume = () => {
   if (typeof window === "undefined") return 50;
-
   const stored = localStorage.getItem(VOLUME_KEY);
-
   if (stored === null) return 50;
-
   const value = Number(stored);
-
   if (Number.isNaN(value)) return 50;
-
   return Math.min(100, Math.max(0, value));
 };
 
 const getLastNonZeroVolume = () => {
   if (typeof window === "undefined") return 50;
-
   const stored = localStorage.getItem(LAST_VOLUME_KEY);
   const value = Number(stored);
-
   return !stored || Number.isNaN(value) || value <= 0 ? 50 : value;
 };
 
@@ -44,33 +38,27 @@ export const SpaceAudioProvider = ({
   children: React.ReactNode;
 }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const gainRef = useRef<GainNode | null>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [volume, setVolumeState] = useState<number>(getInitialVolume);
-
   const lastNonZeroVolume = useRef<number>(getLastNonZeroVolume());
 
   useEffect(() => {
-    const audio = new Audio("/sound/space-sound.mp3");
-    audio.loop = true;
-
-    const audioCtx = new AudioContext();
-    const source = audioCtx.createMediaElementSource(audio);
-    const gainNode = audioCtx.createGain();
-
-    gainNode.gain.value = 1;
-
-    source.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
+    const audio = audioRef.current;
+    if (!audio) return;
 
     audio.volume = volume / 100;
-    audioRef.current = audio;
-    gainRef.current = gainNode;
 
-    return () => {
-      audio.pause();
-      audioCtx.close();
-    };
+    const wasPlaying = localStorage.getItem(PLAYING_KEY) === "true";
+    if (wasPlaying) {
+      audio.muted = true;
+      audio
+        .play()
+        .then(() => {
+          audio.muted = false;
+          setIsPlaying(true);
+        })
+        .catch(() => {});
+    }
   }, []);
 
   useEffect(() => {
@@ -81,12 +69,17 @@ export const SpaceAudioProvider = ({
     localStorage.setItem(VOLUME_KEY, String(volume));
   }, [volume]);
 
+  useEffect(() => {
+    localStorage.setItem(PLAYING_KEY, String(isPlaying));
+  }, [isPlaying]);
+
   const toggle = () => {
-    if (!audioRef.current) return;
+    const audio = audioRef.current;
+    if (!audio) return;
     if (isPlaying) {
-      audioRef.current.pause();
+      audio.pause();
     } else {
-      audioRef.current.play();
+      audio.play();
     }
     setIsPlaying((prev) => !prev);
   };
@@ -114,6 +107,12 @@ export const SpaceAudioProvider = ({
     <AudioCtx.Provider
       value={{ isPlaying, volume, toggle, toggleMute, setVolume }}
     >
+      <audio
+        ref={audioRef}
+        src="/sound/space-sound.mp3"
+        loop
+        style={{ display: "none" }}
+      />
       {children}
     </AudioCtx.Provider>
   );
