@@ -371,3 +371,126 @@ export const Galaxy = () => {
     />
   );
 };
+
+// "use client";
+
+// import { useEffect, useRef } from "react";
+
+// type Particle = {
+//   x: number;
+//   y: number;
+//   vx: number;
+//   vy: number;
+//   radius: number;
+// };
+
+// export const Galaxy = () => {
+//   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
+//   useEffect(() => {
+//     const canvas = canvasRef.current;
+
+//     if (!canvas) return;
+
+//     const ctx = canvas.getContext("2d");
+
+//     if (!ctx) return;
+
+//     const resizeCanvas = () => {
+//       canvas.width = window.innerWidth;
+//       canvas.height = window.innerHeight;
+//     };
+
+//     resizeCanvas();
+
+//     const numParticles: number = 50;
+
+//     const speed: number = 1;
+
+//     const size: number = 0.8;
+
+//     const particles: Particle[] = [];
+
+//     const createParticle = (): Particle => ({
+//       x: Math.random() * canvas.width,
+//       y: Math.random() * canvas.height,
+//       vx: (Math.random() - 0.5) * speed,
+//       vy: (Math.random() - 0.5) * speed,
+//       radius: 2 + Math.random() * size,
+//     });
+
+//     for (let i = 0; i < numParticles; i++) {
+//       particles.push(createParticle());
+//     }
+
+//     const connectParticles = () => {
+//       for (let i = 0; i < particles.length; i++) {
+//         for (let j = i + 1; j < particles.length; j++) {
+//           const dx = particles[i].x - particles[j].x;
+//           const dy = particles[i].y - particles[j].y;
+//           const dist = Math.sqrt(dx * dx + dy * dy);
+
+//           if (dist < 100) {
+//             ctx.beginPath();
+//             ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 100})`;
+//             ctx.lineWidth = 1;
+//             ctx.moveTo(particles[i].x, particles[i].y);
+//             ctx.lineTo(particles[j].x, particles[j].y);
+//             ctx.stroke();
+//           }
+//         }
+//       }
+//     };
+
+//     let animationId: number;
+
+//     const animate = () => {
+//       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+//       particles.forEach((particle) => {
+//         particle.x += particle.vx;
+//         particle.y += particle.vy;
+
+//         if (particle.x <= 0 || particle.x >= canvas.width) {
+//           particle.vx *= -1;
+//         }
+
+//         if (particle.y <= 0 || particle.y >= canvas.height) {
+//           particle.vy *= -1;
+//         }
+
+//         ctx.beginPath();
+//         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+//         ctx.fillStyle = "white";
+//         ctx.fill();
+//       });
+
+//       connectParticles();
+
+//       animationId = requestAnimationFrame(animate);
+//     };
+
+//     animate();
+
+//     window.addEventListener("resize", resizeCanvas);
+
+//     return () => {
+//       cancelAnimationFrame(animationId);
+//       window.removeEventListener("resize", resizeCanvas);
+//     };
+//   }, []);
+
+//   return (
+//     <canvas
+//       ref={canvasRef}
+//       style={{
+//         position: "fixed",
+//         inset: 0,
+//         width: "100%",
+//         height: "100%",
+//         zIndex: -1,
+//         pointerEvents: "none",
+//       }}
+//     />
+//   );
+// };
