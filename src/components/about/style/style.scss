@@ -40,14 +40,26 @@
     margin-bottom: 48px;
   }
 
+  .about_me {
+    @include displayCenter(space-between, flex-start);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 64px;
+    img {
+      width: clamp(150px, 32vw, 300px);
+      height: auto;
+      max-height: 300px;
+    }
+  }
+
   .about_page_bio {
     width: 100%;
-    max-width: 832px;
+    // max-width: 832px;
     background: var(--cyber_glass_bg);
     backdrop-filter: blur(20px);
     border: 1px solid var(--cyber_cyan_border);
     padding: 32px;
-    margin-bottom: 64px;
+    // margin-bottom: 64px;
   }
 
   .about_page_bio_text {

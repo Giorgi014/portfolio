@@ -6,6 +6,8 @@ import { skillCategories } from "./skillCategories";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import ProfileIcon from "@/assets/img/giorgi014.png";
 import "./style/style.scss";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -108,9 +110,12 @@ export const About = () => {
         <div className="about_page_divider" ref={divRef}></div>
       </section>
 
-      <section className="about_page_bio" ref={bioRef}>
-        <p className="about_page_bio_text">{t("bio")}</p>
-      </section>
+      <div className="about_me">
+        <Image src={ProfileIcon} width={250} height={250} alt={t("bio")} />
+        <section className="about_page_bio" ref={bioRef}>
+          <p className="about_page_bio_text">{t("bio")}</p>
+        </section>
+      </div>
 
       <h3 className="about_skills_label" ref={headThreeRef}>
         {t("arsenal.title")}
