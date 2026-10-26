@@ -7,7 +7,6 @@ import Image from "next/image";
 import { CategoryKey } from "@/components/type";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./style/style.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,7 +44,7 @@ const Projects = () => {
             scrollTrigger: {
               trigger: card,
               start: "top 85%",
-              scroller: ".main_cont",
+              scroller: "[data-scroll-container]",
             },
           },
         );
@@ -73,13 +72,14 @@ const Projects = () => {
   };
 
   return (
-    <article className="projects_container">
+    <article>
+      <p>{"// SELECTED WORK"}</p>
       <h2>{t("title")}</h2>
       <Categories
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
       />
-      <div className="projects_grid">
+      <div>
         {filteredProjects.map((item, index) => (
           <Card
             key={item.id}
@@ -90,24 +90,30 @@ const Projects = () => {
             title="View More"
             onClick={() => openModal(item)}
           >
-            <div className="project_media">
-              <Image src={item.img} alt={t(`items.${item.key}.title`)} />
-              <span className="project_media_line" />
-              <div className="project_media_header">
-                <span className="project_id">{item.project}</span>
-                <span className="project_category">
+            <div>
+              <Image
+                src={item.img}
+                alt={t(`items.${item.key}.title`)}
+              />
+              <div>
+                <span>
+                  {item.project}
+                </span>
+                <span>
                   {t(`items.${item.key}.category`)}
                 </span>
               </div>
             </div>
-            <div className="project_body">
-              <h3 className="project_title">{t(`items.${item.key}.title`)}</h3>
-              <p className="project_desc">
+            <div>
+              <h3>
+                {t(`items.${item.key}.title`)}
+              </h3>
+              <p>
                 {t(`items.${item.key}.description`)}
               </p>
-              <div className="project_tags">
+              <div>
                 {item.technologies.map((tech) => (
-                  <span key={tech} className="project_tag">
+                  <span key={tech}>
                     {tech}
                   </span>
                 ))}

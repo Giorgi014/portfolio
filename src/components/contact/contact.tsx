@@ -6,7 +6,6 @@ import Link from "next/link";
 import { links } from "./data";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./style/style.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,7 +38,7 @@ const Contact = () => {
             scrollTrigger: {
               trigger: card,
               start: "top 95%",
-              scroller: ".main_cont",
+              scroller: "[data-scroll-container]",
             },
           },
         );
@@ -60,14 +59,13 @@ const Contact = () => {
   }, []);
 
   return (
-    <article className="contact_container">
+    <article>
       <Form ref={formRef} />
-      <section className="links_container">
+      <section>
         {links.map((item, index) => (
           <Card
             key={item.id}
             variant="link"
-            className="links"
             ref={(el) => {
               if (el) cardsRef.current[index] = el;
             }}
@@ -77,7 +75,6 @@ const Contact = () => {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              data-text={item.label}
             >
               {item.icon}
               <span>{item.label}</span>

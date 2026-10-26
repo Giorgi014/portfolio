@@ -9,7 +9,6 @@ import { useEffect, useRef, useState } from "react";
 import { useTyping } from "@/app/hooks";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./style/style.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +16,7 @@ const SYSTEM_TEXT = "> SYSTEM_INIT... CONNECTION_ESTABLISHED";
 const SPEED = 28;
 const NAME_SPEED = 50;
 const MOBILE_BREAKPOINT = 769;
-const SCROLLER = ".main_cont";
+const SCROLLER = "[data-scroll-container]";
 
 const Home = () => {
   const t = useTranslations("main");
@@ -119,14 +118,16 @@ const Home = () => {
 
   return (
     <main>
-      <p className={`system_init${step === 1 ? " is_typing" : ""}`}>
+      <p>
         {systemDisplayed || " "}
       </p>
-      <h1 className={step === 2 ? "is_typing" : ""}>{nameDisplayed || " "}</h1>
-      <p className={`profession${step >= 3 ? " is_typing" : ""}`}>
+      <h1>
+        {nameDisplayed || " "}
+      </h1>
+      <p>
         {professionDisplayed || " "}
       </p>
-      <section className="button_section" ref={btnRef}>
+      <section ref={btnRef}>
         <Link href="/projects" ref={btn1Ref}>
           <Button variant="default">{t("view_projects")}</Button>
         </Link>
@@ -134,13 +135,12 @@ const Home = () => {
           <Button variant="default">{t("contact")}</Button>
         </Link>
       </section>
-      <DownRown className="down_row" />
-      <section className="about_section">
+      <DownRown />
+      <section>
         <p
-          className="hero_about"
           ref={heroAboutRef}
         >{`// ${t("hero_about")}`}</p>
-        <p className="about_me" ref={aboutMeRef}>
+        <p ref={aboutMeRef}>
           {t("about")}
         </p>
         <div ref={readMoreRef}>

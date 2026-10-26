@@ -6,8 +6,6 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { usePathname } from "next/navigation";
 import { navigation } from "./navigation";
 import { BurgerMenu } from "./burger-menu";
-import { useAudioModal } from "@/app/hooks/use-audio-modal";
-import "./style/header.scss";
 
 type MenuState = "closed" | "open" | "closing";
 
@@ -18,7 +16,6 @@ export const Header = () => {
   const rawPathname = usePathname();
   const pathname = rawPathname.replace(`/${locale}`, "") || "/";
   const [menuState, setMenuState] = useState<MenuState>("closed");
-  const { toggle } = useAudioModal();
 
   const toggleLocale = () => {
     const nextLocale = locale === "en" ? "ka" : "en";
@@ -37,53 +34,32 @@ export const Header = () => {
     else if (menuState === "closed") openMenu();
   };
 
-  const navClass =
-    menuState === "open"
-      ? "nav--open"
-      : menuState === "closing"
-        ? "nav--closing"
-        : "";
-
   return (
     <header>
-      <Link href="/">
-        <h2 data-text="Giorgi014">Giorgi014</h2>
-      </Link>
-      <nav className={navClass}>
-        <ul>
-          {navigation.map((item) => (
-            <li key={item.key}>
-              <Link
-                href={item.href}
-                onClick={closeMenu}
-                data-text={t(item.key)}
-                className={
-                  item.href === "/"
-                    ? pathname === "/"
-                      ? "active"
-                      : ""
-                    : pathname.startsWith(item.href)
-                      ? "active"
-                      : ""
-                }
-              >
-                {t(item.key)}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <span className="line"></span>
-        <button
-          onClick={toggleLocale}
-          data-text={locale === "en" ? "GE" : "EN"}
-        >
-          {locale === "en" ? "GE" : "EN"}
-        </button>
-        <button data-text={t("sound")} onClick={toggle}>
-          {t("sound")}
-        </button>
-      </nav>
-      <BurgerMenu isOpen={menuState === "open"} onToggle={toggleMenu} />
+      <div>
+        <Link href="/">
+          <h2>Giorgi014</h2>
+        </Link>
+        <nav>
+          <ul>
+            {navigation.map((item) => (
+              <li key={item.key}>
+                <Link
+                  href={item.href}
+                  onClick={closeMenu}
+                >
+                  {t(item.key)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <span />
+          <button onClick={toggleLocale}>
+            {locale === "en" ? "GE" : "EN"}
+          </button>
+        </nav>
+        <BurgerMenu isOpen={menuState === "open"} onToggle={toggleMenu} />
+      </div>
     </header>
   );
 };

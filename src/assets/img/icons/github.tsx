@@ -4,7 +4,6 @@ export const GitHubIcon = ({
   size = 20,
   color = "currentColor",
   style,
-  className,
   ...props
 }: IconProps) => {
   return (
@@ -13,7 +12,6 @@ export const GitHubIcon = ({
       height={size}
       width={size}
       style={style}
-      className={className}
       stroke={color}
       fill={color}
       {...props}

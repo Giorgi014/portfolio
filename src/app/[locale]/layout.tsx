@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { AudioSettingsModal, Galaxy, Loader } from "@/components";
-import { SpaceAudioProvider } from "../hooks";
-import { AudioModalProvider } from "../hooks/use-audio-modal";
+import { Loader } from "@/components";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -31,23 +29,11 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         <div
-          style={{
-            width: "100vw",
-            height: "100vh",
-            overflowX: "hidden",
-            overflowY: "scroll",
-          }}
-          className="main_cont"
+          data-scroll-container
         >
           <NextIntlClientProvider>
-            <AudioModalProvider>
-              <SpaceAudioProvider>
-                <Loader />
-                <Galaxy />
-                <AudioSettingsModal />
-                {children}
-              </SpaceAudioProvider>
-            </AudioModalProvider>
+            <Loader />
+            {children}
           </NextIntlClientProvider>
         </div>
       </body>
