@@ -4,7 +4,6 @@ export const LinkedInIcon = ({
   size = 20,
   color = "currentColor",
   style,
-  className,
   ...props
 }: IconProps) => {
   return (
@@ -13,7 +12,6 @@ export const LinkedInIcon = ({
       height={size}
       width={size}
       style={style}
-      className={className}
       stroke={color}
       fill={color}
       {...props}

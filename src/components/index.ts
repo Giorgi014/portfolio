@@ -4,7 +4,6 @@ export * from "./card";
 export * from "./contact";
 export * from "./projects/categories/categories";
 export * from "./form";
-export * from "./galaxy";
 export * from "./header";
 export * from "./home";
 export * from "./loader";

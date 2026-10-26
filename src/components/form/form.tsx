@@ -3,7 +3,6 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Button, Card } from "@/components";
-import "./style/style.scss";
 
 type FormResult = {
   message: string;
@@ -64,44 +63,44 @@ export const Form = ({ ref }: FormProps) => {
   };
 
   return (
-    <Card variant="form" className="form_container" ref={ref}>
-      <form className="form" onSubmit={onSubmit}>
+    <Card variant="form" ref={ref}>
+      <form onSubmit={onSubmit}>
         <input type="hidden" name="subject" value="Portfolio" />
 
-        <div className="enter_name_cont" ref={nameRef}>
+        <div ref={nameRef}>
+          <label htmlFor="enter_name">
+            Enter Your Name
+          </label>
           <input
             type="text"
             name="enter_name"
             id="enter_name"
-            className="enter_name"
-            placeholder=" "
+            placeholder="Your name"
             required
           />
-          <label htmlFor="enter_name" data-text="Enter Your Name">
-            Enter Your Name
-          </label>
         </div>
 
-        <div className="enter_email_cont" ref={emailRef}>
+        <div ref={emailRef}>
+          <label htmlFor="enter_email">
+            Enter Your Email
+          </label>
           <input
             type="email"
             name="enter_email"
             id="enter_email"
-            className="enter_email"
-            placeholder=" "
+            placeholder="you@example.com"
             required
           />
-          <label htmlFor="enter_email" data-text="Enter Your Email">
-            Enter Your Email
-          </label>
         </div>
 
-        <div className="enter_text_cont" ref={messageRef}>
-          <label htmlFor="enter_text">Enter Your Text</label>
+        <div ref={messageRef}>
+          <label htmlFor="enter_text">
+            Enter Your Text
+          </label>
           <textarea
             name="enter_text"
             id="enter_text"
-            className="enter_text"
+            placeholder="How can I help?"
             required
           />
         </div>
@@ -117,9 +116,7 @@ export const Form = ({ ref }: FormProps) => {
 
         {result && (
           <span
-            className={
-              result.success ? "form_result" : "form_result form_result--error"
-            }
+            role="status"
           >
             {result.message}
           </span>

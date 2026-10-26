@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { Galaxy, Loader } from "@/components";
+import { Loader } from "@/components";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,17 +29,10 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         <div
-          style={{
-            width: "100vw",
-            height: "100vh",
-            overflowX: "hidden",
-            overflowY: "scroll",
-          }}
-          className="main_cont"
+          data-scroll-container
         >
           <NextIntlClientProvider>
             <Loader />
-            <Galaxy />
             {children}
           </NextIntlClientProvider>
         </div>
