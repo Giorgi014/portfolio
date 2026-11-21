@@ -118,15 +118,9 @@ const Home = () => {
 
   return (
     <main>
-      <p>
-        {systemDisplayed || " "}
-      </p>
-      <h1>
-        {nameDisplayed || " "}
-      </h1>
-      <p>
-        {professionDisplayed || " "}
-      </p>
+      <p>{systemDisplayed || " "}</p>
+      <h1>{nameDisplayed || " "}</h1>
+      <p>{professionDisplayed || " "}</p>
       <section ref={btnRef}>
         <Link href="/projects" ref={btn1Ref}>
           <Button variant="default">{t("view_projects")}</Button>
@@ -137,12 +131,8 @@ const Home = () => {
       </section>
       <DownRown />
       <section>
-        <p
-          ref={heroAboutRef}
-        >{`// ${t("hero_about")}`}</p>
-        <p ref={aboutMeRef}>
-          {t("about")}
-        </p>
+        <p ref={heroAboutRef}>{`// ${t("hero_about")}`}</p>
+        <p ref={aboutMeRef}>{t("about")}</p>
         <div ref={readMoreRef}>
           <Link href="/about">
             <Button variant="read_more">
