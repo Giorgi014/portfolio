@@ -1,5 +1,105 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "League-Spartan-Thin";
+  src: url("../../assets/font/league-spartan/LeagueSpartan-Thin.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "League-Spartan-ExtraLight";
+  src: url("../../assets/font/league-spartan/LeagueSpartan-ExtraLight.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "League-Spartan-Light";
+  src: url("../../assets/font/league-spartan/LeagueSpartan-Light.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "League-Spartan-Regular";
+  src: url("../../assets/font/league-spartan/LeagueSpartan-Regular.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "League-Spartan-Medium";
+  src: url("../../assets/font/league-spartan/LeagueSpartan-Medium.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "League-Spartan-SemiBold";
+  src: url("../../assets/font/league-spartan/LeagueSpartan-SemiBold.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "League-Spartan-Bold";
+  src: url("../../assets/font/league-spartan/LeagueSpartan-Bold.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "League-Spartan-ExtraBold";
+  src: url("../../assets/font/league-spartan/LeagueSpartan-ExtraBold.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "League-Spartan-Black";
+  src: url("../../assets/font/league-spartan/LeagueSpartan-Black.ttf")
+    format("truetype");
+}
+
+@theme {
+  /* ================= FONTS ================= */
+  --font-league-spartan-thin: "League-Spartan-Thin", sans-serif;
+  --font-league-spartan-extra-light: "League-Spartan-ExtraLight", sans-serif;
+  --font-league-spartan-light: "League-Spartan-Light", sans-serif;
+  --font-league-spartan-regular: "League-Spartan-Regular", sans-serif;
+  --font-league-spartan-medium: "League-Spartan-Medium", sans-serif;
+  --font-league-spartan-semi-bold: "League-Spartan-SemiBold", sans-serif;
+  --font-league-spartan-bold: "League-Spartan-Bold", sans-serif;
+  --font-league-spartan-extra-bold: "League-Spartan-ExtraBold", sans-serif;
+  --font-league-spartan-black: "League-Spartan-Black", sans-serif;
+
+  /* ================= COLORS ================= */
+  --color-white: var(--white);
+  --color-black: var(--black);
+  --color-red: var(--red);
+  --color-dark-grey: var(--dark-grey);
+  --color-dark-gray: var(--dark-grey);
+  --color-dim-grey: var(--dim-grey);
+  --color-dim-gray: var(--dim-grey);
+  --color-grey: var(--grey);
+  --color-gray: var(--grey);
+  --color-purple: var(--purple);
+  --color-orange: var(--orange);
+  --color-header-text: var(--header-text);
+}
+
+:root {
+  /* ================= COLORS ================= */
+  --white: #fff;
+  --black: black;
+  --red: #fa1919;
+  --dark-grey: #9b9b9b;
+  --dim-grey: #636363;
+  --grey: #8080806b;
+  --purple: #6a2aff;
+  --orange: #ff6f00;
+  --header-background: linear-gradient(
+    91deg,
+    var(--dark-grey) 9%,
+    #ffffffc4 98%
+  );
+  --hero-background: linear-gradient(272deg, #67676796 39%, #00000096 69%);
+  --header-text: #333;
+}
+
 body {
   overflow-x: hidden;
 }
