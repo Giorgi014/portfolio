@@ -10,7 +10,7 @@ export type headerType = {
 
 // Button Props
 export type buttonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: "default" | "read_more" | "send";
+  variant?: "default" | "read_more" | "send" | "filter";
   children: React.ReactNode;
 };
 
@@ -23,7 +23,6 @@ export type IconProps = ComponentProps<"svg"> & {
 // Card Props
 export type CardProps = ComponentProps<"div"> & {
   children: React.ReactNode;
-  className?: string;
   variant?: "form" | "link" | "project";
   onClick?: () => void;
 };

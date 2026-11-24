@@ -4,7 +4,6 @@ export const RightRown = ({
   size = 20,
   color = "currentColor",
   style,
-  className,
   ...props
 }: IconProps) => {
   return (
@@ -15,7 +14,6 @@ export const RightRown = ({
       height={size}
       width={size}
       style={style}
-      className={className}
       {...props}
     >
       <path d="M18 8L22 12L18 16"></path>

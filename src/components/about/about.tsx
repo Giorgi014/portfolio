@@ -8,7 +8,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import ProfileIcon from "@/assets/img/giorgi014.png";
-import "./style/style.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,7 +26,7 @@ export const About = () => {
   useEffect(() => {
     const isMobile = window.innerWidth < MOBILE_BREAKPOINT;
     const skills = skillsRef.current.filter(Boolean);
-    const scroller = ".main_cont";
+    const scroller = "[data-scroll-container]";
 
     const fadeInElements = [
       headTwoRef.current,
@@ -102,54 +101,57 @@ export const About = () => {
   }, []);
 
   return (
-    <article className="about_page">
+    <article>
       <section>
-        <h2 className="about_page_title" ref={headTwoRef}>
-          {t("title")}
-        </h2>
-        <div className="about_page_divider" ref={divRef}></div>
+        <p>{"// PROFILE"}</p>
+        <h2 ref={headTwoRef}>{t("title")}</h2>
+        <div ref={divRef} />
       </section>
 
-      <div className="about_me">
+      <div>
         <Image src={ProfileIcon} width={250} height={250} alt={t("bio")} />
-        <section className="about_page_bio" ref={bioRef}>
-          <p className="about_page_bio_text">{t("bio")}</p>
+        <section ref={bioRef}>
+          <p>{t("bio")}</p>
         </section>
       </div>
 
-      <h3 className="about_skills_label" ref={headThreeRef}>
-        {t("arsenal.title")}
-      </h3>
-      <span className="about_page_label" ref={spanRef}>
-        {t("subtitle")}
-      </span>
-      <section className="about_skills_container">
+      <section>
+        <h3 ref={headThreeRef}>{t("arsenal.title")}</h3>
+        <span ref={spanRef}>{t("subtitle")}</span>
+      </section>
+      <section>
         {skillCategories.map((category, index) => (
           <div
             key={category}
-            className="about_page_module"
             ref={(el) => {
               if (el) skillsRef.current[index] = el;
             }}
           >
-            <div className="about_module_header">
-              <span className="about_module_category">
+            <div>
+              <span>
                 {t(`arsenal.skills.${category}.title`)}
               </span>
             </div>
-            <div className="about_module_skills">
-              {skillsData[category].map((skill, idx) => (
-                <span key={idx}>{skill}</span>
+            <div>
+              {skillsData[category].map((skill) => (
+                <span key={skill}>
+                  {skill}
+                </span>
               ))}
             </div>
           </div>
         ))}
       </section>
 
-      <section className="about_status" ref={statusRef}>
-        <div className="about_status_row">
-          <div className="about_status_pulse"></div>
-          <span className="about_status_text">{t("status")}</span>
+      <section ref={statusRef}>
+        <div>
+          <span>
+            <span />
+            <span />
+          </span>
+          <span>
+            {t("status")}
+          </span>
         </div>
       </section>
     </article>
