@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import type { buttonProps } from "../type";
+import type { buttonProps } from "@/types";
 
 type ButtonVariantStyles = {
   shadow: string;

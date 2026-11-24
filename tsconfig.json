@@ -21,7 +21,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/assets": ["./src/assets"],
-      "@/hooks/*": ["./src/app/hooks/*"]
+      "@/hooks/*": ["./src/app/hooks/*"],
+      "@/types": ["./src/components/type.ts"]
     }
   },
   "include": [

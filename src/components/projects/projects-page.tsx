@@ -4,7 +4,7 @@ import { useMemo, useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Card, Categories, projects, ProjectsDialog } from "@/components";
 import Image from "next/image";
-import { CategoryKey } from "@/components/type";
+import type { CategoryKey } from "@/types";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

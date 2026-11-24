@@ -1,6 +1,6 @@
-import { IconProps } from "@/components";
+import type { IconProps } from "@/types";
 
-export const RightRown = ({
+export const RightRowIcon = ({
   size = 20,
   color = "currentColor",
   style,

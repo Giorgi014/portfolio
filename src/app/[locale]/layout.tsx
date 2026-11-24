@@ -3,8 +3,6 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { Loader } from "@/components";
-import Background from "@/assets/img/tag.png";
-import Image from "next/image";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -34,11 +32,6 @@ export default async function RootLayout({
           data-scroll-container
           className="relative isolate min-h-svh bg-black"
         >
-          <Image
-            src={Background}
-            alt=""
-            className="pointer-events-none fixed inset-0 z-0 h-svh w-[90%]"
-          />
           <div className="relative z-10">
             <NextIntlClientProvider>
               <Loader />

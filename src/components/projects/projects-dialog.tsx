@@ -1,9 +1,9 @@
 import { Button, projects } from "@/components";
 import { useTranslations } from "next-intl";
-import { CloseIcon } from "@/assets/img/icons/close";
+import { CloseIcon } from "@/assets/img/icons";
 import Image from "next/image";
 import Link from "next/link";
-import { UpRightIcon } from "@/assets/img/icons/up-right";
+import { UpRightIcon } from "@/assets/img/icons";
 
 type Project = (typeof projects)[number];
 

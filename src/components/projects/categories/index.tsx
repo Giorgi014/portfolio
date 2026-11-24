@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { categories } from "./categories";
-import { CategoriesProps } from "@/components/type";
+import type { CategoriesProps } from "@/types";
 import { Button } from "@/components/button";
 
 export const Categories = ({

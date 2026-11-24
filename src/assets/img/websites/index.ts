@@ -1,0 +1,9 @@
+export { default as Calculator } from "./calculator.png";
+export { default as CyberSite } from "./cyber.png";
+export { default as GuessNumber } from "./guess-number.png";
+export { default as PigGame } from "./pig-game.png";
+export { default as RegForm } from "./registration-form.png";
+export { default as Road } from "./road.png";
+export { default as Stygar } from "./stygar.png";
+export { default as TextAnimation } from "./text-animation.png";
+export { default as WeatherApp } from "./weather.png";
