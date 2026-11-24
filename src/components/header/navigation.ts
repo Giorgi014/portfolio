@@ -1,4 +1,4 @@
-import { headerType } from "@/components";
+import type { headerType } from "@/types";
 
 export const navigation: headerType[] = [
   {

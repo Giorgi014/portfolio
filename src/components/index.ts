@@ -8,4 +8,5 @@ export * from "./header";
 export * from "./home";
 export * from "./loader";
 export * from "./projects";
+export * from "./skills";
 export * from "./type";

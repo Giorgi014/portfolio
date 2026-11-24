@@ -1,11 +1,13 @@
-import CyberSite from "@/assets/img/cyber.png";
-import GuessNumber from "@/assets/img/guess-number.png";
-import TextAnimation from "@/assets/img/text-animation.png";
-import Calculator from "@/assets/img/calculator.png";
-import RegForm from "@/assets/img/registration-form.png";
-import WeatherApp from "@/assets/img/weather.png";
-import PigGame from "@/assets/img/pig-game.png";
-import { ProjectType } from "../type";
+import {
+  Calculator,
+  CyberSite,
+  GuessNumber,
+  PigGame,
+  RegForm,
+  TextAnimation,
+  WeatherApp,
+} from "@/assets/img/websites";
+import type { ProjectType } from "@/types";
 
 export const projects: ProjectType[] = [
   {

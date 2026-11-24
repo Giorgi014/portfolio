@@ -1,4 +1,4 @@
-import { IconProps } from "@/components";
+import type { IconProps } from "@/types";
 
 export const MailIcon = ({
   size = 20,
