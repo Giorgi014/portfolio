@@ -1,4 +1,4 @@
-import { CardProps } from "../type";
+import type { CardProps } from "@/types";
 
 export const Card = ({
   children,

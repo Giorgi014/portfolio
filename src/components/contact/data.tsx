@@ -1,7 +1,5 @@
-import { MailIcon } from "@/assets/img/icons/mail";
-import { GitHubIcon } from "@/assets/img/icons/github";
-import { LinkedInIcon } from "@/assets/img/icons/linkedin";
-import { ContactLink } from "@/components";
+import { GitHubIcon, LinkedInIcon, MailIcon } from "@/assets/img/icons";
+import type { ContactLink } from "@/types";
 
 export const links: ContactLink[] = [
   {

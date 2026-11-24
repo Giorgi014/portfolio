@@ -1,6 +1,6 @@
-import { IconProps } from "@/components";
+import type { IconProps } from "@/types";
 
-export const DownRown = ({
+export const DownRowIcon = ({
   size = 20,
   color = "currentColor",
   style,
