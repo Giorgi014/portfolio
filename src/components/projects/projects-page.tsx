@@ -94,6 +94,8 @@ const Projects = () => {
               <Image
                 src={item.img}
                 alt={t(`items.${item.key}.title`)}
+                width={1200}
+                height={750}
               />
               <div>
                 <span>

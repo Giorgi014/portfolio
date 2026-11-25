@@ -93,11 +93,6 @@
         "description": "This e-commerce platform implements a comprehensive set of features for online shopping, including user authentication, product browsing, search functionality, and responsive design.",
         "title": "cyber"
       },
-      "prj_02": {
-        "category": "web",
-        "description": "Weather App is a city weather forecast app built with Next.js and TypeScript. Search any city to get current weather and a 5-day forecast, with support for light/dark theme and Celsius/Fahrenheit switching — powered by the OpenWeatherMap API.",
-        "title": "Weather App"
-      },
       "prj_03": {
         "category": "creative",
         "description": "Text Animation is a creative JavaScript experiment that brings text to life through dynamic visual effects. Built with pure vanilla JS, HTML, and CSS — no libraries or frameworks.",
@@ -108,11 +103,6 @@
         "description": "Login Form is a styled login and sign-up UI built with pure HTML and CSS. Focuses on clean form design and layout without any frameworks.",
         "title": "Login Form"
       },
-      "prj_05": {
-        "category": "utility",
-        "description": "Calculator is a functional calculator app built with React. Supports standard arithmetic operations with a clean, minimal interface.",
-        "title": "Calculator"
-      },
       "prj_06": {
         "category": "game",
         "description": "Guess My Number is a number guessing game where the player tries to identify a randomly generated secret number between 1 and 20. Each wrong guess costs a point and reveals a hint — the score system tracks your best result across rounds.",
@@ -122,6 +112,31 @@
         "category": "game",
         "description": "Pig Game is a two-player dice game built with React and TypeScript. Players take turns rolling a die and accumulating points — but rolling a 1 resets the turn. The first to reach 100 wins.",
         "title": "Pig Game"
+      },
+      "prj_08": {
+        "category": "e-commerce",
+        "description": "A techwear storefront and brand website featuring product browsing, search, filters, product galleries, a persistent cart, and checkout.",
+        "title": "Road"
+      },
+      "prj_09": {
+        "category": "web",
+        "description": "A modern, responsive design-studio website built with React, TypeScript, and Vite. It includes services, a portfolio, project details, authentication, and contact pages.",
+        "title": "Stygar"
+      },
+      "prj_10": {
+        "category": "web",
+        "description": "A refined architecture and interiors studio website showcasing calm, enduring homes, workspaces, and gardens.",
+        "title": "Oakline Studio"
+      },
+      "prj_11": {
+        "category": "web",
+        "description": "A minimalist architecture and interior design studio website featuring an editorial portfolio, project details, and a light and dark theme.",
+        "title": "Veld Studio"
+      },
+      "prj_12": {
+        "category": "e-commerce",
+        "description": "A futuristic fashion storefront with a bold visual identity and a curated collection experience.",
+        "title": "VOID"
       }
     },
     "title": "PROJECTS",

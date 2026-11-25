@@ -54,7 +54,7 @@ export type CategoryKey = "all" | ProjectCategory;
 
 export type ProjectType = {
   id: number;
-  img: StaticImageData;
+  img: StaticImageData | string;
   project: string;
   key: string;
   category: ProjectCategory;

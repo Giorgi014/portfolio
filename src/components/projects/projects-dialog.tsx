@@ -38,6 +38,8 @@ export const ProjectsDialog = ({ project, onClose }: ProjectsDialogProps) => {
           <Image
             src={project.img}
             alt={t(`items.${project.key}.title`)}
+            width={1200}
+            height={750}
           />
           <Link
             href={project.src}
